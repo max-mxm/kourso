@@ -9,10 +9,12 @@ import {
   RefreshCw,
   Monitor,
   Target,
+  List,
+  X,
   type LucideIcon
 } from 'lucide-react';
 
-// Mapping des noms d'icônes vers les composants
+// Mapping des noms d'icones vers les composants
 const iconMap: Record<string, LucideIcon> = {
   Rocket,
   Zap,
@@ -63,18 +65,29 @@ const categories = [
     label: 'Bonnes Pratiques',
     color: 'from-purple-500 to-pink-500',
   },
-  { id: 'advanced', label: 'Avancé', color: 'from-red-500 to-rose-500' },
+  { id: 'advanced', label: 'Avance', color: 'from-red-500 to-rose-500' },
 ] as const;
 
 export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
   const [activeSection, setActiveSection] = useState('');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mounted, setMounted] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   // Mount animation
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Body scroll lock when mobile nav is open
+  useEffect(() => {
+    if (mobileNavOpen) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }
+  }, [mobileNavOpen]);
 
   // Scroll spy + progress tracker
   useEffect(() => {
@@ -91,7 +104,7 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
         element: document.getElementById(s.id),
       }));
 
-      // Trouver la section la plus proche du haut de la fenêtre
+      // Trouver la section la plus proche du haut de la fenetre
       // On utilise 150px pour tenir compte du scroll-mt-32 (128px) + header
       let closestSection = '';
       let closestDistance = Infinity;
@@ -99,7 +112,7 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
       sectionElements.forEach((section) => {
         if (section && section.element) {
           const rect = section.element.getBoundingClientRect();
-          // Distance absolue par rapport au point de référence (150px du haut)
+          // Distance absolue par rapport au point de reference (150px du haut)
           const distance = Math.abs(rect.top - 150);
 
           // Si cette section est plus proche et visible
@@ -120,9 +133,62 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [sections]);
 
+  // Shared navigation content renderer
+  const renderNavContent = (onLinkClick?: () => void) => (
+    <>
+      {categories.map((category) => {
+        const categorySections = sections.filter(
+          (s) => s.category === category.id,
+        );
+
+        if (categorySections.length === 0) return null;
+
+        return (
+          <div key={category.id}>
+            <div
+              className={cn(
+                'mb-2 bg-gradient-to-r bg-clip-text text-xs font-bold tracking-wider text-transparent uppercase',
+                category.color,
+              )}
+            >
+              {category.label}
+            </div>
+            <ul className="space-y-1">
+              {categorySections.map((section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    onClick={onLinkClick}
+                    className={cn(
+                      'group flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm transition-all duration-200 min-h-[44px]',
+                      activeSection === section.id
+                        ? 'bg-primary/10 text-primary dark:bg-primary/20 font-semibold border-l-2 border-primary'
+                        : 'text-muted-foreground hover:bg-slate-100 dark:hover:bg-slate-800 border-l-2 border-transparent',
+                    )}
+                  >
+                    <span className="flex items-center gap-2 flex-1 truncate">
+                      {section.iconName && (() => {
+                        const IconComponent = iconMap[section.iconName];
+                        return IconComponent ? <IconComponent className="w-4 h-4 flex-shrink-0" /> : null;
+                      })()}
+                      {section.title}
+                    </span>
+                    {activeSection === section.id && (
+                      <div className="bg-primary h-2 w-2 rounded-full animate-pulse" />
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
+    </>
+  );
+
   return (
     <div className="relative min-h-screen scroll-smooth bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-      {/* Progress bar global - Améliorée avec gradient et glow */}
+      {/* Progress bar global */}
       <div className="fixed top-0 right-0 left-0 z-50 h-0.5 bg-slate-200 dark:bg-slate-800">
         <div
           className="from-primary to-brand-secondary h-full bg-gradient-to-r transition-all duration-300 shadow-[0_0_10px_rgba(0,150,136,0.5)] dark:shadow-[0_0_15px_rgba(0,150,136,0.6)]"
@@ -130,74 +196,11 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
         />
       </div>
 
-      {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/80">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <a href="/" className="hover:opacity-80 transition-opacity">
-              <h1 className="from-primary to-brand-secondary bg-gradient-to-r bg-clip-text text-xl font-black tracking-tight text-transparent">
-                Koursorr
-              </h1>
-            </a>
-            <div className="flex items-center gap-3">
-              <div className="text-muted-foreground hidden text-sm md:block">
-                {Math.round(scrollProgress)}% complété
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div className="container mx-auto flex gap-8 px-6 py-8">
-        {/* Sidebar */}
-        <aside className="sticky top-24 hidden h-[calc(100vh-8rem)] w-64 flex-shrink-0 overflow-y-auto lg:block">
+      <div className="container flex gap-8 py-8">
+        {/* Desktop Sidebar */}
+        <aside className="sticky top-20 hidden h-[calc(100vh-6rem)] w-64 flex-shrink-0 overflow-y-auto lg:block">
           <nav className="space-y-6">
-            {categories.map((category) => {
-              const categorySections = sections.filter(
-                (s) => s.category === category.id,
-              );
-
-              if (categorySections.length === 0) return null;
-
-              return (
-                <div key={category.id}>
-                  <div
-                    className={cn(
-                      'mb-2 bg-gradient-to-r bg-clip-text text-xs font-bold tracking-wider text-transparent uppercase',
-                      category.color,
-                    )}
-                  >
-                    {category.label}
-                  </div>
-                  <ul className="space-y-1">
-                    {categorySections.map((section) => (
-                      <li key={section.id}>
-                        <a
-                          href={`#${section.id}`}
-                          className={cn(
-                            'group flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm transition-all duration-200',
-                            activeSection === section.id
-                              ? 'bg-primary/10 text-primary dark:bg-primary/20 font-semibold border-l-2 border-primary'
-                              : 'text-muted-foreground hover:bg-slate-100 dark:hover:bg-slate-800 hover:translate-x-1 border-l-2 border-transparent',
-                          )}
-                        >
-                          <span className="flex items-center gap-2 flex-1 truncate">
-                            {section.iconName && (() => {
-                              const IconComponent = iconMap[section.iconName];
-                              return IconComponent ? <IconComponent className="w-4 h-4 flex-shrink-0" /> : null;
-                            })()}
-                            {section.title}
-                          </span>
-                          {activeSection === section.id && (
-                            <div className="bg-primary h-2 w-2 rounded-full animate-pulse" />
-                          )}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
+            {renderNavContent()}
           </nav>
         </aside>
 
@@ -244,14 +247,61 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
           {/* End marker */}
           <div className="mt-24 text-center">
             <h3 className="from-primary to-brand-secondary bg-gradient-to-r bg-clip-text text-2xl font-black text-transparent">
-              Félicitations !
+              Felicitations !
             </h3>
             <p className="text-muted-foreground mt-2">
-              Vous avez terminé le cours.
+              Vous avez termine le cours.
             </p>
           </div>
         </main>
       </div>
+
+      {/* Mobile Navigation FAB */}
+      <button
+        onClick={() => setMobileNavOpen(true)}
+        className="fixed bottom-6 right-6 z-40 lg:hidden min-h-[56px] min-w-[56px] rounded-full bg-primary text-white shadow-xl flex items-center justify-center hover:bg-primary/90 active:scale-95 transition-all"
+        aria-label="Ouvrir la navigation du cours"
+      >
+        <List className="w-6 h-6" />
+      </button>
+
+      {/* Mobile Navigation Bottom Sheet */}
+      {mobileNavOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-in fade-in duration-200"
+            onClick={() => setMobileNavOpen(false)}
+          />
+
+          {/* Sheet */}
+          <div className="absolute bottom-0 left-0 right-0 max-h-[75vh] bg-background rounded-t-2xl border-t border-border shadow-2xl overflow-hidden flex flex-col animate-in slide-in-from-bottom duration-300">
+            {/* Handle bar */}
+            <div className="flex justify-center py-3 flex-shrink-0">
+              <div className="w-10 h-1 rounded-full bg-muted-foreground/30" />
+            </div>
+
+            {/* Header */}
+            <div className="px-6 pb-3 border-b border-border/50 flex items-center justify-between flex-shrink-0">
+              <span className="text-sm font-bold text-muted-foreground">
+                Navigation du cours
+              </span>
+              <button
+                onClick={() => setMobileNavOpen(false)}
+                className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg hover:bg-muted transition-colors"
+                aria-label="Fermer la navigation"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Scrollable nav content */}
+            <nav className="overflow-y-auto flex-1 px-4 py-4 space-y-4">
+              {renderNavContent(() => setMobileNavOpen(false))}
+            </nav>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

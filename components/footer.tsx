@@ -4,7 +4,7 @@ import { Linkedin, Globe } from 'lucide-react';
 export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-muted/30 mt-32">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* Colonne 1-5: Branding */}
           <div className="md:col-span-5 space-y-4">

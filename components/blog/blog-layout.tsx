@@ -5,8 +5,6 @@ import { ArticleMetadata } from '@/lib/blog/types';
 import { ArticleHeader } from './article-header';
 import { ArticleSidebar } from './article-sidebar';
 import { ArticleContentWrapper } from './article-content-wrapper';
-import { Header } from '../header';
-
 interface BlogLayoutProps {
   metadata: ArticleMetadata;
   children: React.ReactNode;
@@ -39,10 +37,7 @@ export function BlogLayout({ metadata, children }: BlogLayoutProps) {
         />
       </div>
 
-      {/* Header */}
-      <Header />
-
-      <div className="container mx-auto flex gap-8 px-6 py-8">
+      <div className="container flex gap-8 py-8">
         {/* Sidebar avec ToC */}
         <aside className="sticky top-24 hidden h-[calc(100vh-8rem)] w-64 flex-shrink-0 overflow-y-auto lg:block">
           <ArticleSidebar tableOfContents={metadata.tableOfContents} />

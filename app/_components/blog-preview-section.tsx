@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { getAllArticlesMetadata } from '@/lib/blog/get-articles';
+import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
 
 export async function BlogPreviewSection() {
   const articles = await getAllArticlesMetadata();
@@ -13,7 +14,7 @@ export async function BlogPreviewSection() {
 
   return (
     <section className="py-24 bg-violet-500/5">
-      <div className="container mx-auto px-6">
+      <div className="container">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
           <div className="space-y-2">
@@ -21,7 +22,7 @@ export async function BlogPreviewSection() {
               Blog Technique
             </span>
             <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight">
-              <span className="bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent">
                 Derniers articles
               </span>
             </h2>
@@ -45,12 +46,12 @@ export async function BlogPreviewSection() {
             >
               <div className="p-8 space-y-4">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold px-2 py-1 rounded-full bg-brand-secondary/10 text-brand-secondary uppercase">
-                    {featured.category}
+                  <span className={`text-xs font-bold px-2 py-1 rounded-full bg-gradient-to-r ${BLOG_CATEGORY_INFO[featured.category].gradient} bg-clip-text text-transparent uppercase`}>
+                    {BLOG_CATEGORY_INFO[featured.category].label}
                   </span>
                   <span className="text-sm text-muted-foreground">{featured.readingTime} min</span>
                 </div>
-                <h3 className="text-3xl font-black group-hover:text-brand-secondary transition-colors">
+                <h3 className={`text-3xl font-black bg-gradient-to-r ${BLOG_CATEGORY_INFO[featured.category].gradient} bg-clip-text text-transparent`}>
                   {featured.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed line-clamp-3">
@@ -80,12 +81,12 @@ export async function BlogPreviewSection() {
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold px-2 py-1 rounded-full bg-muted text-muted-foreground uppercase">
-                      {article.category}
+                    <span className={`text-xs font-bold px-2 py-1 rounded-full bg-gradient-to-r ${BLOG_CATEGORY_INFO[article.category].gradient} bg-clip-text text-transparent uppercase`}>
+                      {BLOG_CATEGORY_INFO[article.category].label}
                     </span>
                     <span className="text-sm text-muted-foreground">{article.readingTime} min</span>
                   </div>
-                  <h4 className="text-xl font-bold group-hover:text-brand-secondary transition-colors line-clamp-2">
+                  <h4 className={`text-xl font-bold line-clamp-2 bg-gradient-to-r ${BLOG_CATEGORY_INFO[article.category].gradient} bg-clip-text text-transparent`}>
                     {article.title}
                   </h4>
                 </div>

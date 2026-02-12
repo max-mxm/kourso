@@ -1,4 +1,5 @@
-import { ArticleMetadata, BlogCategory } from '@/lib/blog/types';
+import { ArticleMetadata } from '@/lib/blog/types';
+import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
 import { Calendar, Clock, User } from 'lucide-react';
 import Link from 'next/link';
 
@@ -6,28 +7,8 @@ interface ArticleHeaderProps {
   metadata: ArticleMetadata;
 }
 
-const categoryInfo: Record<
-  BlogCategory,
-  { label: string; gradient: string }
-> = {
-  fundamentals: {
-    label: 'Fondamentaux',
-    gradient: 'from-primary to-brand-secondary',
-  },
-  architecture: {
-    label: 'Architecture',
-    gradient: 'from-blue-500 to-cyan-500',
-  },
-  testing: { label: 'Testing', gradient: 'from-orange-500 to-amber-500' },
-  'best-practices': {
-    label: 'Bonnes Pratiques',
-    gradient: 'from-purple-500 to-pink-500',
-  },
-  advanced: { label: 'Avancé', gradient: 'from-red-500 to-rose-500' },
-};
-
 export function ArticleHeader({ metadata }: ArticleHeaderProps) {
-  const category = categoryInfo[metadata.category];
+  const category = BLOG_CATEGORY_INFO[metadata.category];
 
   return (
     <header className="mb-12 space-y-6">

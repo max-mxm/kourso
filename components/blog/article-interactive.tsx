@@ -1,20 +1,24 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { TableOfContentsItem } from '@/lib/blog/types';
+import { TableOfContentsItem, BlogCategory } from '@/lib/blog/types';
+import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
 import { cn } from '@/lib/utils';
 
 interface ArticleInteractiveProps {
   tableOfContents: TableOfContentsItem[];
+  category: BlogCategory;
   children: React.ReactNode;
 }
 
 export function ArticleInteractive({
   tableOfContents,
+  category,
   children,
 }: ArticleInteractiveProps) {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeId, setActiveId] = useState('');
+  const categoryData = BLOG_CATEGORY_INFO[category];
 
   // Scroll progress tracker
   useEffect(() => {
@@ -56,12 +60,12 @@ export function ArticleInteractive({
       {/* Progress bar fixe en haut */}
       <div className="fixed top-0 left-0 right-0 h-0.5 z-50 bg-slate-200 dark:bg-slate-800">
         <div
-          className="h-full bg-gradient-to-r from-primary to-brand-secondary shadow-lg shadow-primary/50 transition-all duration-300"
+          className={`h-full bg-gradient-to-r ${categoryData.gradient} shadow-lg shadow-primary/50 transition-all duration-300`}
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
-      <div className="container mx-auto flex gap-8 px-6 py-8">
+      <div className="container flex gap-8 py-8">
         {/* Sidebar avec ToC */}
         {tableOfContents.length > 0 && (
           <aside className="sticky top-24 hidden h-[calc(100vh-8rem)] w-64 flex-shrink-0 overflow-y-auto lg:block">
@@ -77,9 +81,13 @@ export function ArticleInteractive({
                       className={cn(
                         'block py-1.5 transition-all duration-200 border-l-2',
                         activeId === item.id
-                          ? 'border-primary text-primary font-medium pl-4'
+                          ? 'font-medium pl-4'
                           : 'border-transparent text-muted-foreground hover:text-foreground hover:border-border pl-4 hover:pl-5'
                       )}
+                      style={activeId === item.id ? {
+                        borderColor: categoryData.accentColor,
+                        color: categoryData.accentColor,
+                      } : undefined}
                     >
                       {item.title}
                     </a>

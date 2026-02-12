@@ -1,23 +1,16 @@
 import { BlogCategory } from '@/lib/blog/types';
+import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
 
 interface ArticleContentWrapperProps {
   children: React.ReactNode;
   category: BlogCategory;
 }
 
-const categoryColors: Record<BlogCategory, string> = {
-  fundamentals: 'rgb(0, 150, 136)',
-  architecture: 'rgb(59, 130, 246)',
-  testing: 'rgb(249, 115, 22)',
-  'best-practices': 'rgb(168, 85, 247)',
-  advanced: 'rgb(239, 68, 68)',
-};
-
 export function ArticleContentWrapper({
   children,
   category,
 }: ArticleContentWrapperProps) {
-  const accentColor = categoryColors[category];
+  const accentColor = BLOG_CATEGORY_INFO[category].accentColor;
 
   return (
     <article

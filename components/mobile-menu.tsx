@@ -19,7 +19,7 @@ export function MobileMenu({ pathname, onClose }: MobileMenuProps) {
 
   return (
     <div className="fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-lg md:hidden animate-in fade-in slide-in-from-top-4">
-      <nav className="container mx-auto px-6 py-8 flex flex-col gap-2">
+      <nav className="container py-8 flex flex-col gap-2">
         <MobileNavLink href="/" active={pathname === '/'} onClick={onClose}>
           Accueil
         </MobileNavLink>

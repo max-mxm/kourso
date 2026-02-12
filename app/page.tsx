@@ -42,7 +42,7 @@ export default function Home() {
         <HeroSection />
 
         {/* Featured Course Section */}
-        <section className="container mx-auto px-6 py-20">
+        <section className="container py-20">
           <div className="space-y-8">
             <div className="space-y-2">
               <span className="text-xs font-bold tracking-wider uppercase text-primary">

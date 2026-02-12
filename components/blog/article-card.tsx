@@ -1,4 +1,5 @@
-import { ArticleMetadata, BlogCategory } from '@/lib/blog/types';
+import { ArticleMetadata } from '@/lib/blog/types';
+import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
 import { Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -8,26 +9,6 @@ interface ArticleCardProps {
   variant?: 'default' | 'featured';
 }
 
-const categoryInfo: Record<
-  BlogCategory,
-  { label: string; gradient: string }
-> = {
-  fundamentals: {
-    label: 'Fondamentaux',
-    gradient: 'from-primary to-brand-secondary',
-  },
-  architecture: {
-    label: 'Architecture',
-    gradient: 'from-blue-500 to-cyan-500',
-  },
-  testing: { label: 'Testing', gradient: 'from-orange-500 to-amber-500' },
-  'best-practices': {
-    label: 'Bonnes Pratiques',
-    gradient: 'from-purple-500 to-pink-500',
-  },
-  advanced: { label: 'Avancé', gradient: 'from-red-500 to-rose-500' },
-};
-
 function isNew(publishedAt: string): boolean {
   const published = new Date(publishedAt);
   const now = new Date();
@@ -36,7 +17,7 @@ function isNew(publishedAt: string): boolean {
 }
 
 export function ArticleCard({ metadata, variant = 'default' }: ArticleCardProps) {
-  const category = categoryInfo[metadata.category];
+  const category = BLOG_CATEGORY_INFO[metadata.category];
   const isNewArticle = isNew(metadata.publishedAt);
 
   if (variant === 'featured') {

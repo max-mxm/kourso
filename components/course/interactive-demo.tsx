@@ -65,8 +65,8 @@ export function InteractiveDemo({
       style={{ borderColor: state === 'idle' ? 'rgb(var(--border))' : accentColor }}
     >
       {/* Header */}
-      <div className="p-6 border-b border-border/50">
-        <div className="flex items-start justify-between gap-4">
+      <div className="p-4 sm:p-6 border-b border-border/50">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
               <span
@@ -89,7 +89,7 @@ export function InteractiveDemo({
             onClick={handleRun}
             disabled={state === 'loading'}
             className={cn(
-              'px-6 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 flex items-center gap-2',
+              'w-full sm:w-auto px-6 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 flex items-center justify-center gap-2',
               'border-2 disabled:opacity-50 disabled:cursor-not-allowed',
               state === 'idle' && 'border-border hover:border-primary bg-background hover:bg-primary/5',
               state === 'loading' && 'border-primary/50 bg-primary/5 cursor-wait',
@@ -100,12 +100,12 @@ export function InteractiveDemo({
             {state === 'loading' && (
               <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
             )}
-            {state === 'idle' && 'Lancer la démo'}
+            {state === 'idle' && 'Lancer la demo'}
             {state === 'loading' && 'Chargement...'}
             {state === 'success' && (
               <>
                 <Check className="w-4 h-4" />
-                Succès
+                Succes
               </>
             )}
             {state === 'error' && (
@@ -122,7 +122,7 @@ export function InteractiveDemo({
       {result && (
         <div
           className={cn(
-            'p-6 transition-all duration-300',
+            'p-4 sm:p-6 transition-all duration-300',
             state === 'success' && 'bg-green-500/5',
             state === 'error' && 'bg-red-500/5'
           )}

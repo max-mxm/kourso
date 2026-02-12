@@ -2,26 +2,9 @@
 
 import { ArticleCard } from '@/components/blog/article-card';
 import { ArticleMetadata, BlogCategory } from '@/lib/blog/types';
+import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-
-const categoryInfo: Record<BlogCategory, { label: string; gradient: string }> =
-  {
-    fundamentals: {
-      label: 'Fondamentaux',
-      gradient: 'from-primary to-brand-secondary',
-    },
-    architecture: {
-      label: 'Architecture',
-      gradient: 'from-blue-500 to-cyan-500',
-    },
-    testing: { label: 'Testing', gradient: 'from-orange-500 to-amber-500' },
-    'best-practices': {
-      label: 'Bonnes Pratiques',
-      gradient: 'from-purple-500 to-pink-500',
-    },
-    advanced: { label: 'Avancé', gradient: 'from-red-500 to-rose-500' },
-  };
 
 interface BlogPageClientProps {
   articles: ArticleMetadata[];
@@ -41,7 +24,7 @@ export function BlogPageClient({ articles }: BlogPageClientProps) {
   const regular = filteredArticles.filter((a) => !a.featured);
 
   return (
-    <main className="container mx-auto px-6 py-12">
+    <main className="container py-12">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* En-tête */}
         <div className="space-y-4">
@@ -67,18 +50,18 @@ export function BlogPageClient({ articles }: BlogPageClientProps) {
           >
             Tous
           </button>
-          {(Object.keys(categoryInfo) as BlogCategory[]).map((cat) => (
+          {(Object.keys(BLOG_CATEGORY_INFO) as BlogCategory[]).map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className={cn(
                 'px-4 py-2 rounded-lg font-medium text-sm border transition-colors',
                 selectedCategory === cat
-                  ? `bg-gradient-to-r ${categoryInfo[cat].gradient} text-white border-transparent`
+                  ? `bg-gradient-to-r ${BLOG_CATEGORY_INFO[cat].gradient} text-white border-transparent`
                   : 'hover:bg-muted text-muted-foreground border-border/50'
               )}
             >
-              {categoryInfo[cat].label}
+              {BLOG_CATEGORY_INFO[cat].label}
             </button>
           ))}
         </div>

@@ -29,25 +29,11 @@ export default function CoursesPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-      {/* Header */}
-      <header className="border-b border-border/50 bg-background/80 backdrop-blur-xl">
-        <div className="container mx-auto flex h-16 items-center gap-4 px-6">
-          <Link
-            href="/"
-            className="text-2xl font-black bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-          >
-            Koursorr
-          </Link>
-          <span className="text-muted-foreground">/</span>
-          <span className="text-sm font-semibold text-muted-foreground">Tous les cours</span>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-6 py-12">
+      <main className="container py-12">
         <div className="max-w-5xl mx-auto space-y-12">
           {/* En-tête */}
           <div className="space-y-4">
-            <h1 className="text-5xl font-black tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">
               Catalogue de cours
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl">
@@ -79,30 +65,34 @@ export default function CoursesPage() {
                 href={`/cours/${course.id}`}
                 className="group block"
               >
-                <div className="relative rounded-2xl border border-border/50 bg-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-y-[-2px] overflow-hidden">
+                <div className="relative rounded-2xl border border-border/50 bg-card p-5 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-y-[-2px] overflow-hidden">
                   {/* Gradient accent au survol */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${course.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
 
-                  <div className="relative grid gap-6 md:grid-cols-[auto,1fr,auto]">
-                    {/* Icon */}
-                    <div className="flex items-start">
+                  <div className="relative grid gap-4 sm:gap-6 md:grid-cols-[auto,1fr,auto]">
+                    {/* Icon - large on desktop */}
+                    <div className="hidden md:flex items-start">
                       <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-brand-secondary/10 border border-primary/20 flex items-center justify-center">
                         <course.icon className="w-8 h-8 text-primary" />
                       </div>
                     </div>
 
                     {/* Contenu principal */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       <div>
-                        <div className="flex items-center gap-3 mb-2">
-                          <h2 className="text-2xl font-black group-hover:text-primary transition-colors">
+                        <div className="flex items-center gap-2 sm:gap-3 mb-2 flex-wrap">
+                          {/* Small icon inline on mobile */}
+                          <div className="md:hidden w-10 h-10 rounded-lg bg-gradient-to-br from-primary/10 to-brand-secondary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                            <course.icon className="w-5 h-5 text-primary" />
+                          </div>
+                          <h2 className="text-xl sm:text-2xl font-black group-hover:text-primary transition-colors">
                             {course.title}
                           </h2>
                           <span className="text-xs font-bold px-2 py-1 rounded bg-primary/10 text-primary">
                             DISPONIBLE
                           </span>
                         </div>
-                        <p className="text-muted-foreground leading-relaxed">
+                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                           {course.description}
                         </p>
                       </div>
@@ -118,7 +108,7 @@ export default function CoursesPage() {
                         ))}
                       </div>
 
-                      <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-4 sm:gap-6 text-sm text-muted-foreground">
                         <div className="flex items-center gap-2">
                           <BookOpen className="w-4 h-4 text-primary" />
                           <span>{course.sections} sections</span>
@@ -136,7 +126,7 @@ export default function CoursesPage() {
 
                     {/* CTA */}
                     <div className="flex items-center">
-                      <div className="flex items-center gap-2 px-6 py-3 rounded-xl bg-primary/10 text-primary font-bold group-hover:bg-primary group-hover:text-white transition-all duration-200">
+                      <div className="w-full md:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary/10 text-primary font-bold group-hover:bg-primary group-hover:text-white transition-all duration-200">
                         Commencer
                         <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
                       </div>

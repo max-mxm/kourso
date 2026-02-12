@@ -29,7 +29,7 @@ export function PhilosophySection() {
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-brand-secondary/5" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Colonne 1-5: Portrait */}
           <div className="lg:col-span-5 flex justify-center lg:justify-start">

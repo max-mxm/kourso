@@ -2,7 +2,6 @@ import { getArticleBySlug, getAllArticles } from '@/lib/blog/get-articles';
 import { ArticleInteractive } from '@/components/blog/article-interactive';
 import { ArticleHeader } from '@/components/blog/article-header';
 import { ArticleContentWrapper } from '@/components/blog/article-content-wrapper';
-import { Header } from '@/components/header';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
@@ -70,9 +69,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <div className="min-h-screen scroll-smooth bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-      <Header />
-
-      <ArticleInteractive tableOfContents={article.tableOfContents}>
+      <ArticleInteractive tableOfContents={article.tableOfContents} category={article.category}>
         <ArticleHeader metadata={article} />
 
         <div className="rounded-2xl bg-white/50 p-6 md:p-10 shadow-lg backdrop-blur-sm dark:bg-slate-900/50 border border-border/50">

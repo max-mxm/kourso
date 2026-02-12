@@ -4,25 +4,11 @@ import { Zap, BookOpen, Palette, Unlock } from 'lucide-react';
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
-      {/* Header */}
-      <header className="border-b border-border/50 bg-background/80 backdrop-blur-xl">
-        <div className="container mx-auto flex h-16 items-center gap-4 px-6">
-          <Link
-            href="/"
-            className="text-2xl font-black bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-          >
-            Koursorr
-          </Link>
-          <span className="text-muted-foreground">/</span>
-          <span className="text-sm font-semibold text-muted-foreground">À propos</span>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-6 py-12">
+      <main className="container py-12">
         <div className="max-w-3xl mx-auto space-y-12">
           {/* En-tête */}
           <div className="space-y-6">
-            <h1 className="text-5xl font-black tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">
               À propos de Koursorr
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">

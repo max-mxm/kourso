@@ -55,7 +55,7 @@ export function CodeBlock({
       style={{ borderLeft: `4px solid ${borderColor}` }}
     >
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-3 border-b border-border/50 bg-muted/20">
+      <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border/50 bg-muted/20">
         <div className="flex items-center gap-3">
           {filename && (
             <span className="text-sm font-medium text-foreground/80">{filename}</span>
@@ -89,7 +89,7 @@ export function CodeBlock({
 
       {/* Code Content */}
       <div className="overflow-x-auto">
-        <pre className="p-6 text-sm leading-relaxed">
+        <pre className="p-4 sm:p-6 text-sm leading-relaxed">
           <code className="font-mono">
             {lines.map((line, index) => {
               const lineNumber = index + 1;

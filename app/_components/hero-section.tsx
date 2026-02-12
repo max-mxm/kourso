@@ -6,7 +6,7 @@ export function HeroSection() {
       {/* Abstract Background Shape */}
       <div className="absolute top-0 right-0 w-[40vw] h-[60vh] bg-gradient-to-br from-primary/20 to-brand-secondary/20 blur-3xl rounded-full" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Colonne 1-7: Content */}
           <div className="lg:col-span-7 space-y-8">
