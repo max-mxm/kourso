@@ -51,6 +51,18 @@ Contient :
 
 ### Par Type de Tâche
 
+#### Ajout d'un Nouveau Cours
+→ **Consulter OBLIGATOIREMENT** : [`docs/guides/ajouter-un-cours.md`](./docs/guides/ajouter-un-cours.md)
+
+Contient :
+- Guide complet étape par étape
+- Structure de fichiers requise
+- Ajout à la navigation (page d'accueil + catalogue)
+- Tests et validation
+- Checklist complète
+
+---
+
 #### Ajout de Couleurs ou Travail sur le Thème
 → **Consulter** : [`docs/design-system/colors.md`](./docs/design-system/colors.md)
 
@@ -113,6 +125,7 @@ Contient :
 
 | Mots-clés | Documentation à consulter |
 |-----------|---------------------------|
+| "nouveau cours", "ajouter cours", "créer cours", "navigation" | [`docs/guides/ajouter-un-cours.md`](./docs/guides/ajouter-un-cours.md) |
 | "cours", "section", "catégorie", "CourseLayout" | [`docs/architecture/cours-structure.md`](./docs/architecture/cours-structure.md) |
 | "couleur", "teal", "violet", "theme", "dark", "light" | [`docs/design-system/colors.md`](./docs/design-system/colors.md) |
 | "police", "typographie", "Inter", "radius" | [`docs/design-system/typography.md`](./docs/design-system/typography.md) |
@@ -133,6 +146,8 @@ Contient :
 - [`docs/design-system/categories.md`](./docs/design-system/categories.md) - Gradients par catégorie
 
 ### Guides
+- [`docs/guides/ajouter-un-cours.md`](./docs/guides/ajouter-un-cours.md) - Guide complet pour créer un nouveau cours
+- [`docs/guides/bonnes-pratiques-cours.md`](./docs/guides/bonnes-pratiques-cours.md) - Standards de qualité et recommandations
 - [`docs/guides/impeccable-workflow.md`](./docs/guides/impeccable-workflow.md) - 15 skills en 6 phases
 
 ### Projet

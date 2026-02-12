@@ -60,11 +60,11 @@ export default function Home() {
               {/* Stats */}
               <div className="flex gap-8 pt-8 border-t border-border/50">
                 <div>
-                  <div className="text-3xl font-black text-foreground">1</div>
-                  <div className="text-sm text-muted-foreground">Cours disponible</div>
+                  <div className="text-3xl font-black text-foreground">2</div>
+                  <div className="text-sm text-muted-foreground">Cours disponibles</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-black text-foreground">6</div>
+                  <div className="text-3xl font-black text-foreground">39</div>
                   <div className="text-sm text-muted-foreground">Sections détaillées</div>
                 </div>
                 <div>
@@ -104,7 +104,7 @@ export default function Home() {
                       <Rocket className="w-6 h-6 text-primary" />
                     </div>
                     <div className="text-xs font-bold px-2 py-1 rounded bg-primary/10 text-primary">
-                      NOUVEAU
+                      POPULAIRE
                     </div>
                   </div>
 
@@ -130,8 +130,56 @@ export default function Home() {
                   </div>
 
                   <div className="pt-4 flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">6 sections</span>
+                    <span className="text-muted-foreground">21 sections</span>
                     <span className="text-primary group-hover:translate-x-1 transition-transform duration-200">
+                      Commencer →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Cours React 19 */}
+              <Link
+                href="/cours/react-19-advanced"
+                className="group relative rounded-2xl border border-border/50 bg-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden"
+              >
+                {/* Gradient accent au survol */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                <div className="relative space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/10 to-pink-500/10 flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-purple-500" />
+                    </div>
+                    <div className="text-xs font-bold px-2 py-1 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400">
+                      NOUVEAU
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-2xl font-black mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      React 19 - Seniors
+                    </h4>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Maîtrisez React 19, le Compiler, Server Components, Actions et tous les patterns avancés pour devs seniors.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                      React 19
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                      TypeScript
+                    </span>
+                    <span className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground">
+                      Avancé
+                    </span>
+                  </div>
+
+                  <div className="pt-4 flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">18 sections</span>
+                    <span className="text-purple-600 dark:text-purple-400 group-hover:translate-x-1 transition-transform duration-200">
                       Commencer →
                     </span>
                   </div>

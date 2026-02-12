@@ -38,9 +38,10 @@ Contexte historique, stack technique, et roadmap.
 3. Parcourir [design-system/](./design-system/) - Comprendre le design
 
 ### Créer un cours ?
-1. Lire [architecture/cours-structure.md](./architecture/cours-structure.md)
-2. Consulter [design-system/categories.md](./design-system/categories.md)
-3. Voir les exemples dans `app/cours/`
+1. **Suivre le guide** : [guides/ajouter-un-cours.md](./guides/ajouter-un-cours.md) - Guide complet étape par étape
+2. Lire [architecture/cours-structure.md](./architecture/cours-structure.md) - Structure technique
+3. Consulter [design-system/categories.md](./design-system/categories.md) - Catégories et gradients
+4. Voir les exemples dans `app/cours/nextjs-demo/` et `app/cours/react-19-advanced/`
 
 ### Modifier le design ?
 1. Consulter [design-system/colors.md](./design-system/colors.md)
@@ -60,6 +61,8 @@ Contexte historique, stack technique, et roadmap.
 - [categories.md](./design-system/categories.md) - Gradients par catégorie de cours
 
 ### Guides
+- [ajouter-un-cours.md](./guides/ajouter-un-cours.md) - Guide complet pour créer un nouveau cours
+- [bonnes-pratiques-cours.md](./guides/bonnes-pratiques-cours.md) - Standards de qualité et recommandations
 - [impeccable-workflow.md](./guides/impeccable-workflow.md) - 15 skills en 6 phases pour améliorer l'UI
 
 ### Projet

@@ -9,10 +9,21 @@ export default function CoursesPage() {
       description: 'Maîtrisez les modes de rendu modernes : SSR, SSG, ISR et Client Components avec des exemples interactifs.',
       icon: Rocket,
       tags: ['Next.js 15', 'React 19', 'TypeScript'],
-      sections: 6,
+      sections: 21,
       level: 'Intermédiaire',
-      duration: '2h',
+      duration: '3h',
       gradient: 'from-primary to-brand-secondary'
+    },
+    {
+      id: 'react-19-advanced',
+      title: 'React 19 - Bonnes Pratiques Seniors',
+      description: 'Cours complet sur React 19 : Compiler, Server Components, Actions, useOptimistic, architecture scalable et patterns avancés.',
+      icon: Rocket,
+      tags: ['React 19', 'TypeScript', 'Avancé'],
+      sections: 18,
+      level: 'Avancé',
+      duration: '4h',
+      gradient: 'from-purple-500 to-pink-500'
     }
   ];
 
