@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Rocket, BookOpen, Clock, BarChart3 } from 'lucide-react';
+import { Rocket, BookOpen, Clock, BarChart3, Database, Brain } from 'lucide-react';
 
 export default function CoursesPage() {
   const courses = [
@@ -24,6 +24,28 @@ export default function CoursesPage() {
       level: 'Avancé',
       duration: '4h',
       gradient: 'from-purple-500 to-pink-500'
+    },
+    {
+      id: 'tanstack-react',
+      title: 'TanStack - Ecosysteme Complet React',
+      description: 'Maitrisez l\'ecosysteme TanStack : Query, Router, Table, Virtual, Form, Store et Pacer. Du data fetching a l\'architecture de production.',
+      icon: Database,
+      tags: ['TanStack', 'React Query', 'React'],
+      sections: 14,
+      level: 'Intermédiaire',
+      duration: '4h',
+      gradient: 'from-orange-500 to-amber-500'
+    },
+    {
+      id: 'react-memoization',
+      title: 'useMemo, useCallback et React.memo',
+      description: 'Comprendre les 3 mecanismes de memoisation React. Exemples concrets, erreurs courantes, et preparation au React Compiler.',
+      icon: Brain,
+      tags: ['React', 'Performance', 'Hooks'],
+      sections: 10,
+      level: 'Intermédiaire',
+      duration: '2h',
+      gradient: 'from-blue-500 to-cyan-500'
     }
   ];
 

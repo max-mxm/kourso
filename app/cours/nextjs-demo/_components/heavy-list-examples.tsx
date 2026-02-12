@@ -104,7 +104,7 @@ const ProductItemMemo = memo(
 ProductItemMemo.displayName = 'ProductItemMemo';
 
 // SCÉNARIO 1 : Sans optimisation
-export function HeavyListBaseline() {
+export function HeavyListBaseline({ itemCount = 50 }: { itemCount?: number }) {
   const [search, setSearch] = useState('');
 
   // Filtrage SANS useMemo
@@ -130,7 +130,7 @@ export function HeavyListBaseline() {
         />
       </div>
       <div className="h-64 overflow-y-auto border border-border rounded-lg">
-        {filteredProducts.slice(0, 50).map((product) => (
+        {filteredProducts.slice(0, itemCount).map((product) => (
           <ProductItem key={product.id} product={product} />
         ))}
       </div>
@@ -142,7 +142,7 @@ export function HeavyListBaseline() {
 }
 
 // SCÉNARIO 2 : Avec React.memo uniquement
-export function HeavyListWithMemo() {
+export function HeavyListWithMemo({ itemCount = 50 }: { itemCount?: number }) {
   const [search, setSearch] = useState('');
 
   // Filtrage SANS useMemo
@@ -168,7 +168,7 @@ export function HeavyListWithMemo() {
         />
       </div>
       <div className="h-64 overflow-y-auto border border-border rounded-lg">
-        {filteredProducts.slice(0, 50).map((product) => (
+        {filteredProducts.slice(0, itemCount).map((product) => (
           <ProductItemMemo key={product.id} product={product} />
         ))}
       </div>
@@ -180,7 +180,7 @@ export function HeavyListWithMemo() {
 }
 
 // SCÉNARIO 3 : Avec useMemo uniquement
-export function HeavyListWithUseMemo() {
+export function HeavyListWithUseMemo({ itemCount = 50 }: { itemCount?: number }) {
   const [search, setSearch] = useState('');
 
   // Filtrage AVEC useMemo
@@ -210,7 +210,7 @@ export function HeavyListWithUseMemo() {
         />
       </div>
       <div className="h-64 overflow-y-auto border border-border rounded-lg">
-        {filteredProducts.slice(0, 50).map((product) => (
+        {filteredProducts.slice(0, itemCount).map((product) => (
           <ProductItem key={product.id} product={product} />
         ))}
       </div>
@@ -222,7 +222,7 @@ export function HeavyListWithUseMemo() {
 }
 
 // SCÉNARIO 4 : Tout optimisé
-export function HeavyListOptimized() {
+export function HeavyListOptimized({ itemCount = 50 }: { itemCount?: number }) {
   const [search, setSearch] = useState('');
 
   // Filtrage AVEC useMemo
@@ -255,7 +255,7 @@ export function HeavyListOptimized() {
         />
       </div>
       <div className="h-64 overflow-y-auto border border-border rounded-lg">
-        {filteredProducts.slice(0, 50).map((product) => (
+        {filteredProducts.slice(0, itemCount).map((product) => (
           <ProductItemMemo key={product.id} product={product} />
         ))}
       </div>

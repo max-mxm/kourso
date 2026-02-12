@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import { CodeBlock } from '@/components/course/code-block';
 import { ConceptCard } from '@/components/course/concept-card';
 import { PerformanceDemo } from '../_components/performance-demo';
@@ -8,7 +11,162 @@ import {
   HeavyListOptimized,
 } from '../_components/heavy-list-examples';
 
+const CODE_TABS = [
+  {
+    id: 'baseline',
+    label: 'Sans optimisation',
+    code: `function ProductList() {
+  const [search, setSearch] = useState('');
+
+  // Filtrage recalculé à chaque render
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  // Nouvelle fonction créée à chaque render
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  return (
+    <div>
+      <input onChange={handleSearch} />
+      {filteredProducts.map(product => (
+        // ProductItem re-render même si product n'a pas changé
+        <ProductItem key={product.id} product={product} />
+      ))}
+    </div>
+  );
+}
+
+// Composant Item non optimisé
+function ProductItem({ product }) {
+  const expensiveCalculation = () => {
+    let result = 0;
+    for (let i = 0; i < 100000; i++) {
+      result += Math.random();
+    }
+    return result;
+  };
+
+  expensiveCalculation();
+  return <div>{product.name}</div>;
+}`,
+    filename: 'baseline.tsx',
+  },
+  {
+    id: 'memo',
+    label: 'React.memo',
+    code: `function ProductList() {
+  const [search, setSearch] = useState('');
+
+  // Toujours recalculé
+  const filteredProducts = products.filter(product =>
+    product.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  return (
+    <div>
+      <input onChange={handleSearch} />
+      {filteredProducts.map(product => (
+        // ProductItemMemo ne re-render que si product change
+        <ProductItemMemo key={product.id} product={product} />
+      ))}
+    </div>
+  );
+}
+
+// Composant memoizé avec comparaison custom
+const ProductItemMemo = memo(
+  ({ product }) => {
+    const expensiveCalculation = () => { /* ... */ };
+    expensiveCalculation();
+    return <div>{product.name}</div>;
+  },
+  (prevProps, nextProps) => prevProps.product.id === nextProps.product.id
+);`,
+    filename: 'with-memo.tsx',
+  },
+  {
+    id: 'usememo',
+    label: 'useMemo',
+    code: `function ProductList() {
+  const [search, setSearch] = useState('');
+
+  // Filtrage memoizé, recalculé uniquement si search change
+  const filteredProducts = useMemo(
+    () => products.filter(product =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    ),
+    [search]
+  );
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
+  return (
+    <div>
+      <input onChange={handleSearch} />
+      {filteredProducts.map(product => (
+        // ProductItem re-render à chaque fois
+        <ProductItem key={product.id} product={product} />
+      ))}
+    </div>
+  );
+}`,
+    filename: 'with-usememo.tsx',
+  },
+  {
+    id: 'optimized',
+    label: 'Tout optimisé',
+    code: `function ProductList() {
+  const [search, setSearch] = useState('');
+
+  // Filtrage memoizé
+  const filteredProducts = useMemo(
+    () => products.filter(product =>
+      product.name.toLowerCase().includes(search.toLowerCase())
+    ),
+    [search]
+  );
+
+  // Handler memoizé avec useCallback
+  const handleSearch = useCallback((e) => {
+    setSearch(e.target.value);
+  }, []);
+
+  return (
+    <div>
+      <input onChange={handleSearch} />
+      {filteredProducts.map(product => (
+        // ProductItemMemo memoizé
+        <ProductItemMemo key={product.id} product={product} />
+      ))}
+    </div>
+  );
+}
+
+// Composant fully optimized
+const ProductItemMemo = memo(
+  ({ product }) => {
+    const expensiveCalculation = () => { /* ... */ };
+    expensiveCalculation();
+    return <div>{product.name}</div>;
+  },
+  (prevProps, nextProps) => prevProps.product.id === nextProps.product.id
+);`,
+    filename: 'fully-optimized.tsx',
+  },
+];
+
 export function PerformanceMeasurementSection() {
+  const [itemCount, setItemCount] = useState(50);
+  const [activeCodeTab, setActiveCodeTab] = useState('baseline');
   return (
     <div className="space-y-8">
       <h2 id="performance-measurement" className="group">
@@ -210,217 +368,67 @@ function MyComponent() {
         réel. Cliquez sur "Lancer le test" pour mesurer les performances :
       </p>
 
-      <div className="my-6 p-6 bg-muted/30 rounded-lg border border-border">
+      <div className="my-6 p-6 bg-muted/30 rounded-lg border border-border space-y-6">
         <PerformanceDemo
           scenarios={[
             {
               name: 'Sans optimisation',
               description: 'Aucun memo, useMemo ou useCallback',
-              component: <HeavyListBaseline />,
+              component: <HeavyListBaseline itemCount={itemCount} />,
             },
             {
               name: 'Avec React.memo',
               description: 'Items memoizés uniquement',
-              component: <HeavyListWithMemo />,
+              component: <HeavyListWithMemo itemCount={itemCount} />,
             },
             {
               name: 'Avec useMemo',
               description: 'Liste filtrée memoizée uniquement',
-              component: <HeavyListWithUseMemo />,
+              component: <HeavyListWithUseMemo itemCount={itemCount} />,
             },
             {
               name: 'Tout optimisé',
               description: 'React.memo + useMemo + useCallback',
-              component: <HeavyListOptimized />,
+              component: <HeavyListOptimized itemCount={itemCount} />,
             },
           ]}
+          itemCount={itemCount}
+          onItemCountChange={setItemCount}
         />
+
+        {/* Onglets code source */}
+        <div className="border-t border-border pt-6">
+          <h5 className="font-semibold text-foreground mb-4">
+            Code source de chaque approche
+          </h5>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {CODE_TABS.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveCodeTab(tab.id)}
+                className={`px-3 py-1.5 text-sm font-medium rounded-lg border transition-colors ${
+                  activeCodeTab === tab.id
+                    ? 'bg-primary/10 text-primary border-primary/20'
+                    : 'text-muted-foreground border-border/50 hover:bg-muted'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+          {CODE_TABS.map((tab) =>
+            activeCodeTab === tab.id ? (
+              <CodeBlock
+                key={tab.id}
+                code={tab.code}
+                language="typescript"
+                filename={tab.filename}
+                category="optimization"
+              />
+            ) : null
+          )}
+        </div>
       </div>
-
-      <h3 id="implementation-details" className="group">
-        Détails d'Implémentation
-        <a
-          href="#implementation-details"
-          className="opacity-0 group-hover:opacity-100 ml-2 text-primary text-base"
-        >
-          #
-        </a>
-      </h3>
-
-      <p className="text-foreground/80 leading-relaxed">
-        Examinons les différences de code entre chaque approche :
-      </p>
-
-      <h4 className="text-base font-semibold text-foreground mt-6 mb-3">
-        1. Sans optimisation (Baseline)
-      </h4>
-
-      <CodeBlock
-        code={`function ProductList() {
-  const [search, setSearch] = useState('');
-
-  // ❌ Filtrage recalculé à chaque render
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(search.toLowerCase())
-  );
-
-  // ❌ Nouvelle fonction créée à chaque render
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
-
-  return (
-    <div>
-      <input onChange={handleSearch} />
-      {filteredProducts.map(product => (
-        // ❌ ProductItem re-render même si product n'a pas changé
-        <ProductItem key={product.id} product={product} />
-      ))}
-    </div>
-  );
-}
-
-// Composant Item non optimisé
-function ProductItem({ product }) {
-  // Simule un rendu coûteux
-  const expensiveCalculation = () => {
-    let result = 0;
-    for (let i = 0; i < 100000; i++) {
-      result += Math.random();
-    }
-    return result;
-  };
-
-  expensiveCalculation();
-  return <div>{product.name}</div>;
-}`}
-        language="typescript"
-        filename="baseline.tsx"
-        category="optimization"
-      />
-
-      <h4 className="text-base font-semibold text-foreground mt-6 mb-3">
-        2. Avec React.memo uniquement
-      </h4>
-
-      <CodeBlock
-        code={`function ProductList() {
-  const [search, setSearch] = useState('');
-
-  // ❌ Toujours recalculé
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
-
-  return (
-    <div>
-      <input onChange={handleSearch} />
-      {filteredProducts.map(product => (
-        // ✅ ProductItemMemo ne re-render que si product change
-        <ProductItemMemo key={product.id} product={product} />
-      ))}
-    </div>
-  );
-}
-
-// ✅ Composant memoizé avec comparaison custom
-const ProductItemMemo = memo(
-  ({ product }) => {
-    const expensiveCalculation = () => { /* ... */ };
-    expensiveCalculation();
-    return <div>{product.name}</div>;
-  },
-  (prevProps, nextProps) => prevProps.product.id === nextProps.product.id
-);`}
-        language="typescript"
-        filename="with-memo.tsx"
-        category="optimization"
-      />
-
-      <h4 className="text-base font-semibold text-foreground mt-6 mb-3">
-        3. Avec useMemo uniquement
-      </h4>
-
-      <CodeBlock
-        code={`function ProductList() {
-  const [search, setSearch] = useState('');
-
-  // ✅ Filtrage memoizé, recalculé uniquement si search change
-  const filteredProducts = useMemo(
-    () => products.filter(product =>
-      product.name.toLowerCase().includes(search.toLowerCase())
-    ),
-    [search]
-  );
-
-  const handleSearch = (e) => {
-    setSearch(e.target.value);
-  };
-
-  return (
-    <div>
-      <input onChange={handleSearch} />
-      {filteredProducts.map(product => (
-        // ❌ ProductItem re-render à chaque fois
-        <ProductItem key={product.id} product={product} />
-      ))}
-    </div>
-  );
-}`}
-        language="typescript"
-        filename="with-usememo.tsx"
-        category="optimization"
-      />
-
-      <h4 className="text-base font-semibold text-foreground mt-6 mb-3">
-        4. Tout optimisé
-      </h4>
-
-      <CodeBlock
-        code={`function ProductList() {
-  const [search, setSearch] = useState('');
-
-  // ✅ Filtrage memoizé
-  const filteredProducts = useMemo(
-    () => products.filter(product =>
-      product.name.toLowerCase().includes(search.toLowerCase())
-    ),
-    [search]
-  );
-
-  // ✅ Handler memoizé avec useCallback
-  const handleSearch = useCallback((e) => {
-    setSearch(e.target.value);
-  }, []);
-
-  return (
-    <div>
-      <input onChange={handleSearch} />
-      {filteredProducts.map(product => (
-        // ✅ ProductItemMemo memoizé
-        <ProductItemMemo key={product.id} product={product} />
-      ))}
-    </div>
-  );
-}
-
-// ✅ Composant fully optimized
-const ProductItemMemo = memo(
-  ({ product }) => {
-    const expensiveCalculation = () => { /* ... */ };
-    expensiveCalculation();
-    return <div>{product.name}</div>;
-  },
-  (prevProps, nextProps) => prevProps.product.id === nextProps.product.id
-);`}
-        language="typescript"
-        filename="fully-optimized.tsx"
-        category="optimization"
-      />
 
       <h3 id="results-analysis" className="group">
         Analyse des Résultats

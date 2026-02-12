@@ -12,6 +12,8 @@ interface Scenario {
 interface PerformanceDemoProps {
   scenarios: Scenario[];
   initialRuns?: number;
+  itemCount?: number;
+  onItemCountChange?: (count: number) => void;
 }
 
 interface PerformanceMetrics {
@@ -24,11 +26,14 @@ interface PerformanceMetrics {
 export function PerformanceDemo({
   scenarios,
   initialRuns = 0,
+  itemCount = 50,
+  onItemCountChange,
 }: PerformanceDemoProps) {
   const [isRunning, setIsRunning] = useState(false);
   const [metrics, setMetrics] = useState<Record<string, PerformanceMetrics>>(
     {}
   );
+  const [animateResults, setAnimateResults] = useState(false);
   const renderCountRef = useRef<Record<string, number>>({});
 
   const handleRunTest = useCallback(async () => {
@@ -73,8 +78,13 @@ export function PerformanceDemo({
       };
     }
 
+    setAnimateResults(false);
     setMetrics(newMetrics);
     setIsRunning(false);
+    // Déclencher l'animation d'entrée après un court délai
+    requestAnimationFrame(() => {
+      setAnimateResults(true);
+    });
   }, [scenarios]);
 
   const getPerformanceColor = (time: number): string => {
@@ -95,24 +105,45 @@ export function PerformanceDemo({
   return (
     <div className="space-y-6">
       {/* Header avec bouton de test */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h4 className="text-lg font-semibold text-foreground mb-1">
             Comparateur de Performance
           </h4>
           <p className="text-sm text-foreground/70">
-            Comparez les temps de rendu entre différentes approches d'optimisation
+            Comparez les temps de rendu entre différentes approches d&apos;optimisation
           </p>
         </div>
         <button
           onClick={handleRunTest}
           disabled={isRunning}
-          className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+          className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2 shrink-0"
         >
           <Zap className="w-4 h-4" />
           {isRunning ? 'Test en cours...' : 'Lancer le test'}
         </button>
       </div>
+
+      {/* Slider nombre d'items */}
+      {onItemCountChange && (
+        <div className="flex items-center gap-4 p-3 bg-muted/50 rounded-lg border border-border">
+          <label className="text-sm font-medium text-foreground whitespace-nowrap">
+            Items affichés
+          </label>
+          <input
+            type="range"
+            min={10}
+            max={500}
+            step={10}
+            value={itemCount}
+            onChange={(e) => onItemCountChange(Number(e.target.value))}
+            className="flex-1 accent-primary"
+          />
+          <span className="text-sm font-mono font-semibold text-primary min-w-[3ch] text-right">
+            {itemCount}
+          </span>
+        </div>
+      )}
 
       {/* Grid des scénarios */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -182,7 +213,7 @@ export function PerformanceDemo({
                   <div className="pt-2">
                     <div className="h-2 bg-muted rounded-full overflow-hidden">
                       <div
-                        className={`h-full transition-all duration-300 ${
+                        className={`h-full transition-all duration-700 ease-out ${
                           metric.averageTime < 10
                             ? 'bg-green-500'
                             : metric.averageTime < 50
@@ -190,7 +221,8 @@ export function PerformanceDemo({
                               : 'bg-red-500'
                         }`}
                         style={{
-                          width: `${getBarWidth(metric.averageTime, maxTime)}%`,
+                          width: animateResults ? `${getBarWidth(metric.averageTime, maxTime)}%` : '0%',
+                          transitionDelay: `${scenarios.indexOf(scenario) * 150}ms`,
                         }}
                       />
                     </div>
@@ -235,7 +267,7 @@ export function PerformanceDemo({
                   </div>
                   <div className="h-8 bg-muted rounded overflow-hidden flex items-center">
                     <div
-                      className={`h-full transition-all duration-500 flex items-center justify-end pr-2 ${
+                      className={`h-full transition-all duration-700 ease-out flex items-center justify-end pr-2 ${
                         metric.averageTime < 10
                           ? 'bg-gradient-to-r from-green-500 to-green-600'
                           : metric.averageTime < 50
@@ -243,10 +275,11 @@ export function PerformanceDemo({
                             : 'bg-gradient-to-r from-red-500 to-red-600'
                       }`}
                       style={{
-                        width: `${getBarWidth(metric.averageTime, maxTime)}%`,
+                        width: animateResults ? `${getBarWidth(metric.averageTime, maxTime)}%` : '0%',
+                        transitionDelay: `${scenarios.indexOf(scenario) * 150}ms`,
                       }}
                     >
-                      {getBarWidth(metric.averageTime, maxTime) > 15 && (
+                      {animateResults && getBarWidth(metric.averageTime, maxTime) > 15 && (
                         <span className="text-white text-xs font-bold">
                           {metric.averageTime.toFixed(1)} ms
                         </span>
