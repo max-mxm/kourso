@@ -127,7 +127,7 @@ export function InteractiveDemo({
             state === 'error' && 'bg-red-500/5'
           )}
         >
-          {state === 'success' && result.data && (
+          {state === 'success' && result.data != null && (
             <div className="space-y-3">
               <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
                 Résultat

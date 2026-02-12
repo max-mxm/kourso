@@ -21,6 +21,28 @@ export default function TDDFrontendVsBackendContent() {
       </p>
 
       <ConceptCard
+        title="Les chiffres parlent d'eux-mêmes"
+        description="La maintenance des tests frontend représente un défi majeur en termes de temps et de complexité"
+        category="testing"
+      >
+        <ul className="space-y-2 text-sm text-foreground/80">
+          <li>
+            <strong>30-50% du temps</strong> : Part de la maintenance des tests
+            frontend (contre 15-20% en backend)
+          </li>
+          <li>
+            <strong>Centaines de ms vs &lt;1ms</strong> : Temps d'exécution d'un
+            test frontend comparé à un test unitaire backend
+          </li>
+          <li>
+            <strong>Imprévisibilité</strong> : Il est beaucoup plus facile de
+            prédire comment une API sera consommée que la myriade de façons dont
+            un utilisateur peut interagir avec une interface
+          </li>
+        </ul>
+      </ConceptCard>
+
+      <ConceptCard
         title="La promesse du TDD"
         description="Le TDD promet un code plus fiable, mieux structuré et plus maintenable. Mais cette promesse s'applique-t-elle uniformément au frontend ?"
         category="testing"
@@ -44,6 +66,20 @@ export default function TDDFrontendVsBackendContent() {
         En backend, un test vérifie souvent une sortie textuelle ou numérique
         prévisible. En frontend, vous testez des composants visuels avec état,
         interactions utilisateur, et rendu conditionnel.
+      </p>
+
+      <p>
+        La différence est fondamentale : <strong>une API backend peut être définie
+        par une simple structure JSON</strong>, alors que même la fonctionnalité
+        frontend la plus simple est définie non seulement par son comportement,
+        mais aussi par <strong>des milliers de pixels rendus à l'écran</strong>.
+      </p>
+
+      <p>
+        Le vrai défi ? Nous n'avons pas encore de bon moyen d'expliquer à une
+        machine quels pixels sont critiques et lesquels ne le sont pas. Changer
+        les mauvais pixels peut rendre une fonctionnalité complètement inutilisable,
+        mais comment automatiser cette vérification ?
       </p>
 
       <CodeBlock
@@ -139,6 +175,16 @@ test('Button should toggle modal on click', async () => {
         <code>waitFor</code>, <code>act</code>, et autres utilitaires complexes.
       </p>
 
+      <p>
+        Historiquement, les outils de test frontend ne permettaient pas de lancer
+        des tests d'intégration en quelques secondes. Les tests devaient soit se
+        limiter à de la logique métier pure, soit tourner dans un navigateur avec
+        <strong> plusieurs minutes de setup</strong>. Bien que les outils modernes
+        comme Jest et React Testing Library aient considérablement amélioré la
+        situation, le problème fondamental demeure : tester l'asynchrone est
+        intrinsèquement plus complexe que tester du code synchrone.
+      </p>
+
       <CodeBlock
         code={`test('Load user data on mount', async () => {
   // Mock fetch
@@ -197,7 +243,17 @@ test('Button should toggle modal on click', async () => {
 
       <p>
         Les interactions utilisateur sont imprévisibles et multiples : click,
-        hover, focus, keyboard navigation, drag & drop, touch events...
+        hover, focus, keyboard navigation, drag & drop, touch events, gestures
+        mobiles (pinch, swipe), double tap...
+      </p>
+
+      <p>
+        Comme le soulignent de nombreux développeurs : <strong>il est beaucoup
+        plus facile de prédire comment une API sera consommée que la myriade de
+        façons dont un utilisateur peut interagir avec une interface</strong>.
+        Ajoutez à cela les défis du design responsive — avec tant d'appareils et
+        de tailles d'écran différents — et vous obtenez un espace de test
+        exponentiellement plus complexe qu'en backend.
       </p>
 
       <CodeBlock
@@ -270,6 +326,15 @@ test('Dropdown opens on keyboard Enter', async () => {
       <h3 id="mocks-complexes">4. Mocks et dépendances externes</h3>
 
       <p>
+        Tester les containers frontend est <strong>particulièrement difficile</strong>{' '}
+        car vous devez mocker de nombreux appels API et données. De plus, écrire
+        des sélecteurs pour interagir avec des composants imbriqués est délicat.
+        Une question revient souvent : <strong>que faut-il tester exactement ?</strong>{' '}
+        Les feuilles de style ? La méthode render de chaque composant ? Comment
+        gérer les interactions et mocker les données ?
+      </p>
+
+      <p>
         Frontend dépend de nombreuses APIs navigateur difficiles à mocker :
       </p>
 
@@ -338,9 +403,47 @@ beforeEach(() => {
       />
 
       <p>
-        En backend, vous mockez peut-être une base de données. En frontend,
-        vous mockez <strong>le navigateur entier</strong>.
+        En backend, vous mockez peut-être une base de données ou un service
+        externe avec des entrées/sorties claires. En frontend, vous mockez{' '}
+        <strong>le navigateur entier</strong> — un environnement complexe avec
+        des centaines d'APIs et comportements imprévisibles.
       </p>
+
+      <h3 id="separation-concerns">5. Séparation des préoccupations</h3>
+
+      <p>
+        Un défi souvent sous-estimé en frontend est la{' '}
+        <strong>séparation de la logique métier du code UI</strong>. En backend,
+        la séparation entre couches (contrôleur, service, repository) est bien
+        établie. En frontend, la logique métier est souvent entrelacée avec le
+        rendu, les événements, et l'état des composants.
+      </p>
+
+      <p>
+        Ce problème est particulièrement prononcé dans les applications React
+        modernes où les hooks mélangent état, effets de bord, et logique métier.
+        Tester cette logique nécessite soit de mocker tout le contexte React,
+        soit d'extraire laborieusement la logique dans des fonctions pures —
+        ce qui devrait être fait dès le début mais ne l'est souvent pas.
+      </p>
+
+      <ConceptCard
+        title="Recommandation pratique"
+        description="Extraire la logique métier pour faciliter les tests"
+        category="best-practices"
+      >
+        <p className="text-sm text-foreground/80">
+          Plutôt que de tester des composants entiers avec toutes leurs
+          dépendances, <strong>extrayez la logique métier</strong> dans des
+          fonctions pures ou des custom hooks réutilisables. Ces unités isolées
+          sont beaucoup plus faciles à tester et ressemblent au code backend.
+        </p>
+        <p className="text-sm text-foreground/80 mt-2">
+          Exemple : Au lieu de tester un formulaire complet, testez séparément
+          la fonction de validation, le formattage des données, et la logique
+          de soumission.
+        </p>
+      </ConceptCard>
 
       <h2 id="pourquoi-continuer">Pourquoi continuer malgré tout ?</h2>
 
@@ -408,6 +511,16 @@ beforeEach(() => {
         Le but n'est pas de suivre dogmatiquement le TDD, mais de{' '}
         <strong>produire du code fiable</strong>. Et parfois, cela signifie
         adapter la méthodologie au contexte.
+      </p>
+
+      <p>
+        Les outils modernes (2025-2026) comme Vitest, Testing Library, et
+        Playwright ont considérablement amélioré l'expérience de test frontend.
+        Mais ils ne peuvent pas éliminer la complexité inhérente au testing
+        d'interfaces visuelles et interactives. L'important est de{' '}
+        <strong>trouver l'équilibre</strong> entre couverture de tests et
+        pragmatisme, en reconnaissant que certains aspects du frontend sont
+        simplement plus difficiles à tester que d'autres.
       </p>
     </>
   );

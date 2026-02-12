@@ -26,6 +26,7 @@ interface Section {
   id: string;
   title: string;
   iconName?: string;
+  emoji?: string;
   category:
     | 'fundamentals'
     | 'rendering'
@@ -90,15 +91,27 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
         element: document.getElementById(s.id),
       }));
 
-      for (let i = sectionElements.length - 1; i >= 0; i--) {
-        const section = sectionElements[i];
+      // Trouver la section la plus proche du haut de la fenêtre
+      // On utilise 150px pour tenir compte du scroll-mt-32 (128px) + header
+      let closestSection = '';
+      let closestDistance = Infinity;
+
+      sectionElements.forEach((section) => {
         if (section && section.element) {
           const rect = section.element.getBoundingClientRect();
-          if (rect.top <= 120) {
-            setActiveSection(section.id);
-            break;
+          // Distance absolue par rapport au point de référence (150px du haut)
+          const distance = Math.abs(rect.top - 150);
+
+          // Si cette section est plus proche et visible
+          if (distance < closestDistance && rect.top <= 200) {
+            closestDistance = distance;
+            closestSection = section.id;
           }
         }
+      });
+
+      if (closestSection) {
+        setActiveSection(closestSection);
       }
     };
 
@@ -123,7 +136,7 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
           <div className="flex items-center justify-between">
             <a href="/" className="hover:opacity-80 transition-opacity">
               <h1 className="from-primary to-brand-secondary bg-gradient-to-r bg-clip-text text-xl font-black tracking-tight text-transparent">
-                Kourso
+                Koursorr
               </h1>
             </a>
             <div className="flex items-center gap-3">

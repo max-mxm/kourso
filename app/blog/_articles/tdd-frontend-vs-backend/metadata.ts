@@ -7,7 +7,7 @@ export const metadata: ArticleMetadata = {
     'Une analyse approfondie des défis spécifiques du Test-Driven Development en frontend, comparé aux pratiques backend établies.',
   author: 'Maxime',
   publishedAt: '2026-02-12',
-  readingTime: 8,
+  readingTime: 11,
   category: 'testing',
   tags: ['TDD', 'Frontend', 'Testing', 'Best Practices'],
   featured: true,
@@ -48,6 +48,11 @@ export const metadata: ArticleMetadata = {
       level: 3,
     },
     {
+      id: 'separation-concerns',
+      title: '5. Séparation des préoccupations',
+      level: 3,
+    },
+    {
       id: 'pourquoi-continuer',
       title: 'Pourquoi continuer malgré tout ?',
       level: 2,
@@ -60,7 +65,7 @@ export const metadata: ArticleMetadata = {
   ],
 
   // SEO
-  seoTitle: 'TDD Frontend vs Backend : Les Défis Cachés | Kourso Blog',
+  seoTitle: 'TDD Frontend vs Backend : Les Défis Cachés | Koursorr Blog',
   seoDescription:
     'Découvrez pourquoi le TDD en frontend présente des défis uniques absents en backend : composants visuels, états asynchrones, et interactions utilisateur.',
 };

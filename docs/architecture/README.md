@@ -1,6 +1,6 @@
-# Architecture - Kourso
+# Architecture - Koursorr
 
-Documentation technique sur la structure du code, l'organisation des cours, et les patterns de développement.
+Documentation technique sur la structure du code, l'organisation des guides pratiques, et les patterns de développement.
 
 ---
 

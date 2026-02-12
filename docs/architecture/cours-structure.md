@@ -1,17 +1,17 @@
-# Architecture des Cours - Kourso
+# Architecture des Guides Pratiques - Koursorr
 
-Documentation de l'architecture et de la structure des cours importée depuis Scanorr.
+Documentation technique de la structure pour partager bonnes pratiques et retours d'expérience.
 
 ---
 
-## 📚 Structure d'un Cours
+## 📚 Structure d'un Guide Pratique
 
 ### Composants Principaux
 
 #### 1. **CourseLayout** - Layout principal du cours
 
 Le composant `CourseLayout` gère :
-- **Navigation par catégories** - Organisation hiérarchique des sections
+- **Navigation par type de pratique** - Organisation hiérarchique des sections
 - **Scroll spy** - Détection automatique de la section active
 - **Progress tracker** - Barre de progression globale
 - **Sidebar fixe** - Navigation persistante avec liens vers sections
@@ -157,7 +157,7 @@ app/
 
 ---
 
-## 🔧 Composants à Créer pour Kourso
+## 🔧 Composants à Créer pour Koursorr
 
 ### Priorité 1 - MVP
 - [ ] CourseLayout (layout principal)
@@ -217,19 +217,19 @@ export default function NextJSCourse() {
 
 Chaque section devrait contenir :
 
-1. **Introduction** - Contexte et objectifs
-2. **Explications** - Théorie avec exemples
-3. **Code** - Exemples pratiques commentés
-4. **Cas d'usage** - Quand utiliser
-5. **Pièges** - Erreurs à éviter
-6. **Ressources** - Liens pour approfondir
+1. **Contexte Réel** - Le problème/situation rencontré
+2. **Pourquoi Cette Pratique** - Justification basée sur expérience
+3. **Implémentation** - Code et approche utilisée
+4. **Résultats Mesurables** - Impact mesuré
+5. **Pièges et Limitations** - Ce qui ne marche pas toujours
+6. **Alternatives** - Autres approches considérées et pourquoi pas
 
 ### Ton et Style
 
-- **Clair et concis** - Phrases courtes
-- **Progressif** - Du simple au complexe
-- **Pratique** - Toujours avec exemples
-- **Visuel** - Diagrammes et illustrations
+- **Honnête** - Phrases courtes
+- **Du spécifique au général** - Du simple au complexe
+- **Pragmatique** - Focus sur ce qui marche réellement
+- **Chiffré** - Donner des métriques quand possible
 - **Interactif** - Démos fonctionnelles
 
 ---
@@ -260,5 +260,5 @@ Chaque section devrait contenir :
 ---
 
 **Source** : Importé depuis Scanorr (nextjs-demo)
-**Adapté pour** : Kourso - Plateforme de cours simple
+**Adapté pour** : Koursorr - Plateforme de cours simple
 **Dernière mise à jour** : Février 2026

@@ -176,7 +176,7 @@ http://localhost:3000/cours/react-19-advanced
 
 ## Composants Utilisés
 
-Ce cours utilise les composants du design system Kourso :
+Ce cours utilise les composants du design system Koursorr :
 - **CourseLayout** : Layout principal avec navigation
 - **ConceptCard** : Cartes explicatives avec animations
 - **CodeBlock** : Blocs de code avec syntax highlighting
@@ -188,7 +188,7 @@ Voir [`docs/architecture/cours-structure.md`](../../../docs/architecture/cours-s
 
 ## Contributeurs
 
-Cours créé en février 2026 pour la plateforme Kourso.
+Cours créé en février 2026 pour la plateforme Koursorr.
 
 ---
 

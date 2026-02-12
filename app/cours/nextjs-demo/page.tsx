@@ -17,6 +17,7 @@ import { ServerActionsSection } from './_sections/server-actions';
 import { StreamingSection } from './_sections/streaming';
 import { FrontendPerformanceSection } from './_sections/frontend-performance';
 import { BackendPerformanceSection } from './_sections/backend-performance';
+import { PerformanceMeasurementSection } from './_sections/performance-measurement';
 import { SecuritySection } from './_sections/security';
 import { ReactPatternsSection } from './_sections/react-patterns';
 import { CompositionSection } from './_sections/composition';
@@ -117,6 +118,13 @@ export default function NextJSDemoCourse() {
       category: 'optimization' as const,
       component: <BackendPerformanceSection />
     },
+    {
+      id: 'performance-measurement',
+      title: 'Mesure de Performance',
+      iconName: 'Timer',
+      category: 'optimization' as const,
+      component: <PerformanceMeasurementSection />
+    },
 
     // 14-19. Bonnes Pratiques
     {
@@ -175,7 +183,7 @@ export default function NextJSDemoCourse() {
   return (
     <CourseLayout
       title="Guide Next.js 15"
-      subtitle="Du débutant au senior - 21 sections complètes"
+      subtitle="Du débutant au senior - 22 sections complètes"
       sections={sections}
     />
   );

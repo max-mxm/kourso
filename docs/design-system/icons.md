@@ -6,7 +6,7 @@
 
 ## Bibliothèque d'Icônes
 
-Kourso utilise **Lucide React** comme bibliothèque d'icônes officielle.
+Koursorr utilise **Lucide React** comme bibliothèque d'icônes officielle.
 
 - **Site officiel** : [lucide.dev](https://lucide.dev)
 - **Package** : `lucide-react`

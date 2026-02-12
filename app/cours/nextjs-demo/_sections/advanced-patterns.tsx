@@ -617,7 +617,7 @@ app/
               code={`// messages/en.json
 {
   "home": {
-    "title": "Welcome to Kourso",
+    "title": "Welcome to Koursorr",
     "subtitle": "Learn Next.js with interactive courses"
   },
   "nav": {
@@ -629,7 +629,7 @@ app/
 // messages/fr.json
 {
   "home": {
-    "title": "Bienvenue sur Kourso",
+    "title": "Bienvenue sur Koursorr",
     "subtitle": "Apprenez Next.js avec des cours interactifs"
   },
   "nav": {

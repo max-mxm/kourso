@@ -1,4 +1,4 @@
-# Projet - Kourso
+# Projet - Koursorr
 
 Contexte historique, stack technique, et vision du projet.
 
@@ -26,17 +26,17 @@ Résumé complet de l'import depuis Scanorr.
 
 ## 🎯 Vision du Projet
 
-**Kourso** est une plateforme simple pour créer et partager des cours de développement.
+**Koursorr** est une plateforme simple pour partager et documenter les bonnes pratiques et retours d'expérience (REX).
 
 ### Objectifs
-- **Simplicité** - Facile à créer, facile à consulter
-- **Qualité** - Design impeccable et contenu de qualité
-- **Accessibilité** - Cours accessibles à tous, partout
+- **Simplicité** - Facile à contribuer, facile à consulter
+- **Authenticité** - Bonnes pratiques réelles issues du terrain
+- **Accessibilité** - Guides accessibles à tous, partout
 - **Open Source** - Code ouvert et contributif
 
 ### Valeurs
-- Pédagogie avant tout
-- Design épuré et fonctionnel
+- Partage de savoirs pratiques avant tout
+- Retours d'expérience réels et testés
 - Performance et accessibilité
 - Communauté bienveillante
 
@@ -96,13 +96,13 @@ Résumé complet de l'import depuis Scanorr.
 ## 🗓️ Roadmap
 
 ### Phase 1 : MVP (Février 2026)
-- [ ] Premier cours complet (Next.js)
-- [ ] Page d'accueil avec liste des cours
+- [ ] Premier guide complet (Next.js REX)
+- [ ] Page d'accueil avec liste des guides
 - [ ] Responsive design complet
 - [ ] Déploiement initial
 
 ### Phase 2 : Enrichissement (Mars 2026)
-- [ ] 3-5 cours supplémentaires
+- [ ] 3-5 guides supplémentaires partagés par la communauté
 - [ ] Composants interactifs (Quiz, Playground)
 - [ ] Système de recherche
 - [ ] Amélioration SEO

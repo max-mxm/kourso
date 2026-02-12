@@ -3,7 +3,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
-type CategoryType = 'fundamentals' | 'rendering' | 'optimization' | 'best-practices' | 'advanced';
+type CategoryType =
+  | 'fundamentals'
+  | 'rendering'
+  | 'optimization'
+  | 'best-practices'
+  | 'advanced'
+  | 'architecture'
+  | 'testing';
 
 interface ConceptCardProps {
   title: string;
@@ -20,6 +27,8 @@ const categoryAccents: Record<CategoryType, string> = {
   optimization: 'from-orange-500/10 to-amber-500/10',
   'best-practices': 'from-purple-500/10 to-pink-500/10',
   advanced: 'from-red-500/10 to-rose-500/10',
+  architecture: 'from-blue-500/10 to-cyan-500/10',
+  testing: 'from-orange-500/10 to-amber-500/10',
 };
 
 export function ConceptCard({

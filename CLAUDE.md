@@ -1,4 +1,4 @@
-# Documentation Kourso - Référencement Contextuel
+# Documentation Koursorr - Référencement Contextuel
 
 Règles de consultation automatique de la documentation selon le contexte de travail.
 

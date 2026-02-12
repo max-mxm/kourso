@@ -1,59 +1,61 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './theme-toggle';
+import { NavLink } from './nav-link';
+import { MobileMenu } from './mobile-menu';
+import { Menu, X } from 'lucide-react';
 
 export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
-        <div className="flex items-center gap-6">
-          <Link
-            href="/"
-            className="text-2xl font-black bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent"
+        {/* Logo */}
+        <Link
+          href="/"
+          className="text-2xl font-black bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent"
+        >
+          Koursorr
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6">
+          <NavLink href="/" active={pathname === '/'}>
+            Accueil
+          </NavLink>
+          <NavLink href="/cours" active={pathname.startsWith('/cours')}>
+            Cours
+          </NavLink>
+          <NavLink href="/blog" active={pathname.startsWith('/blog')}>
+            Blog
+          </NavLink>
+          <NavLink href="/about" active={pathname === '/about'}>
+            À propos
+          </NavLink>
+        </nav>
+
+        {/* Desktop: ThemeToggle | Mobile: Hamburger + ThemeToggle */}
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <button
+            className="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           >
-            Kourso
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-4">
-            <Link
-              href="/cours"
-              className={
-                pathname.startsWith('/cours')
-                  ? 'text-primary font-semibold'
-                  : 'text-muted-foreground hover:text-foreground transition-colors'
-              }
-            >
-              Cours
-            </Link>
-            <Link
-              href="/blog"
-              className={
-                pathname.startsWith('/blog')
-                  ? 'text-primary font-semibold'
-                  : 'text-muted-foreground hover:text-foreground transition-colors'
-              }
-            >
-              Blog
-            </Link>
-            <Link
-              href="/about"
-              className={
-                pathname === '/about'
-                  ? 'text-primary font-semibold'
-                  : 'text-muted-foreground hover:text-foreground transition-colors'
-              }
-            >
-              À propos
-            </Link>
-          </nav>
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-
-        <ThemeToggle />
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <MobileMenu pathname={pathname} onClose={() => setMobileMenuOpen(false)} />
+      )}
     </header>
   );
 }

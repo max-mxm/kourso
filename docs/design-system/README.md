@@ -1,4 +1,4 @@
-# Design System - Kourso
+# Design System - Koursorr
 
 Documentation complète du système de design : couleurs, typographie, thème, et guidelines visuelles.
 

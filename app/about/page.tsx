@@ -11,7 +11,7 @@ export default function AboutPage() {
             href="/"
             className="text-2xl font-black bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
-            Kourso
+            Koursorr
           </Link>
           <span className="text-muted-foreground">/</span>
           <span className="text-sm font-semibold text-muted-foreground">À propos</span>
@@ -23,10 +23,10 @@ export default function AboutPage() {
           {/* En-tête */}
           <div className="space-y-6">
             <h1 className="text-5xl font-black tracking-tight">
-              À propos de Kourso
+              À propos de Koursorr
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Kourso est une plateforme d&apos;apprentissage open source conçue pour rendre l&apos;apprentissage des technologies web moderne plus accessible et interactif.
+              Koursorr est une plateforme d&apos;apprentissage open source conçue pour rendre l&apos;apprentissage des technologies web moderne plus accessible et interactif.
             </p>
           </div>
 

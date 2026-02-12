@@ -1,26 +1,26 @@
-# Guide : Ajouter un Nouveau Cours
+# Guide : Ajouter un Nouveau Guide Pratique
 
-Guide complet pour créer et publier un nouveau cours sur Kourso.
+Guide complet pour documenter et publier un nouveau guide pratique sur Koursorr.
 
 ---
 
 ## Vue d'Ensemble
 
-Ajouter un cours implique 4 étapes principales :
+Ajouter un guide pratique implique 4 étapes principales :
 1. Créer la structure de fichiers
-2. Développer les sections du cours
-3. Ajouter le cours à la navigation
+2. Développer les sections du guide
+3. Ajouter le guide à la navigation
 4. Tester et valider
 
 ---
 
 ## Étape 1 : Créer la Structure de Fichiers
 
-### 1.1 Créer le Dossier du Cours
+### 1.1 Créer le Dossier du Guide
 
 ```bash
 # Créer la structure
-mkdir -p app/cours/[slug-du-cours]/_sections
+mkdir -p app/cours/[slug-du-guide]/_sections
 ```
 
 **Règles de nommage du slug :**
@@ -31,7 +31,7 @@ mkdir -p app/cours/[slug-du-cours]/_sections
 
 ### 1.2 Créer le Point d'Entrée (`page.tsx`)
 
-Créer `app/cours/[slug-du-cours]/page.tsx` :
+Créer `app/cours/[slug-du-guide]/page.tsx` :
 
 ```tsx
 import { CourseLayout } from '@/components/course/course-layout';
@@ -41,7 +41,7 @@ import IntroductionSection from './_sections/introduction';
 import Section2 from './_sections/section-2';
 // ... autres imports
 
-export default function MonCours() {
+export default function MonGuide() {
   const sections = [
     {
       id: 'introduction',
@@ -62,7 +62,7 @@ export default function MonCours() {
 
   return (
     <CourseLayout
-      title="Titre de Mon Cours"
+      title="Titre de Mon Guide"
       subtitle="Description courte - X sections"
       sections={sections}
     />
@@ -75,7 +75,7 @@ export default function MonCours() {
 Chaque section = 1 fichier dans `_sections/` :
 
 ```tsx
-// app/cours/[slug]/_sections/ma-section.tsx
+// app/cours/[slug]/_sections/ma-bonne-pratique.tsx
 import { ConceptCard } from '@/components/course/concept-card';
 import { CodeBlock } from '@/components/course/code-block';
 import { ComparisonTable } from '@/components/course/comparison-table';
@@ -118,8 +118,8 @@ const example = 'Hello World';`}
 
 ### 1.4 Créer le README.md
 
-Créer `app/cours/[slug-du-cours]/README.md` avec :
-- Description du cours
+Créer `app/cours/[slug-du-guide]/README.md` avec :
+- Description du guide
 - Structure des sections
 - Prérequis
 - Objectifs pédagogiques
@@ -129,7 +129,7 @@ Voir [`app/cours/react-19-advanced/README.md`](../../app/cours/react-19-advanced
 
 ---
 
-## Étape 2 : Développer les Sections
+## Étape 2 : Développer les Sections du Guide
 
 ### 2.1 Catégories Disponibles
 
@@ -151,7 +151,7 @@ Utiliser **STRICTEMENT** l'une des 5 catégories :
 Layout principal avec navigation, scroll spy, progress bar.
 
 **Props :**
-- `title` : Titre du cours
+- `title` : Titre du guide
 - `subtitle` : Sous-titre (optionnel)
 - `sections` : Array des sections
 
@@ -230,16 +230,16 @@ Icônes disponibles via `iconName` dans CourseLayout :
 
 ---
 
-## Étape 3 : Ajouter à la Navigation
+## Étape 3 : Ajouter le Guide à la Navigation
 
 ### 3.1 Page d'Accueil (`app/page.tsx`)
 
-Ajouter une carte du cours dans la section "Cours disponibles" :
+Ajouter une carte du guide dans la section "Guides pratiques" :
 
 ```tsx
-{/* Votre nouveau cours */}
+{/* Votre nouveau guide */}
 <Link
-  href="/cours/[slug-du-cours]"
+  href="/cours/[slug-du-guide]"
   className="group relative rounded-2xl border border-border/50 bg-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden"
 >
   <div className="absolute inset-0 bg-gradient-to-br from-[couleur]/5 to-[couleur]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -256,10 +256,10 @@ Ajouter une carte du cours dans la section "Cours disponibles" :
 
     <div>
       <h4 className="text-2xl font-black mb-2 group-hover:text-[couleur] transition-colors">
-        Titre du Cours
+        Titre du Guide
       </h4>
       <p className="text-muted-foreground leading-relaxed">
-        Description courte du cours (1-2 phrases).
+        Description courte du guide (1-2 phrases).
       </p>
     </div>
 
@@ -275,7 +275,7 @@ Ajouter une carte du cours dans la section "Cours disponibles" :
     <div className="pt-4 flex items-center justify-between text-sm">
       <span className="text-muted-foreground">X sections</span>
       <span className="text-[couleur] group-hover:translate-x-1 transition-transform duration-200">
-        Commencer →
+        Explorer le guide →
       </span>
     </div>
   </div>
@@ -286,20 +286,20 @@ Ajouter une carte du cours dans la section "Cours disponibles" :
 
 ```tsx
 <div className="text-3xl font-black text-foreground">X</div>
-<div className="text-sm text-muted-foreground">Cours disponibles</div>
+<div className="text-sm text-muted-foreground">Guides pratiques</div>
 ```
 
 ### 3.2 Page Catalogue (`app/cours/page.tsx`)
 
-Ajouter le cours dans l'array `courses` :
+Ajouter le guide dans l'array `courses` :
 
 ```tsx
 const courses = [
-  // ... cours existants
+  // ... guides existants
   {
-    id: 'slug-du-cours',
-    title: 'Titre du Cours',
-    description: 'Description complète du cours.',
+    id: 'slug-du-guide',
+    title: 'Titre du Guide',
+    description: 'Description complète du guide.',
     icon: IconeChoisie,
     tags: ['Tag 1', 'Tag 2', 'Tag 3'],
     sections: X,
@@ -322,7 +322,7 @@ npm run dev
 
 ### 4.2 Tests Visuels
 
-Naviguer vers `http://localhost:3000/cours/[slug-du-cours]` et vérifier :
+Naviguer vers `http://localhost:3000/cours/[slug-du-guide]` et vérifier :
 
 - ✅ Progress bar fonctionne
 - ✅ Scroll spy détecte section active
@@ -367,29 +367,29 @@ Vérifier :
 
 ## Checklist Complète
 
-Avant de considérer le cours terminé :
+Avant de considérer votre guide de bonnes pratiques terminé :
 
 ### Structure
 - [ ] Dossier `app/cours/[slug]/` créé
 - [ ] Fichier `page.tsx` créé
 - [ ] Toutes les sections dans `_sections/` créées
-- [ ] `README.md` complet
+- [ ] `README.md` complété avec contexte/REX
 
 ### Contenu
 - [ ] 2-20 sections (recommandé : 8-15)
-- [ ] Chaque section utilise les composants du design system
+- [ ] Chaque section documente une bonne pratique testée
 - [ ] Pas d'émojis classiques (utiliser icônes Lucide)
-- [ ] Code examples testés et fonctionnels
+- [ ] Code examples issus de projets réels et testés
 - [ ] Pas de hard-coding de couleurs
 
 ### Navigation
-- [ ] Cours ajouté à `app/page.tsx`
-- [ ] Cours ajouté à `app/cours/page.tsx`
-- [ ] Stats mises à jour (nombre de cours, sections)
+- [ ] Guide ajouté à `app/page.tsx`
+- [ ] Guide ajouté à `app/cours/page.tsx`
+- [ ] Stats mises à jour (nombre de guides, sections)
 - [ ] Gradient et couleur cohérents
 
 ### Tests
-- [ ] Cours accessible via l'URL
+- [ ] Guide accessible via l'URL
 - [ ] Toutes les sections s'affichent
 - [ ] Navigation fonctionne (scroll spy, sidebar)
 - [ ] Mode dark/light OK
@@ -398,7 +398,7 @@ Avant de considérer le cours terminé :
 - [ ] Accessibilité validée
 
 ### Documentation
-- [ ] README.md du cours complété
+- [ ] README.md du guide complété avec contexte et REX
 - [ ] Références et sources ajoutées
 - [ ] Prérequis documentés
 
@@ -408,17 +408,17 @@ Avant de considérer le cours terminé :
 
 ### Organisation du Contenu
 
-1. **Commencer simple** : Introduction claire avec objectifs
-2. **Progresser logiquement** : Du simple au complexe
-3. **Exemples concrets** : Toujours illustrer avec du code
-4. **Comparaisons** : Utiliser ComparisonTable pour les alternatives
-5. **Best practices** : Section finale avec recommandations
+1. **Contexte d'abord** : Expliquer le problème/contexte qui a mené à cette bonne pratique
+2. **Du problème à la solution** : Montrer l'évolution et le raisonnement
+3. **Exemples terrain réels** : Code issu de vrais projets, pas d'exemples théoriques
+4. **Comparaisons** : Utiliser ComparisonTable pour les alternatives testées
+5. **Retour d'expérience** : Section finale avec apprentissages et pièges à éviter
 
 ### Taille des Sections
 
 - **Minimum** : 5 sections
 - **Recommandé** : 10-15 sections
-- **Maximum** : 20 sections (au-delà, découper en plusieurs cours)
+- **Maximum** : 20 sections (au-delà, découper en plusieurs guides)
 
 ### Durée Estimée
 
@@ -436,19 +436,19 @@ Avant de considérer le cours terminé :
 
 ## Exemples de Référence
 
-### Cours Existants
+### Guides Existants
 
 - **Next.js Demo** : [`app/cours/nextjs-demo/`](../../app/cours/nextjs-demo/)
-  - 21 sections, 5 catégories
-  - Bon exemple de structure complète
+  - 21 sections couvrant les patterns testés
+  - Exemple de guide complet avec REX
 
 - **React 19 Advanced** : [`app/cours/react-19-advanced/`](../../app/cours/react-19-advanced/)
   - 18 sections, niveau avancé
-  - Bon exemple de contenu technique approfondi
+  - Exemple de contenu issu du terrain
 
 ### Documentation de Référence
 
-- [`docs/architecture/cours-structure.md`](../architecture/cours-structure.md) - Architecture des cours
+- [`docs/architecture/cours-structure.md`](../architecture/cours-structure.md) - Architecture des guides
 - [`docs/design-system/categories.md`](../design-system/categories.md) - Catégories et couleurs
 - [`docs/design-system/README.md`](../design-system/README.md) - Design system complet
 
@@ -467,7 +467,10 @@ Consulter [`docs/design-system/`](../design-system/) pour les couleurs, typograp
 ### Questions Fréquentes
 
 **Q : Combien de sections minimum ?**
-R : Minimum 5, recommandé 10-15 pour un cours complet.
+R : Minimum 5, recommandé 10-15 pour un guide REX complet.
+
+**Q : Dois-je inclure du contexte/REX ?**
+R : OUI - C'est essentiel ! Expliquez le problème, la solution, et vos apprentissages terrain.
 
 **Q : Puis-je utiliser des émojis ?**
 R : NON. Utiliser uniquement les icônes Lucide React via `iconName`.

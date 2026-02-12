@@ -1,6 +1,6 @@
-# Documentation Kourso
+# Documentation Koursorr
 
-Bienvenue dans la documentation de Kourso, une plateforme simple pour créer et partager des cours de développement.
+Bienvenue dans la documentation de Koursorr, une plateforme simple pour partager les bonnes pratiques et retours d'expérience de développement.
 
 ---
 

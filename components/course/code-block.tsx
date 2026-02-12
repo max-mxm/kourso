@@ -4,7 +4,14 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Check } from 'lucide-react';
 
-type CategoryType = 'fundamentals' | 'rendering' | 'optimization' | 'best-practices' | 'advanced';
+type CategoryType =
+  | 'fundamentals'
+  | 'rendering'
+  | 'optimization'
+  | 'best-practices'
+  | 'advanced'
+  | 'architecture'
+  | 'testing';
 
 interface CodeBlockProps {
   code: string;
@@ -20,6 +27,8 @@ const categoryColors: Record<CategoryType, string> = {
   optimization: 'rgb(249, 115, 22)', // Orange
   'best-practices': 'rgb(168, 85, 247)', // Violet
   advanced: 'rgb(239, 68, 68)', // Rouge
+  architecture: 'rgb(59, 130, 246)', // Blue
+  testing: 'rgb(249, 115, 22)', // Orange
 };
 
 export function CodeBlock({

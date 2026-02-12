@@ -1,6 +1,6 @@
-# Guides - Kourso
+# Guides - Koursorr
 
-Guides pratiques et workflows opérationnels pour travailler efficacement sur Kourso.
+Guides pratiques et workflows opérationnels pour travailler efficacement sur Koursorr.
 
 ---
 
@@ -16,6 +16,7 @@ Workflow complet de refonte visuelle avec les 15 skills Impeccable.
 - Conseils d'exécution
 
 **Quand consulter** :
+- Pour contribuer, partager une bonne pratique ou améliorer un guide existant
 - Refonte ou amélioration de l'interface
 - Audit UX/UI
 - Optimisation du design

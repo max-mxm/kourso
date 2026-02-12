@@ -3,7 +3,7 @@ import { Header } from '@/components/header';
 import { BlogPageClient } from './blog-page-client';
 
 export const metadata = {
-  title: 'Blog | Kourso',
+  title: 'Blog | Koursorr',
   description:
     'Articles techniques sur le développement frontend moderne : React, Next.js, Testing, Architecture',
 };

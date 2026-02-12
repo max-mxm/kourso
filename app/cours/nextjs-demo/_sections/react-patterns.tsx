@@ -594,6 +594,27 @@ const ProductCard = React.memo(
               highlightLines={[20, 21, 22, 29, 30, 31, 32, 33]}
               category="best-practices"
             />
+
+            <div className="mt-4 p-4 bg-muted/30 rounded-lg border border-border">
+              <h5 className="font-semibold text-foreground mb-2">Cas d'utilisation concrets de React.memo</h5>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>
+                  <strong>1. Items de liste</strong> : Dans une liste de produits, actualités ou messages où chaque item est indépendant
+                </li>
+                <li>
+                  <strong>2. Composants de visualisation</strong> : Graphiques, cartes, tableaux qui sont coûteux à rendre
+                </li>
+                <li>
+                  <strong>3. Sections de formulaire</strong> : Isoler les sections d'un formulaire complexe pour éviter re-render global
+                </li>
+                <li>
+                  <strong>4. Composants feuilles</strong> : Composants en bout d'arbre sans enfants, purement présentationnels
+                </li>
+                <li>
+                  <strong>5. Widgets indépendants</strong> : Timer, compteur, horloge qui ne dépendent pas du state parent
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* useMemo */}
@@ -635,6 +656,33 @@ function ProductList({ products }: { products: Product[] }) {
               highlightLines={[17, 18, 19, 20, 21, 22]}
               category="best-practices"
             />
+
+            <div className="mt-4 p-4 bg-muted/30 rounded-lg border border-border">
+              <h5 className="font-semibold text-foreground mb-2">Cas d'utilisation concrets de useMemo</h5>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>
+                  <strong>1. Filtrage et tri de listes longues</strong> : Liste de {'>'}1000 produits avec recherche/filtres multiples
+                </li>
+                <li>
+                  <strong>2. Agrégations de données</strong> : Calcul de sommes, moyennes, groupBy sur datasets volumineux
+                </li>
+                <li>
+                  <strong>3. Transformations coûteuses</strong> : Parsing de JSON complexe, formatting de dates, conversions d'unités
+                </li>
+                <li>
+                  <strong>4. Objets de configuration</strong> : Création d'objets complexes passés à des composants memoizés
+                </li>
+                <li>
+                  <strong>5. Calculs mathématiques</strong> : Matrices, statistiques, algorithmes récursifs ou itératifs lourds
+                </li>
+                <li>
+                  <strong>6. Dérivation d'état</strong> : Calculer un état dérivé complexe à partir du state principal
+                </li>
+              </ul>
+              <div className="mt-3 p-2 bg-background rounded text-xs text-foreground/70">
+                <strong>Règle pratique :</strong> Si le calcul prend {'>'}10ms (vérifiable avec console.time), utilisez useMemo
+              </div>
+            </div>
           </div>
 
           {/* useCallback */}
@@ -685,6 +733,33 @@ const handleClick = useCallback((id: string) => {
               highlightLines={[24, 25, 26, 37, 38, 39]}
               category="best-practices"
             />
+
+            <div className="mt-4 p-4 bg-muted/30 rounded-lg border border-border">
+              <h5 className="font-semibold text-foreground mb-2">Cas d'utilisation concrets de useCallback</h5>
+              <ul className="space-y-2 text-sm text-foreground/80">
+                <li>
+                  <strong>1. Event handlers dans des listes</strong> : onClick, onChange passés à des items de liste memoizés
+                </li>
+                <li>
+                  <strong>2. Callbacks avec debounce/throttle</strong> : Recherche en temps réel, scroll handlers, resize listeners
+                </li>
+                <li>
+                  <strong>3. Callbacks dans useEffect dependencies</strong> : Éviter re-exécution d'effet si fonction stable
+                </li>
+                <li>
+                  <strong>4. Callbacks passés à des composants memoizés</strong> : Préserver les bénéfices de React.memo
+                </li>
+                <li>
+                  <strong>5. Fonctions dans Context</strong> : Fonctions partagées via Context pour éviter re-render global
+                </li>
+                <li>
+                  <strong>6. Handlers de formulaire complexes</strong> : Validation, transformation de données, soumission async
+                </li>
+              </ul>
+              <div className="mt-3 p-2 bg-background rounded text-xs text-foreground/70">
+                <strong>Attention :</strong> useCallback sans React.memo n'a pas d'impact sur la performance !
+              </div>
+            </div>
           </div>
 
           {/* Virtualization */}

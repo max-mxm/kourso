@@ -36,7 +36,7 @@ export default function CoursesPage() {
             href="/"
             className="text-2xl font-black bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
-            Kourso
+            Koursorr
           </Link>
           <span className="text-muted-foreground">/</span>
           <span className="text-sm font-semibold text-muted-foreground">Tous les cours</span>

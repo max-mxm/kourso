@@ -1,4 +1,4 @@
-# Typographie - Kourso
+# Typographie - Koursorr
 
 ## Polices
 

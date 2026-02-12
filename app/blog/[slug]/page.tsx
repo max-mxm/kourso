@@ -19,14 +19,14 @@ export async function generateMetadata({
 
   if (!article) {
     return {
-      title: 'Article non trouvé | Blog Kourso',
+      title: 'Article non trouvé | Blog Koursorr',
     };
   }
 
   const metadata = article;
 
   return {
-    title: metadata.seoTitle || `${metadata.title} | Blog Kourso`,
+    title: metadata.seoTitle || `${metadata.title} | Blog Koursorr`,
     description: metadata.seoDescription || metadata.description,
     authors: [{ name: metadata.author }],
 

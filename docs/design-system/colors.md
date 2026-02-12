@@ -1,4 +1,4 @@
-# Palette de Couleurs - Kourso
+# Palette de Couleurs - Koursorr
 
 ## Mode Light (Clair)
 

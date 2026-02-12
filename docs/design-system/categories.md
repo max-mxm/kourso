@@ -1,4 +1,4 @@
-# Couleurs des Catégories de Cours - Kourso
+# Couleurs des Catégories de Cours - Koursorr
 
 Les catégories de cours utilisent des gradients distinctifs pour créer une identité visuelle forte et faciliter la navigation.
 

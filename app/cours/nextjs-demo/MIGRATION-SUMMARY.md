@@ -1,14 +1,14 @@
 # Migration du Cours Next.js - Résumé Complet
 
 **Date :** Février 2026
-**Projet :** Kourso - Guide Next.js 15 complet
+**Projet :** Koursorr - Guide Next.js 15 complet
 **Source :** Scanorr nextjs-demo + PERFORMANCE-TIPS.md
 
 ---
 
 ## Vue d'ensemble
 
-Migration réussie d'un cours Next.js basique (6 sections) vers un guide complet professionnel (21 sections) en s'inspirant du contenu exhaustif de Scanorr.
+Migration réussie d'un cours Next.js basique (6 sections) vers un guide complet professionnel (22 sections) en s'inspirant du contenu exhaustif de Scanorr.
 
 ### État Avant
 - 6 sections basiques
@@ -16,10 +16,11 @@ Migration réussie d'un cours Next.js basique (6 sections) vers un guide complet
 - Fichier monolithique (614 lignes)
 
 ### État Après
-- **21 sections complètes**
+- **22 sections complètes**
 - Contenu détaillé et professionnel
-- **Architecture modulaire** (19 fichiers dans `_sections/`)
-- **~450 KB de contenu** pédagogique
+- **Architecture modulaire** (20 fichiers dans `_sections/`)
+- **Démos interactives** avec mesure de performance
+- **~500 KB de contenu** pédagogique
 
 ---
 
@@ -47,6 +48,7 @@ app/cours/nextjs-demo/
 │   ├── streaming.tsx         # ✨ NOUVEAU
 │   ├── frontend-performance.tsx  # ✨ NOUVEAU
 │   ├── backend-performance.tsx   # ✨ NOUVEAU
+│   ├── performance-measurement.tsx # ✨ NOUVEAU (Février 2026)
 │   │
 │   ├── security.tsx          # Bonnes pratiques
 │   ├── react-patterns.tsx    # ✨ NOUVEAU
@@ -130,7 +132,7 @@ app/cours/nextjs-demo/
 
 ## Composants Utilisés
 
-Tous les composants respectent le design system Kourso :
+Tous les composants respectent le design system Koursorr :
 
 ### Composants Existants
 - **ConceptCard** : Cartes explicatives avec animations
@@ -149,7 +151,7 @@ Tous les composants respectent le design system Kourso :
 
 ## Standards Respectés
 
-### Documentation Kourso
+### Documentation Koursorr
 ✅ [`docs/architecture/cours-structure.md`](../../../docs/architecture/cours-structure.md) - Structure et composants
 ✅ [`docs/design-system/categories.md`](../../../docs/design-system/categories.md) - Gradients par catégorie
 ✅ [`docs/design-system/colors.md`](../../../docs/design-system/colors.md) - Variables CSS
@@ -220,14 +222,46 @@ npm run format:fix
 
 ---
 
+## Dernières Mises à Jour
+
+### Février 2026 - Performance Measurement & Use Cases
+
+**Ajouts :**
+
+1. **Nouvelle section Performance Measurement** (`performance-measurement.tsx`)
+   - Introduction aux outils de mesure (DevTools Profiler, Profiler API, Performance API)
+   - Démo interactive avec 4 scénarios de comparaison
+   - Mesure en temps réel du temps de rendu
+   - Graphiques visuels de comparaison
+   - Guide d'analyse des résultats
+
+2. **Nouveaux composants** :
+   - `PerformanceDemo` : Composant réutilisable pour comparer les performances
+   - `HeavyListExamples` : 4 implémentations de liste (baseline, React.memo, useMemo, optimisée)
+   - Mesure avec React Profiler API intégré
+
+3. **Enrichissement de React Patterns** (`react-patterns.tsx`)
+   - Cas d'utilisation concrets pour `React.memo` (5 exemples)
+   - Cas d'utilisation concrets pour `useMemo` (6 exemples)
+   - Cas d'utilisation concrets pour `useCallback` (6 exemples)
+   - Règles pratiques et avertissements
+
+**Impact :**
+- Passage de 21 à 22 sections
+- Ajout de contenu interactif et mesurable
+- Meilleure compréhension des optimisations React
+- Exemples réalistes avec données chiffrées
+
+---
+
 ## Conclusion
 
-Migration réussie d'un cours Next.js basique vers **un guide professionnel complet de 21 sections**, en s'inspirant du meilleur contenu de Scanorr et des best practices Vercel.
+Migration réussie d'un cours Next.js basique vers **un guide professionnel complet de 22 sections**, en s'inspirant du meilleur contenu de Scanorr et des best practices Vercel.
 
-**Résultat :** Un cours structuré, modulaire, et pédagogique qui couvre tous les aspects de Next.js 15, du débutant au développeur senior.
+**Résultat :** Un cours structuré, modulaire, et pédagogique qui couvre tous les aspects de Next.js 15, du débutant au développeur senior, avec des démos interactives pour mesurer concrètement l'impact des optimisations.
 
 ---
 
 **Auteur :** Migration automatisée via Claude Code
-**Agents utilisés :** 6 agents parallèles pour optimiser la création
-**Temps de migration :** ~2 heures de travail intelligent
+**Agents utilisés :** 6 agents parallèles pour optimiser la création initiale + enrichissements continus
+**Temps de migration :** ~2 heures de travail intelligent (initial) + améliorations continues

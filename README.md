@@ -1,6 +1,6 @@
-# 🚀 Kourso - Plateforme d'apprentissage Next.js
+# 🚀 Koursorr - Partage de Bonnes Pratiques Web
 
-Une plateforme open source de cours interactifs pour apprendre Next.js, React et les technologies web modernes.
+Une plateforme open source regroupant les retours d'expérience (REX) et bonnes pratiques terrain pour Next.js, React et les technologies web modernes.
 
 ![Next.js 16](https://img.shields.io/badge/Next.js-16.1.6-black?style=flat-square&logo=next.js)
 ![React 19](https://img.shields.io/badge/React-19.2.3-61dafb?style=flat-square&logo=react)
@@ -9,17 +9,17 @@ Une plateforme open source de cours interactifs pour apprendre Next.js, React et
 
 ## ✨ Fonctionnalités
 
-- 📚 **Cours interactifs** : Sections détaillées avec exemples de code et démos en temps réel
+- 📚 **Guides pratiques** : Sections détaillées avec exemples issus de projets réels et démos en temps réel
 - ⚡ **Démos live** : Testez les concepts directement dans le navigateur (SSR, SSG, ISR, Client Components)
 - 🎨 **Design moderne** : Interface élégante avec thème sombre/clair automatique
 - 📊 **Suivi de progression** : Barre de progression et navigation contextuelle avec scroll spy
 - 🔥 **Performance optimale** : Next.js 16 avec Turbopack et App Router
 - 🎯 **Responsive** : Design adapté mobile/tablet/desktop
 
-## 🎓 Cours disponible
+## 🎓 Guides de Terrain
 
 ### Guide Next.js 15
-Un cours complet sur les modes de rendu modernes avec 6 sections :
+Un guide complet regroupant les bonnes pratiques et retours d'expérience sur les modes de rendu modernes avec 6 sections :
 
 1. **Introduction** : Découverte de Next.js et de ses avantages
 2. **SSR** : Server-Side Rendering avec démo en temps réel
@@ -40,7 +40,7 @@ Un cours complet sur les modes de rendu modernes avec 6 sections :
 ```bash
 # Cloner le repository
 git clone <votre-repo>
-cd kourso
+cd koursorr
 
 # Installer les dépendances
 npm install
@@ -69,7 +69,7 @@ Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 ## 📁 Structure du projet
 
 ```
-kourso/
+koursorr/
 ├── app/
 │   ├── cours/
 │   │   ├── nextjs-demo/
@@ -142,13 +142,13 @@ Les contributions sont les bienvenues ! Pour contribuer :
 4. Pushez vers la branche (`git push origin feature/amazing-course`)
 5. Ouvrez une Pull Request
 
-### Ajouter un nouveau cours
+### Ajouter un nouveau guide
 
 1. Créez un dossier dans `app/cours/[votre-cours]/`
-2. Créez un fichier `page.tsx` avec votre contenu
+2. Créez un fichier `page.tsx` avec vos bonnes pratiques
 3. Utilisez les composants existants (`CodeBlock`, `ConceptCard`, `ComparisonTable`, `InteractiveDemo`)
 4. Enveloppez vos sections dans `<CourseLayout>`
-5. Mettez à jour `app/cours/page.tsx` pour lister votre cours
+5. Mettez à jour `app/cours/page.tsx` pour référencer votre guide
 
 ## 📚 Documentation
 
@@ -172,4 +172,4 @@ MIT License - Voir le fichier LICENSE pour plus de détails.
 
 ---
 
-Fait avec ❤️ pour la communauté des développeurs
+Construit par et pour la communauté des développeurs | Partageons nos bonnes pratiques terrain
