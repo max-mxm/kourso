@@ -1,4 +1,5 @@
 import { CourseLayout } from '@/components/course/course-layout';
+import { Rocket, Repeat, Shield, Brain, Zap, Puzzle, Table2, AlertTriangle, XCircle, Cpu } from 'lucide-react';
 
 // Import des sections - Fondamentaux (2)
 import IntroductionSection from './_sections/introduction';
@@ -26,14 +27,14 @@ export default function ReactMemoizationCourse() {
     {
       id: 'introduction',
       title: 'Introduction a la Memoisation React',
-      iconName: 'Rocket',
+      icon: <Rocket className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <IntroductionSection />,
     },
     {
       id: 'probleme-re-render',
       title: 'Le Probleme du Re-render',
-      iconName: 'Repeat',
+      icon: <Repeat className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <ProblemeReRenderSection />,
     },
@@ -42,14 +43,14 @@ export default function ReactMemoizationCourse() {
     {
       id: 'react-memo',
       title: 'React.memo - Memoiser un Composant',
-      iconName: 'Shield',
+      icon: <Shield className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ReactMemoSection />,
     },
     {
       id: 'usememo',
       title: 'useMemo - Memoiser une Valeur',
-      iconName: 'Brain',
+      icon: <Brain className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <UseMemoSection />,
     },
@@ -58,14 +59,14 @@ export default function ReactMemoizationCourse() {
     {
       id: 'usecallback',
       title: 'useCallback - Memoiser une Fonction',
-      iconName: 'Zap',
+      icon: <Zap className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <UseCallbackSection />,
     },
     {
       id: 'trio-en-action',
       title: 'Le Trio en Action - Exemple Complet',
-      iconName: 'Puzzle',
+      icon: <Puzzle className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <TrioEnActionSection />,
     },
@@ -74,14 +75,14 @@ export default function ReactMemoizationCourse() {
     {
       id: 'comparaison-complete',
       title: 'Comparaison Complete des Trois',
-      iconName: 'Table2',
+      icon: <Table2 className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ComparaisonCompleteSection />,
     },
     {
       id: 'erreurs-courantes',
       title: 'Erreurs Courantes et Anti-Patterns',
-      iconName: 'AlertTriangle',
+      icon: <AlertTriangle className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ErreursCourantesSection />,
     },
@@ -90,14 +91,14 @@ export default function ReactMemoizationCourse() {
     {
       id: 'quand-ne-pas-memoiser',
       title: 'Quand ne PAS Memoiser',
-      iconName: 'XCircle',
+      icon: <XCircle className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <QuandNePasMemoiserSection />,
     },
     {
       id: 'react-compiler',
       title: "React Compiler et l'Avenir",
-      iconName: 'Cpu',
+      icon: <Cpu className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <ReactCompilerSection />,
     },

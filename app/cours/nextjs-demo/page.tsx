@@ -1,4 +1,5 @@
 import { CourseLayout } from '@/components/course/course-layout';
+import { Rocket, Server, FileText, RefreshCw, Monitor, Layers, Component, Package, Zap, Activity, Gauge, Database, Timer, Shield, Code, LayoutGrid, Building, Eye, Sparkles, Target } from 'lucide-react';
 
 // Import des sections depuis _sections/
 // Import des sections depuis _sections/ (default exports)
@@ -33,7 +34,7 @@ export default function NextJSDemoCourse() {
     {
       id: 'introduction',
       title: 'Introduction à Next.js 15',
-      iconName: 'Rocket',
+      icon: <Rocket className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <IntroductionSection />
     },
@@ -42,42 +43,42 @@ export default function NextJSDemoCourse() {
     {
       id: 'ssr',
       title: 'Server-Side Rendering (SSR)',
-      iconName: 'Server',
+      icon: <Server className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <SSRSection />
     },
     {
       id: 'ssg',
       title: 'Static Site Generation (SSG)',
-      iconName: 'FileText',
+      icon: <FileText className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <SSGSection />
     },
     {
       id: 'isr',
       title: 'Incremental Static Regeneration (ISR)',
-      iconName: 'RefreshCw',
+      icon: <RefreshCw className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ISRSection />
     },
     {
       id: 'csr',
       title: 'Client-Side Rendering (CSR)',
-      iconName: 'Monitor',
+      icon: <Monitor className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <CSRSection />
     },
     {
       id: 'hybrid',
       title: 'Hybrid (Server + Client)',
-      iconName: 'Layers',
+      icon: <Layers className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <HybridSection />
     },
     {
       id: 'client-components',
       title: 'Client Components',
-      iconName: 'Component',
+      icon: <Component className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ClientComponentsSection />
     },
@@ -86,42 +87,42 @@ export default function NextJSDemoCourse() {
     {
       id: 'dynamic-import',
       title: 'Dynamic Import & Code Splitting',
-      iconName: 'Package',
+      icon: <Package className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <DynamicImportSection />
     },
     {
       id: 'server-actions',
       title: 'Server Actions',
-      iconName: 'Zap',
+      icon: <Zap className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <ServerActionsSection />
     },
     {
       id: 'streaming',
       title: 'Streaming & Suspense',
-      iconName: 'Activity',
+      icon: <Activity className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <StreamingSection />
     },
     {
       id: 'frontend-performance',
       title: 'Performance Frontend',
-      iconName: 'Gauge',
+      icon: <Gauge className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <FrontendPerformanceSection />
     },
     {
       id: 'backend-performance',
       title: 'Performance Backend',
-      iconName: 'Database',
+      icon: <Database className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <BackendPerformanceSection />
     },
     {
       id: 'performance-measurement',
       title: 'Mesure de Performance',
-      iconName: 'Timer',
+      icon: <Timer className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <PerformanceMeasurementSection />
     },
@@ -130,35 +131,35 @@ export default function NextJSDemoCourse() {
     {
       id: 'security',
       title: 'Sécurité',
-      iconName: 'Shield',
+      icon: <Shield className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <SecuritySection />
     },
     {
       id: 'react-patterns',
       title: 'React Best Practices',
-      iconName: 'Code',
+      icon: <Code className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ReactPatternsSection />
     },
     {
       id: 'composition',
       title: 'Composition Patterns',
-      iconName: 'Blocks',
+      icon: <LayoutGrid className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <CompositionSection />
     },
     {
       id: 'architecture',
       title: 'Architecture',
-      iconName: 'Building',
+      icon: <Building className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ArchitectureSection />
     },
     {
       id: 'accessibility',
       title: 'Accessibilité (a11y)',
-      iconName: 'Eye',
+      icon: <Eye className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <AccessibilitySection />
     },
@@ -167,14 +168,14 @@ export default function NextJSDemoCourse() {
     {
       id: 'advanced-patterns',
       title: 'Patterns Avancés',
-      iconName: 'Sparkles',
+      icon: <Sparkles className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <AdvancedPatternsSection />
     },
     {
       id: 'comparison',
       title: 'Comparaison & Conclusion',
-      iconName: 'Target',
+      icon: <Target className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <ComparisonSection />
     }

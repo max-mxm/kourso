@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { HeroSection } from './_components/hero-section';
 import { FeaturedCourseCard } from './_components/featured-course-card';
 import { BlogPreviewSection } from './_components/blog-preview-section';
+import { BlogPreviewSkeleton } from './_components/blog-preview-skeleton';
 import { PhilosophySection } from './_components/philosophy-section';
 import { Rocket, Zap, Database, Brain, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -69,7 +71,7 @@ export default function Home() {
 
               {/* React 19 - Compact card */}
               <div className="md:col-span-4">
-                <a
+                <Link
                   href="/cours/react-19-advanced"
                   className="group block h-full rounded-2xl border-2 border-border/50 bg-card p-6 hover:shadow-xl transition-all duration-300"
                 >
@@ -93,7 +95,7 @@ export default function Home() {
                       <span className="text-purple-600 dark:text-purple-400 font-bold">→</span>
                     </div>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -110,7 +112,7 @@ export default function Home() {
             {/* Nouveaux cours */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               {/* TanStack - Compact card */}
-              <a
+              <Link
                 href="/cours/tanstack-react"
                 className="group block rounded-2xl border-2 border-border/50 bg-card p-6 hover:shadow-xl transition-all duration-300"
               >
@@ -134,10 +136,10 @@ export default function Home() {
                     <span className="text-orange-600 dark:text-orange-400 font-bold">→</span>
                   </div>
                 </div>
-              </a>
+              </Link>
 
               {/* Memoisation - Compact card */}
-              <a
+              <Link
                 href="/cours/react-memoization"
                 className="group block rounded-2xl border-2 border-border/50 bg-card p-6 hover:shadow-xl transition-all duration-300"
               >
@@ -161,13 +163,15 @@ export default function Home() {
                     <span className="text-blue-600 dark:text-blue-400 font-bold">→</span>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Blog Preview */}
-        <BlogPreviewSection />
+        <Suspense fallback={<BlogPreviewSkeleton />}>
+          <BlogPreviewSection />
+        </Suspense>
 
         {/* Philosophy / About Maxime */}
         <PhilosophySection />

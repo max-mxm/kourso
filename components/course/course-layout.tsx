@@ -2,92 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
-import {
-  Rocket,
-  Zap,
-  FileText,
-  RefreshCw,
-  Monitor,
-  Target,
-  List,
-  X,
-  Package,
-  Server,
-  Cpu,
-  Activity,
-  Gauge,
-  Database,
-  Shield,
-  Code,
-  TestTube,
-  Eye,
-  Sparkles,
-  Layers,
-  Building,
-  Trash2,
-  Settings,
-  Navigation,
-  Table2,
-  Box,
-  Timer,
-  Key,
-  GitBranch,
-  Search,
-  Repeat,
-  Brain,
-  Lightbulb,
-  AlertTriangle,
-  CheckCircle,
-  XCircle,
-  Puzzle,
-  Component,
-  type LucideIcon
-} from 'lucide-react';
-
-// Mapping des noms d'icones vers les composants
-const iconMap: Record<string, LucideIcon> = {
-  Rocket,
-  Zap,
-  FileText,
-  RefreshCw,
-  Monitor,
-  Target,
-  Package,
-  Server,
-  Cpu,
-  Activity,
-  Gauge,
-  Database,
-  Shield,
-  Code,
-  TestTube,
-  Eye,
-  Sparkles,
-  Layers,
-  Building,
-  Trash2,
-  Settings,
-  Navigation,
-  Table2,
-  Box,
-  Timer,
-  Key,
-  GitBranch,
-  Search,
-  Repeat,
-  Brain,
-  Lightbulb,
-  AlertTriangle,
-  CheckCircle,
-  XCircle,
-  Puzzle,
-  Component,
-};
+import { useScrollProgress } from '@/hooks/use-scroll-progress';
+import { List, X } from 'lucide-react';
 
 interface Section {
   id: string;
   title: string;
-  iconName?: string;
+  icon?: React.ReactNode;
   emoji?: string;
   category:
     | 'fundamentals'
@@ -130,7 +51,7 @@ const categories = [
 
 export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
   const [activeSection, setActiveSection] = useState('');
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const scrollProgress = useScrollProgress();
   const [mounted, setMounted] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -149,48 +70,40 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
     }
   }, [mobileNavOpen]);
 
-  // Scroll spy + progress tracker
+  // Scroll spy for active section detection (throttled with rAF)
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      setScrollProgress(progress);
+    let rafId: number;
 
-      // Detect active section
-      const sectionElements = sections.map((s) => ({
-        id: s.id,
-        element: document.getElementById(s.id),
-      }));
+    const detectActiveSection = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        let closestSection = '';
+        let closestDistance = Infinity;
 
-      // Trouver la section la plus proche du haut de la fenetre
-      // On utilise 150px pour tenir compte du scroll-mt-32 (128px) + header
-      let closestSection = '';
-      let closestDistance = Infinity;
-
-      sectionElements.forEach((section) => {
-        if (section && section.element) {
-          const rect = section.element.getBoundingClientRect();
-          // Distance absolue par rapport au point de reference (150px du haut)
-          const distance = Math.abs(rect.top - 150);
-
-          // Si cette section est plus proche et visible
-          if (distance < closestDistance && rect.top <= 200) {
-            closestDistance = distance;
-            closestSection = section.id;
+        sections.forEach((s) => {
+          const element = document.getElementById(s.id);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            const distance = Math.abs(rect.top - 150);
+            if (distance < closestDistance && rect.top <= 200) {
+              closestDistance = distance;
+              closestSection = s.id;
+            }
           }
+        });
+
+        if (closestSection) {
+          setActiveSection(closestSection);
         }
       });
-
-      if (closestSection) {
-        setActiveSection(closestSection);
-      }
     };
 
-    handleScroll(); // Initial call
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    detectActiveSection();
+    window.addEventListener('scroll', detectActiveSection, { passive: true });
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('scroll', detectActiveSection);
+    };
   }, [sections]);
 
   // Shared navigation content renderer
@@ -227,10 +140,7 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
                     )}
                   >
                     <span className="flex items-center gap-2 flex-1 truncate">
-                      {section.iconName && (() => {
-                        const IconComponent = iconMap[section.iconName];
-                        return IconComponent ? <IconComponent className="w-4 h-4 flex-shrink-0" /> : null;
-                      })()}
+                      {section.icon}
                       {section.title}
                     </span>
                     {activeSection === section.id && (

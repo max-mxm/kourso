@@ -2,10 +2,12 @@ import { Article, ArticleMetadata } from './types';
 
 // Import manuel des métadonnées uniquement
 import { metadata as tddMetadata } from '@/app/blog/_articles/tdd-frontend-vs-backend/metadata';
+import { metadata as reduxVsContextVsZustandMetadata } from '@/app/blog/_articles/redux-vs-context-vs-zustand/metadata';
 
 // Registre des métadonnées (sans les composants)
 const metadataRegistry: ArticleMetadata[] = [
   tddMetadata,
+  reduxVsContextVsZustandMetadata,
 ];
 
 // Fonction pour charger le composant content d'un article
@@ -14,6 +16,9 @@ async function loadArticleContent(slug: string): Promise<React.ComponentType | n
     case 'tdd-frontend-vs-backend':
       const { default: TDDContent } = await import('@/app/blog/_articles/tdd-frontend-vs-backend/content');
       return TDDContent;
+    case 'redux-vs-context-vs-zustand':
+      const { default: ReduxVsContextVsZustandContent } = await import('@/app/blog/_articles/redux-vs-context-vs-zustand/content');
+      return ReduxVsContextVsZustandContent;
     default:
       return null;
   }

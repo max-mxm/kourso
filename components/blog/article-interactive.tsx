@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { TableOfContentsItem, BlogCategory } from '@/lib/blog/types';
 import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
 import { cn } from '@/lib/utils';
+import { useScrollProgress } from '@/hooks/use-scroll-progress';
 
 interface ArticleInteractiveProps {
   tableOfContents: TableOfContentsItem[];
@@ -16,23 +17,9 @@ export function ArticleInteractive({
   category,
   children,
 }: ArticleInteractiveProps) {
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const scrollProgress = useScrollProgress();
   const [activeId, setActiveId] = useState('');
   const categoryData = BLOG_CATEGORY_INFO[category];
-
-  // Scroll progress tracker
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Scroll spy pour la ToC
   useEffect(() => {

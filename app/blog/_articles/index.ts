@@ -4,3 +4,6 @@
 
 export { metadata as tddMetadata } from './tdd-frontend-vs-backend/metadata';
 export { default as TDDContent } from './tdd-frontend-vs-backend/content';
+
+export { metadata as reduxVsContextVsZustandMetadata } from './redux-vs-context-vs-zustand/metadata';
+export { default as ReduxVsContextVsZustandContent } from './redux-vs-context-vs-zustand/content';

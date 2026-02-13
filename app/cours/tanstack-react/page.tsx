@@ -1,4 +1,5 @@
 import { CourseLayout } from '@/components/course/course-layout';
+import { Rocket, Database, Settings, RefreshCw, Code, Navigation, Table2, List, FileText, Box, Timer, Monitor, Server, Building } from 'lucide-react';
 
 // Import des sections - Fondamentaux (2)
 import IntroductionSection from './_sections/introduction';
@@ -30,14 +31,14 @@ export default function TanStackReactCourse() {
     {
       id: 'introduction',
       title: "Introduction a l'ecosysteme TanStack",
-      iconName: 'Rocket',
+      icon: <Rocket className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <IntroductionSection />,
     },
     {
       id: 'query-basics',
       title: 'TanStack Query - Les Bases',
-      iconName: 'Database',
+      icon: <Database className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <QueryBasicsSection />,
     },
@@ -46,28 +47,28 @@ export default function TanStackReactCourse() {
     {
       id: 'query-advanced',
       title: 'Query - Options et Strategies Avancees',
-      iconName: 'Settings',
+      icon: <Settings className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <QueryAdvancedSection />,
     },
     {
       id: 'mutations-invalidation',
       title: 'Mutations et Invalidation du Cache',
-      iconName: 'RefreshCw',
+      icon: <RefreshCw className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <MutationsInvalidationSection />,
     },
     {
       id: 'query-patterns',
       title: 'Query Patterns et queryOptions',
-      iconName: 'Code',
+      icon: <Code className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <QueryPatternsSection />,
     },
     {
       id: 'tanstack-router',
       title: 'TanStack Router - Routing Type-Safe',
-      iconName: 'Navigation',
+      icon: <Navigation className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <TanStackRouterSection />,
     },
@@ -76,28 +77,28 @@ export default function TanStackReactCourse() {
     {
       id: 'tanstack-table',
       title: 'TanStack Table - Tableaux Headless',
-      iconName: 'Table2',
+      icon: <Table2 className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <TanStackTableSection />,
     },
     {
       id: 'tanstack-virtual',
       title: 'TanStack Virtual - Virtualisation 60fps',
-      iconName: 'List',
+      icon: <List className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <TanStackVirtualSection />,
     },
     {
       id: 'tanstack-form',
       title: 'TanStack Form - Formulaires Performants',
-      iconName: 'FileText',
+      icon: <FileText className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <TanStackFormSection />,
     },
     {
       id: 'tanstack-store',
       title: 'TanStack Store - State Reactif Minimal',
-      iconName: 'Box',
+      icon: <Box className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <TanStackStoreSection />,
     },
@@ -106,14 +107,14 @@ export default function TanStackReactCourse() {
     {
       id: 'tanstack-pacer',
       title: 'TanStack Pacer - Timing et Scheduling',
-      iconName: 'Timer',
+      icon: <Timer className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <TanStackPacerSection />,
     },
     {
       id: 'devtools',
       title: 'DevTools et Debugging',
-      iconName: 'Monitor',
+      icon: <Monitor className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <DevtoolsSection />,
     },
@@ -122,14 +123,14 @@ export default function TanStackReactCourse() {
     {
       id: 'ssr-nextjs',
       title: 'SSR et Integration Next.js',
-      iconName: 'Server',
+      icon: <Server className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <SSRNextJSSection />,
     },
     {
       id: 'architecture-production',
       title: "Architecture de Production",
-      iconName: 'Building',
+      icon: <Building className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <ArchitectureProductionSection />,
     },

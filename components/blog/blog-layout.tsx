@@ -1,31 +1,17 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { ArticleMetadata } from '@/lib/blog/types';
 import { ArticleHeader } from './article-header';
 import { ArticleSidebar } from './article-sidebar';
 import { ArticleContentWrapper } from './article-content-wrapper';
+import { useScrollProgress } from '@/hooks/use-scroll-progress';
 interface BlogLayoutProps {
   metadata: ArticleMetadata;
   children: React.ReactNode;
 }
 
 export function BlogLayout({ metadata, children }: BlogLayoutProps) {
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  // Scroll progress tracker
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / docHeight) * 100;
-      setScrollProgress(progress);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const scrollProgress = useScrollProgress();
 
   return (
     <div className="min-h-screen scroll-smooth bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">

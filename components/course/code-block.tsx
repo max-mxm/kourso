@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useSyncExternalStore } from 'react';
 import { cn } from '@/lib/utils';
 import { Check } from 'lucide-react';
 import { Highlight, themes } from 'prism-react-renderer';
@@ -35,39 +35,50 @@ const categoryColors: Record<CategoryType, string> = {
 
 const plainLanguages = ['text', 'plaintext', 'plain'];
 
+const EMPTY_HIGHLIGHT_LINES: number[] = [];
+
+function subscribeToColorScheme(callback: () => void) {
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  mq.addEventListener('change', callback);
+  return () => mq.removeEventListener('change', callback);
+}
+
+function getSystemDark() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
 function useResolvedDark() {
   const { theme } = useTheme();
-  const [isDark, setIsDark] = useState(false);
+  const systemDark = useSyncExternalStore(
+    subscribeToColorScheme,
+    getSystemDark,
+    () => false
+  );
 
-  useEffect(() => {
-    if (theme === 'system') {
-      const mq = window.matchMedia('(prefers-color-scheme: dark)');
-      setIsDark(mq.matches);
-      const listener = (e: MediaQueryListEvent) => setIsDark(e.matches);
-      mq.addEventListener('change', listener);
-      return () => mq.removeEventListener('change', listener);
-    } else {
-      setIsDark(theme === 'dark');
-    }
-  }, [theme]);
-
-  return isDark;
+  if (theme === 'system') return systemDark;
+  return theme === 'dark';
 }
 
 export function CodeBlock({
   code,
   language,
   filename,
-  highlightLines = [],
+  highlightLines = EMPTY_HIGHLIGHT_LINES,
   category = 'fundamentals'
 }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
   const isDark = useResolvedDark();
+  const copyTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  useEffect(() => {
+    return () => clearTimeout(copyTimerRef.current);
+  }, []);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(code);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    clearTimeout(copyTimerRef.current);
+    copyTimerRef.current = setTimeout(() => setCopied(false), 2000);
   };
 
   const borderColor = categoryColors[category];
