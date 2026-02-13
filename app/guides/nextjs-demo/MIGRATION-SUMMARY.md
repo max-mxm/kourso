@@ -1,7 +1,7 @@
 # Migration du Cours Next.js - Résumé Complet
 
 **Date :** Février 2026
-**Projet :** Koursorr - Guide Next.js 15 complet
+**Projet :** Koursorr - Guide Next.js 16 complet
 **Source :** Scanorr nextjs-demo + PERFORMANCE-TIPS.md
 
 ---
@@ -67,7 +67,7 @@ app/cours/nextjs-demo/
 ## Les 21 Sections du Cours
 
 ### 1. Fondamentaux (1 section)
-1. **Introduction à Next.js 15** - Pourquoi Next.js, avantages, structure
+1. **Introduction à Next.js 16** - Pourquoi Next.js, avantages, structure
 
 ### 2. Modes de Rendu (7 sections)
 2. **Server-Side Rendering (SSR)** - Rendu serveur à chaque requête
@@ -258,7 +258,7 @@ npm run format:fix
 
 Migration réussie d'un cours Next.js basique vers **un guide professionnel complet de 22 sections**, en s'inspirant du meilleur contenu de Scanorr et des best practices Vercel.
 
-**Résultat :** Un cours structuré, modulaire, et pédagogique qui couvre tous les aspects de Next.js 15, du débutant au développeur senior, avec des démos interactives pour mesurer concrètement l'impact des optimisations.
+**Résultat :** Un cours structuré, modulaire, et pédagogique qui couvre tous les aspects de Next.js 16, du débutant au développeur senior, avec des démos interactives pour mesurer concrètement l'impact des optimisations.
 
 ---
 

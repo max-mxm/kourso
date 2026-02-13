@@ -56,7 +56,12 @@ export function ContentCard({
             {type === 'guide' ? 'Guide' : 'Article'}
           </span>
           {badge && (
-            <span className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-primary/10 text-primary">
+            <span className={cn(
+              "text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded-md",
+              badge === 'INTERACTIF'
+                ? 'bg-orange-500/15 text-orange-600 dark:text-orange-400'
+                : 'bg-primary/10 text-primary'
+            )}>
               {badge}
             </span>
           )}

@@ -25,9 +25,9 @@ export function StreamingSection() {
     },
     {
       name: 'Partial Prerendering (PPR)',
-      description: 'Shell statique + slots dynamiques (Next.js 15+)',
+      description: 'Shell statique + slots dynamiques (Next.js 16+)',
       pros: ['Meilleur des deux mondes', 'Shell instantané', 'Données à jour'],
-      cons: ['Experimental', 'Next.js 15+ uniquement'],
+      cons: ['Experimental', 'Next.js 16+ uniquement'],
       useCases: ['E-commerce', 'Pages produit', 'Blog avec commentaires'],
       color: 'rgb(124, 58, 237)'
     }
@@ -326,7 +326,7 @@ export default function DashboardPage() {
       {/* Pattern #3 : Partial Prerendering (PPR) */}
       <ConceptCard
         title="Pattern #3 : Partial Prerendering (PPR)"
-        description="Le meilleur des deux mondes : shell statique généré à la build + slots dynamiques streamés à la demande. Experimental dans Next.js 15+."
+        description="Le meilleur des deux mondes : shell statique généré à la build + slots dynamiques streamés à la demande. Experimental dans Next.js 16+."
         category="optimization"
       >
         <div className="space-y-6">

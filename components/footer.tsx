@@ -67,7 +67,7 @@ export function Footer() {
             </h4>
             <nav className="flex flex-col gap-2 items-center md:items-start">
               <Link href="/guides/nextjs-demo" className="text-sm text-foreground hover:text-primary transition-colors">
-                Guide Next.js 15
+                Guide Next.js 16
               </Link>
               <Link href="/guides/react-19-advanced" className="text-sm text-foreground hover:text-primary transition-colors">
                 React 19 -- Seniors

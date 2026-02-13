@@ -159,7 +159,7 @@ function ProductPage({ products, category }: ProductPageProps) {
       </h3>
 
       <CodeBlock
-        code={`// Installation dans un projet Next.js 15+
+        code={`// Installation dans un projet Next.js 16+
 // Le compilateur est inclus dans React 19
 
 // next.config.ts

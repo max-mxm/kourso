@@ -33,7 +33,7 @@ export default function NextJSDemoCourse() {
     // 1. Fondamentaux
     {
       id: 'introduction',
-      title: 'Introduction à Next.js 15',
+      title: 'Introduction à Next.js 16',
       icon: <Rocket className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <IntroductionSection />
@@ -183,7 +183,7 @@ export default function NextJSDemoCourse() {
 
   return (
     <CourseLayout
-      title="Guide Next.js 15"
+      title="Guide Next.js 16"
       subtitle="Du débutant au senior - 22 sections complètes"
       sections={sections}
     />

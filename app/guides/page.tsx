@@ -1,32 +1,32 @@
 import Link from 'next/link';
-import { Rocket, BookOpen, Clock, BarChart3, Database, Brain, Timer } from 'lucide-react';
+import { Rocket, BookOpen, Clock, BarChart3, Database, Brain, Timer, Shield } from 'lucide-react';
 
 export default function CoursesPage() {
+  // Ordre : du plus recent au plus ancien
   const courses = [
     {
-      id: 'nextjs-demo',
-      title: 'Guide Next.js 15',
-      description: 'Maîtrisez les modes de rendu modernes : SSR, SSG, ISR et Client Components avec des exemples interactifs.',
-      icon: Rocket,
-      tags: ['Next.js 15', 'React 19', 'TypeScript'],
-      sections: 21,
-      level: 'Intermédiaire',
+      id: 'zod-validation',
+      title: 'Zod - Validation TypeScript-first',
+      description: 'Schemas, inference de types, validation de formulaires et d\'API. De la validation basique aux patterns de production.',
+      icon: Shield,
+      tags: ['Zod', 'TypeScript', 'Validation'],
+      sections: 13,
+      level: 'Intermediaire',
       duration: '3h',
-      gradient: 'from-primary to-brand-secondary',
-      color: 'rgb(0, 150, 136)',
-      ribbon: 'Testez en direct'
+      gradient: 'from-blue-500 to-cyan-500',
+      color: 'rgb(59, 130, 246)'
     },
     {
-      id: 'react-19-advanced',
-      title: 'React 19 - Bonnes Pratiques Seniors',
-      description: 'Guide complet sur React 19 : Compiler, Server Components, Actions, useOptimistic, architecture scalable et patterns avancés.',
-      icon: Rocket,
-      tags: ['React 19', 'TypeScript', 'Avancé'],
-      sections: 18,
-      level: 'Avancé',
-      duration: '4h',
-      gradient: 'from-purple-500 to-pink-500',
-      color: 'rgb(168, 85, 247)'
+      id: 'nextjs-demo/simulateur-performance',
+      title: 'useMemo, useCallback et React.memo teste en live',
+      description: 'Comparez 4 strategies d\'optimisation React avec des mesures reelles de temps de rendu. Benchmark interactif : baseline, React.memo, useMemo et combinaison complete.',
+      icon: Timer,
+      tags: ['React', 'Performance', 'Interactif'],
+      level: 'Tous niveaux',
+      duration: '10min',
+      gradient: 'from-orange-500 to-amber-500',
+      color: 'rgb(249, 115, 22)',
+      ribbon: 'Interactif'
     },
     {
       id: 'tanstack-react',
@@ -41,6 +41,31 @@ export default function CoursesPage() {
       color: 'rgb(249, 115, 22)'
     },
     {
+      id: 'react-19-advanced',
+      title: 'React 19 - Bonnes Pratiques Seniors',
+      description: 'Guide complet sur React 19 : Compiler, Server Components, Actions, useOptimistic, architecture scalable et patterns avancés.',
+      icon: Rocket,
+      tags: ['React 19', 'TypeScript', 'Avancé'],
+      sections: 18,
+      level: 'Avancé',
+      duration: '4h',
+      gradient: 'from-purple-500 to-pink-500',
+      color: 'rgb(168, 85, 247)'
+    },
+    {
+      id: 'nextjs-demo',
+      title: 'Guide Next.js 16',
+      description: 'Maîtrisez les modes de rendu modernes : SSR, SSG, ISR et Client Components avec des exemples interactifs.',
+      icon: Rocket,
+      tags: ['Next.js 16', 'React 19', 'TypeScript'],
+      sections: 21,
+      level: 'Intermédiaire',
+      duration: '3h',
+      gradient: 'from-primary to-brand-secondary',
+      color: 'rgb(0, 150, 136)',
+      ribbon: 'Testez en direct'
+    },
+    {
       id: 'react-memoization',
       title: 'useMemo, useCallback et React.memo',
       description: 'Comprendre les 3 mecanismes de memoisation React. Exemples concrets, erreurs courantes, et preparation au React Compiler.',
@@ -51,18 +76,6 @@ export default function CoursesPage() {
       duration: '2h',
       gradient: 'from-blue-500 to-cyan-500',
       color: 'rgb(59, 130, 246)'
-    },
-    {
-      id: 'nextjs-demo/simulateur-performance',
-      title: 'Simulateur de Performance React',
-      description: 'Comparez 4 strategies d\'optimisation React avec des mesures reelles de temps de rendu. Benchmark interactif : baseline, React.memo, useMemo et combinaison complete.',
-      icon: Timer,
-      tags: ['React', 'Performance', 'Interactif'],
-      level: 'Tous niveaux',
-      duration: '10min',
-      gradient: 'from-orange-500 to-amber-500',
-      color: 'rgb(249, 115, 22)',
-      ribbon: 'Interactif'
     }
   ];
 

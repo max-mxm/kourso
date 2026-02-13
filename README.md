@@ -18,7 +18,7 @@ Une plateforme open source regroupant les retours d'expérience (REX) et bonnes 
 
 ## 🎓 Guides de Terrain
 
-### Guide Next.js 15
+### Guide Next.js 16
 Un guide complet regroupant les bonnes pratiques et retours d'expérience sur les modes de rendu modernes avec 6 sections :
 
 1. **Introduction** : Découverte de Next.js et de ses avantages

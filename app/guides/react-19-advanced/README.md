@@ -82,7 +82,7 @@ Cours complet sur React 19 et les patterns avancés pour développeurs expérime
 - Playwright (E2E)
 
 ### Architecture
-- Next.js 15+ App Router (recommandé)
+- Next.js 16+ App Router (recommandé)
 - Server Components
 - Feature-based structure
 
@@ -135,7 +135,7 @@ Ce cours s'adresse aux **développeurs React expérimentés** :
 - Editor avec support TypeScript (VS Code recommandé)
 
 ### Recommandé
-- Next.js 15+ pour tester Server Components
+- Next.js 16+ pour tester Server Components
 - React DevTools extension
 - Git pour suivre les exemples
 

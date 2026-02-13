@@ -75,7 +75,7 @@ module.exports = {
   ]
 };
 
-// 3. Pour Next.js 15+
+// 3. Pour Next.js 16+
 // next.config.js
 module.exports = {
   experimental: {

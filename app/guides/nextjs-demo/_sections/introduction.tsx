@@ -8,7 +8,7 @@ export default function IntroductionSection() {
       {/* Hero de la formation */}
       <div className="text-center space-y-4 mb-12 pb-8 border-b border-slate-200 dark:border-slate-800">
         <h1 className="from-primary to-brand-secondary bg-gradient-to-r bg-clip-text text-4xl md:text-5xl font-black tracking-tight text-transparent">
-          Guide Next.js 15
+          Guide Next.js 16
         </h1>
         <p className="text-xl text-muted-foreground font-medium">
           Maîtriser les modes de rendu modernes
@@ -17,7 +17,7 @@ export default function IntroductionSection() {
 
       <div className="prose prose-slate dark:prose-invert max-w-none">
         <p className="text-lg leading-relaxed text-foreground/80">
-          Next.js est un framework React qui permet de créer des applications web modernes avec une excellente performance et une expérience développeur optimale. La version 15 apporte des améliorations significatives en termes de rendu et d&apos;optimisation.
+          Next.js est un framework React qui permet de créer des applications web modernes avec une excellente performance et une expérience développeur optimale. La version 16 apporte des améliorations significatives en termes de rendu et d&apos;optimisation.
         </p>
       </div>
 
@@ -47,7 +47,7 @@ export default function IntroductionSection() {
       </ConceptCard>
 
       <CodeBlock
-        code={`// Structure d'un projet Next.js 15
+        code={`// Structure d'un projet Next.js 16
 app/
 ├── layout.tsx          // Layout racine
 ├── page.tsx            // Page d'accueil
@@ -62,7 +62,7 @@ app/
 export default function Home() {
   return (
     <main>
-      <h1>Bienvenue sur Next.js 15</h1>
+      <h1>Bienvenue sur Next.js 16</h1>
     </main>
   );
 }`}

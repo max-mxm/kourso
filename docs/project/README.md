@@ -45,7 +45,7 @@ Résumé complet de l'import depuis Scanorr.
 ## 🛠️ Stack Technique
 
 ### Frontend
-- **Next.js 15** - Framework React avec App Router
+- **Next.js 16** - Framework React avec App Router
 - **React 19** - Bibliothèque UI
 - **TypeScript** - Typage statique
 - **Tailwind CSS** - Utility-first CSS

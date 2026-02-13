@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { Activity, ArrowRight } from 'lucide-react';
 import { ConceptCard } from '@/components/course/concept-card';
 import { CodeBlock } from '@/components/course/code-block';
 import { ComparisonTable } from '@/components/course/comparison-table';
@@ -95,6 +97,28 @@ export default function ComparisonSection() {
       </div>
 
       <ComparisonTable modes={renderingModes} />
+
+      {/* CTA vers le simulateur de rendering */}
+      <Link
+        href="/guides/nextjs-demo/simulateur-rendering"
+        className="group block p-6 bg-muted/30 rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+      >
+        <div className="flex items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <Activity className="w-5 h-5 text-primary" />
+              <span className="text-lg font-semibold text-foreground">
+                Ouvrir le simulateur de rendering
+              </span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Comparez visuellement SSR, SSG, ISR, CSR et Streaming avec des timelines animees
+              et des metriques Core Web Vitals detaillees.
+            </p>
+          </div>
+          <ArrowRight className="w-5 h-5 flex-shrink-0 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+        </div>
+      </Link>
 
       <ConceptCard
         title="Stratégie Hybride"

@@ -26,7 +26,7 @@ export default function SimulateurPerformancePage() {
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          Retour au guide Next.js 15
+          Retour au guide Next.js 16
         </Link>
 
         {/* Header */}
@@ -40,7 +40,7 @@ export default function SimulateurPerformancePage() {
             </span>
           </div>
           <h1 className="text-3xl md:text-4xl font-black tracking-tight">
-            Simulateur de Performance React
+            useMemo, useCallback et React.memo teste en live
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl">
             Comparez 4 strategies d&apos;optimisation React en temps reel sur un benchmark

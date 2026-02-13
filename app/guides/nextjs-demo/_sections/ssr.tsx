@@ -58,7 +58,7 @@ export default async function UserProfile({
   );
 }
 
-// Les composants sont Server Components par défaut dans Next.js 15`}
+// Les composants sont Server Components par défaut dans Next.js 16`}
         language="typescript"
         filename="app/users/[id]/page.tsx"
         highlightLines={[9, 10]}

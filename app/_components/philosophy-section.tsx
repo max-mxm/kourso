@@ -9,7 +9,7 @@ const values = [
   {
     icon: Zap,
     title: 'Toujours a jour',
-    description: 'Aligne sur React 19, Next.js 15 et les standards actuels.',
+    description: 'Aligne sur React 19, Next.js 16 et les standards actuels.',
   },
   {
     icon: BookOpen,

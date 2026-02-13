@@ -128,7 +128,7 @@ export default function AboutPage() {
             <div className="space-y-3">
               <h2 className="text-3xl font-black">Prêt à explorer ?</h2>
               <p className="text-lg text-muted-foreground">
-                Commencez avec le guide Next.js 15, gratuit et open source.
+                Commencez avec le guide Next.js 16, gratuit et open source.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 justify-center">

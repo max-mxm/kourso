@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { HeroSection } from './_components/hero-section';
 import { PhilosophySection } from './_components/philosophy-section';
 import { ContentCard } from '@/components/content-card';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
-import { getContentForLanding } from '@/lib/content';
+import { getGuidesForLanding, getArticlesForLanding } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Accueil',
@@ -30,7 +32,8 @@ const personSchema = {
 };
 
 export default async function Home() {
-  const content = await getContentForLanding();
+  const guides = getGuidesForLanding();
+  const articles = await getArticlesForLanding();
 
   return (
     <>
@@ -42,29 +45,64 @@ export default async function Home() {
       <div className="min-h-screen">
         <HeroSection />
 
-        {/* Unified content grid */}
+        {/* Section Guides */}
         <section className="container py-12 md:py-20">
           <div className="space-y-3 mb-8 md:mb-12 text-center md:text-left">
             <span className="text-xs font-semibold tracking-widest uppercase text-primary">
-              Ressources
+              Guides
             </span>
             <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-tight">
-              Guides et articles
+              Guides techniques
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto md:mx-0">
-              Retours d&apos;experience structures et analyses techniques sur le developpement
-              frontend moderne.
+              Guides complets bases sur des retours d&apos;experience en production.
+              React, Next.js, performance et patterns avances.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {content.map((item, index) => (
+            {guides.map((item, index) => (
               <RevealOnScroll key={item.href} delay={index * 80}>
                 <ContentCard {...item} />
               </RevealOnScroll>
             ))}
           </div>
         </section>
+
+        {/* Section Articles */}
+        {articles.length > 0 && (
+          <section className="container pb-12 md:pb-20">
+            <div className="space-y-3 mb-8 md:mb-12 text-center md:text-left">
+              <span className="text-xs font-semibold tracking-widest uppercase text-primary">
+                Blog
+              </span>
+              <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-tight">
+                Articles recents
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto md:mx-0">
+                Analyses, comparatifs et reflexions sur le developpement frontend moderne.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {articles.map((item, index) => (
+                <RevealOnScroll key={item.href} delay={index * 80}>
+                  <ContentCard {...item} />
+                </RevealOnScroll>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center md:text-left">
+              <Link
+                href="/blog"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+              >
+                Voir tous les articles
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+          </section>
+        )}
 
         <PhilosophySection />
       </div>
