@@ -363,7 +363,7 @@ function BadTimer() {
 
       <div className="p-6 rounded-xl bg-gradient-to-br from-primary/5 to-brand-secondary/5 border border-primary/20">
         <p className="text-foreground font-semibold text-lg mb-3">
-          Recapitulatif du cours
+          Recapitulatif du guide
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
           <div className="space-y-2">

@@ -20,11 +20,11 @@ Toute la documentation se trouve dans [`docs/`](./docs/).
 
 ### Par Modification de Fichiers
 
-#### Si modification dans `app/cours/**/*`
+#### Si modification dans `app/guides/**/*`
 → **Consulter OBLIGATOIREMENT** : [`docs/architecture/cours-structure.md`](./docs/architecture/cours-structure.md)
 
 Contient :
-- Structure d'un cours (CourseLayout, Sections, Catégories)
+- Structure d'un guide (CourseLayout, Sections, Catégories)
 - Organisation des fichiers recommandée
 - Composants disponibles
 - Patterns de développement
@@ -51,7 +51,7 @@ Contient :
 
 ### Par Type de Tâche
 
-#### Ajout d'un Nouveau Cours
+#### Ajout d'un Nouveau Guide
 → **Consulter OBLIGATOIREMENT** : [`docs/guides/ajouter-un-cours.md`](./docs/guides/ajouter-un-cours.md)
 
 Contient :
@@ -85,7 +85,7 @@ Contient :
 
 ---
 
-#### Création/Modification de Catégories de Cours
+#### Création/Modification de Catégories de Guides
 → **Consulter** : [`docs/design-system/categories.md`](./docs/design-system/categories.md)
 
 Contient :
@@ -125,8 +125,8 @@ Contient :
 
 | Mots-clés | Documentation à consulter |
 |-----------|---------------------------|
-| "nouveau cours", "ajouter cours", "créer cours", "navigation" | [`docs/guides/ajouter-un-cours.md`](./docs/guides/ajouter-un-cours.md) |
-| "cours", "section", "catégorie", "CourseLayout" | [`docs/architecture/cours-structure.md`](./docs/architecture/cours-structure.md) |
+| "nouveau guide", "ajouter guide", "créer guide", "navigation" | [`docs/guides/ajouter-un-cours.md`](./docs/guides/ajouter-un-cours.md) |
+| "guide", "section", "catégorie", "CourseLayout" | [`docs/architecture/cours-structure.md`](./docs/architecture/cours-structure.md) |
 | "couleur", "teal", "violet", "theme", "dark", "light" | [`docs/design-system/colors.md`](./docs/design-system/colors.md) |
 | "police", "typographie", "Inter", "radius" | [`docs/design-system/typography.md`](./docs/design-system/typography.md) |
 | "gradient", "fondamentaux", "rendering", "catégorie" | [`docs/design-system/categories.md`](./docs/design-system/categories.md) |
@@ -138,7 +138,7 @@ Contient :
 ## 📖 Documentation Complète
 
 ### Architecture
-- [`docs/architecture/cours-structure.md`](./docs/architecture/cours-structure.md) - Structure des cours, composants, patterns
+- [`docs/architecture/cours-structure.md`](./docs/architecture/cours-structure.md) - Structure des guides, composants, patterns
 
 ### Design System
 - [`docs/design-system/colors.md`](./docs/design-system/colors.md) - Palette teal/violet, light/dark
@@ -146,7 +146,7 @@ Contient :
 - [`docs/design-system/categories.md`](./docs/design-system/categories.md) - Gradients par catégorie
 
 ### Guides
-- [`docs/guides/ajouter-un-cours.md`](./docs/guides/ajouter-un-cours.md) - Guide complet pour créer un nouveau cours
+- [`docs/guides/ajouter-un-cours.md`](./docs/guides/ajouter-un-cours.md) - Guide complet pour créer un nouveau guide
 - [`docs/guides/bonnes-pratiques-cours.md`](./docs/guides/bonnes-pratiques-cours.md) - Standards de qualité et recommandations
 - [`docs/guides/impeccable-workflow.md`](./docs/guides/impeccable-workflow.md) - 15 skills en 6 phases
 

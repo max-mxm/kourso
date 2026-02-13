@@ -17,7 +17,7 @@ export default function CoursesPage() {
     {
       id: 'react-19-advanced',
       title: 'React 19 - Bonnes Pratiques Seniors',
-      description: 'Cours complet sur React 19 : Compiler, Server Components, Actions, useOptimistic, architecture scalable et patterns avancés.',
+      description: 'Guide complet sur React 19 : Compiler, Server Components, Actions, useOptimistic, architecture scalable et patterns avancés.',
       icon: Rocket,
       tags: ['React 19', 'TypeScript', 'Avancé'],
       sections: 18,
@@ -56,10 +56,10 @@ export default function CoursesPage() {
           {/* En-tête */}
           <div className="space-y-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">
-              Catalogue de cours
+              Catalogue des guides
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl">
-              Parcourez notre collection de cours interactifs conçus pour vous faire progresser dans les technologies web modernes.
+              Parcourez mes guides pratiques basés sur des retours d&apos;expérience et des bonnes pratiques terrain.
             </p>
           </div>
 
@@ -79,12 +79,12 @@ export default function CoursesPage() {
             </button>
           </div>
 
-          {/* Liste des cours */}
+          {/* Liste des guides */}
           <div className="grid gap-6">
             {courses.map((course) => (
               <Link
                 key={course.id}
-                href={`/cours/${course.id}`}
+                href={`/guides/${course.id}`}
                 className="group block"
               >
                 <div className="relative rounded-2xl border border-border/50 bg-card p-5 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-y-[-2px] overflow-hidden">
@@ -159,17 +159,17 @@ export default function CoursesPage() {
             ))}
           </div>
 
-          {/* Message cours à venir */}
+          {/* Message guides à venir */}
           <div className="rounded-2xl border border-dashed border-border/50 bg-muted/20 p-12 text-center space-y-4">
             <div className="inline-flex w-20 h-20 rounded-2xl bg-muted items-center justify-center">
               <BookOpen className="w-10 h-10 text-muted-foreground/50" />
             </div>
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-2">
-                Plus de cours en préparation
+                Plus de guides en préparation
               </h3>
               <p className="text-muted-foreground">
-                D&apos;autres cours sur React, TypeScript, Node.js et bien plus seront ajoutés prochainement. Restez à l&apos;écoute !
+                D&apos;autres guides sur React, TypeScript, Node.js et bien plus seront ajoutés prochainement. Restez à l&apos;écoute !
               </p>
             </div>
           </div>

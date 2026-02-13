@@ -28,8 +28,8 @@ export function Header() {
           <NavLink href="/" active={pathname === '/'}>
             Accueil
           </NavLink>
-          <NavLink href="/cours" active={pathname.startsWith('/cours')}>
-            Cours
+          <NavLink href="/guides" active={pathname.startsWith('/guides')}>
+            Guides
           </NavLink>
           <NavLink href="/blog" active={pathname.startsWith('/blog')}>
             Blog

@@ -12,16 +12,16 @@ export default function AboutPage() {
               À propos de Koursorr
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Koursorr est une plateforme d&apos;apprentissage open source conçue pour rendre l&apos;apprentissage des technologies web moderne plus accessible et interactif.
+              Koursorr est mon espace open source de partage de bonnes pratiques React, Next.js et technologies web modernes. Issues de 8 ans d&apos;expérience sur des projets réels, ces ressources ont vocation à évoluer et à s&apos;ouvrir aux contributions d&apos;autres développeurs.
             </p>
           </div>
 
           {/* Mission */}
           <section className="space-y-4">
-            <h2 className="text-3xl font-black">Notre Mission</h2>
+            <h2 className="text-3xl font-black">Ma démarche</h2>
             <div className="prose prose-slate dark:prose-invert max-w-none">
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Notre mission est de fournir des cours de haute qualité, gratuits et accessibles à tous, en mettant l&apos;accent sur l&apos;apprentissage pratique avec des démos interactives et des exemples concrets.
+                Documenter et partager les bonnes pratiques que j&apos;ai éprouvées en production. Chaque guide est basé sur des retours d&apos;expérience concrets, avec des démos interactives et des exemples de code testés sur des projets réels.
               </p>
             </div>
           </section>
@@ -46,7 +46,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-bold">Contenu Structuré</h3>
                 <p className="text-muted-foreground">
-                  Cours organisés par catégories avec une progression logique et un suivi de votre avancement.
+                  Guides organisés par thèmes avec une navigation fluide et un suivi de votre progression.
                 </p>
               </div>
 
@@ -126,24 +126,24 @@ export default function AboutPage() {
           {/* Call to Action */}
           <section className="rounded-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-brand-secondary/5 p-8 text-center space-y-6">
             <div className="space-y-3">
-              <h2 className="text-3xl font-black">Prêt à apprendre ?</h2>
+              <h2 className="text-3xl font-black">Prêt à explorer ?</h2>
               <p className="text-lg text-muted-foreground">
-                Commencez dès maintenant avec notre cours Next.js 15 gratuit.
+                Commencez avec le guide Next.js 15, gratuit et open source.
               </p>
             </div>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
-                href="/cours/nextjs-demo"
+                href="/guides/nextjs-demo"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:translate-y-[-2px]"
               >
-                Commencer le cours
+                Explorer le guide
                 <span>→</span>
               </Link>
               <Link
-                href="/cours"
+                href="/guides"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-border hover:border-primary/50 font-semibold rounded-xl hover:bg-primary/5 transition-all duration-200"
               >
-                Voir tous les cours
+                Voir tous les guides
               </Link>
             </div>
           </section>

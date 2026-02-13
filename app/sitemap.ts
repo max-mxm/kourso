@@ -11,16 +11,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  // Cours disponibles
-  const courseUrls = [
+  // Guides disponibles
+  const guideUrls = [
     {
-      url: 'https://kourso.com/cours/nextjs-demo',
+      url: 'https://kourso.com/guides/nextjs-demo',
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: 'https://kourso.com/cours/react-19-advanced',
+      url: 'https://kourso.com/guides/react-19-advanced',
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: 'https://kourso.com/cours',
+      url: 'https://kourso.com/guides',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -52,7 +52,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
-    ...courseUrls,
+    ...guideUrls,
     ...articleUrls,
   ];
 }

@@ -630,10 +630,10 @@ app/
 {
   "home": {
     "title": "Bienvenue sur Koursorr",
-    "subtitle": "Apprenez Next.js avec des cours interactifs"
+    "subtitle": "Apprenez Next.js avec des guides interactifs"
   },
   "nav": {
-    "courses": "Cours",
+    "courses": "Guides",
     "about": "À propos"
   }
 }`}

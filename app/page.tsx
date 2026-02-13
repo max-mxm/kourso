@@ -72,7 +72,7 @@ export default function Home() {
               {/* React 19 - Compact card */}
               <div className="md:col-span-4">
                 <Link
-                  href="/cours/react-19-advanced"
+                  href="/guides/react-19-advanced"
                   className="group block h-full rounded-2xl border-2 border-border/50 bg-card p-6 hover:shadow-xl transition-all duration-300"
                 >
                   <div className="space-y-4 h-full flex flex-col">
@@ -101,7 +101,7 @@ export default function Home() {
 
             <div className="mt-4 flex justify-end">
               <Link
-                href="/cours/nextjs-demo#performance-measurement"
+                href="/guides/nextjs-demo#performance-measurement"
                 className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
               >
                 Voir la démo performance live
@@ -109,11 +109,11 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Nouveaux cours */}
+            {/* Nouveaux guides */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               {/* TanStack - Compact card */}
               <Link
-                href="/cours/tanstack-react"
+                href="/guides/tanstack-react"
                 className="group block rounded-2xl border-2 border-border/50 bg-card p-6 hover:shadow-xl transition-all duration-300"
               >
                 <div className="space-y-4 h-full flex flex-col">
@@ -140,7 +140,7 @@ export default function Home() {
 
               {/* Memoisation - Compact card */}
               <Link
-                href="/cours/react-memoization"
+                href="/guides/react-memoization"
                 className="group block rounded-2xl border-2 border-border/50 bg-card p-6 hover:shadow-xl transition-all duration-300"
               >
                 <div className="space-y-4 h-full flex flex-col">

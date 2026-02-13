@@ -9,9 +9,9 @@ Bienvenue dans la documentation de Koursorr, une plateforme simple pour partager
 La documentation est organisée en 4 sections principales :
 
 ### [Architecture](./architecture/)
-Documentation technique sur la structure du code et l'organisation des cours.
+Documentation technique sur la structure du code et l'organisation des guides.
 
-**Quand consulter** : Lors de la création ou modification de cours, composants, ou structure de fichiers.
+**Quand consulter** : Lors de la création ou modification de guides, composants, ou structure de fichiers.
 
 ### [Design System](./design-system/)
 Palette de couleurs, typographie, et guidelines visuelles.
@@ -34,14 +34,14 @@ Contexte historique, stack technique, et roadmap.
 
 ### Nouveau contributeur ?
 1. Lire [project/import-summary.md](./project/import-summary.md) - Contexte et état actuel
-2. Lire [architecture/cours-structure.md](./architecture/cours-structure.md) - Structure des cours
+2. Lire [architecture/cours-structure.md](./architecture/cours-structure.md) - Structure des guides
 3. Parcourir [design-system/](./design-system/) - Comprendre le design
 
-### Créer un cours ?
+### Créer un guide ?
 1. **Suivre le guide** : [guides/ajouter-un-cours.md](./guides/ajouter-un-cours.md) - Guide complet étape par étape
 2. Lire [architecture/cours-structure.md](./architecture/cours-structure.md) - Structure technique
 3. Consulter [design-system/categories.md](./design-system/categories.md) - Catégories et gradients
-4. Voir les exemples dans `app/cours/nextjs-demo/` et `app/cours/react-19-advanced/`
+4. Voir les exemples dans `app/guides/nextjs-demo/` et `app/guides/react-19-advanced/`
 
 ### Modifier le design ?
 1. Consulter [design-system/colors.md](./design-system/colors.md)
@@ -53,15 +53,15 @@ Contexte historique, stack technique, et roadmap.
 ## 📖 Index Complet
 
 ### Architecture
-- [cours-structure.md](./architecture/cours-structure.md) - Structure et composants des cours
+- [cours-structure.md](./architecture/cours-structure.md) - Structure et composants des guides
 
 ### Design System
 - [colors.md](./design-system/colors.md) - Palette teal/violet, light/dark mode
 - [typography.md](./design-system/typography.md) - Polices Inter, radius, hiérarchie
-- [categories.md](./design-system/categories.md) - Gradients par catégorie de cours
+- [categories.md](./design-system/categories.md) - Gradients par catégorie de guides
 
 ### Guides
-- [ajouter-un-cours.md](./guides/ajouter-un-cours.md) - Guide complet pour créer un nouveau cours
+- [ajouter-un-cours.md](./guides/ajouter-un-cours.md) - Guide complet pour créer un nouveau guide
 - [bonnes-pratiques-cours.md](./guides/bonnes-pratiques-cours.md) - Standards de qualité et recommandations
 - [impeccable-workflow.md](./guides/impeccable-workflow.md) - 15 skills en 6 phases pour améliorer l'UI
 

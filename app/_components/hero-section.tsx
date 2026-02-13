@@ -42,14 +42,14 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/cours/nextjs-demo"
+                href="/guides/nextjs-demo"
                 className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 transition-all duration-200 shadow-lg hover:shadow-xl hover:translate-y-[-2px]"
               >
                 Explorer les ressources
                 <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
               </Link>
               <Link
-                href="/cours"
+                href="/guides"
                 className="inline-flex items-center gap-2 px-8 py-4 border-2 border-border hover:border-primary/50 font-semibold rounded-xl hover:bg-primary/5 transition-all duration-200"
               >
                 Voir tous les guides

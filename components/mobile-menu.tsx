@@ -23,8 +23,8 @@ export function MobileMenu({ pathname, onClose }: MobileMenuProps) {
         <MobileNavLink href="/" active={pathname === '/'} onClick={onClose}>
           Accueil
         </MobileNavLink>
-        <MobileNavLink href="/cours" active={pathname.startsWith('/cours')} onClick={onClose}>
-          Cours
+        <MobileNavLink href="/guides" active={pathname.startsWith('/guides')} onClick={onClose}>
+          Guides
         </MobileNavLink>
         <MobileNavLink href="/blog" active={pathname.startsWith('/blog')} onClick={onClose}>
           Blog

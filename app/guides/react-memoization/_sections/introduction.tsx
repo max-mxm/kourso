@@ -121,7 +121,7 @@ function Dashboard() {
       />
 
       <ConceptCard
-        title="Ce que vous apprendrez dans ce cours"
+        title="Ce que vous apprendrez dans ce guide"
         description="Un parcours complet pour maitriser la memoisation React, de la theorie a la pratique en production."
         category="fundamentals"
       >

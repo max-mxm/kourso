@@ -1,6 +1,6 @@
-# Couleurs des Catégories de Cours - Koursorr
+# Couleurs des Catégories de Guides - Koursorr
 
-Les catégories de cours utilisent des gradients distinctifs pour créer une identité visuelle forte et faciliter la navigation.
+Les catégories de guides utilisent des gradients distinctifs pour créer une identité visuelle forte et faciliter la navigation.
 
 ---
 
@@ -159,4 +159,4 @@ Pour ajouter une nouvelle catégorie :
 
 Voir aussi :
 - [colors.md](./colors.md) - Palette de couleurs complète
-- [cours-structure.md](../architecture/cours-structure.md) - Architecture des cours
+- [cours-structure.md](../architecture/cours-structure.md) - Architecture des guides

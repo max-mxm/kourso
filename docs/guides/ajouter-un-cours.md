@@ -20,7 +20,7 @@ Ajouter un guide pratique implique 4 étapes principales :
 
 ```bash
 # Créer la structure
-mkdir -p app/cours/[slug-du-guide]/_sections
+mkdir -p app/guides/[slug-du-guide]/_sections
 ```
 
 **Règles de nommage du slug :**
@@ -31,7 +31,7 @@ mkdir -p app/cours/[slug-du-guide]/_sections
 
 ### 1.2 Créer le Point d'Entrée (`page.tsx`)
 
-Créer `app/cours/[slug-du-guide]/page.tsx` :
+Créer `app/guides/[slug-du-guide]/page.tsx` :
 
 ```tsx
 import { CourseLayout } from '@/components/course/course-layout';
@@ -75,7 +75,7 @@ export default function MonGuide() {
 Chaque section = 1 fichier dans `_sections/` :
 
 ```tsx
-// app/cours/[slug]/_sections/ma-bonne-pratique.tsx
+// app/guides/[slug]/_sections/ma-bonne-pratique.tsx
 import { ConceptCard } from '@/components/course/concept-card';
 import { CodeBlock } from '@/components/course/code-block';
 import { ComparisonTable } from '@/components/course/comparison-table';
@@ -118,14 +118,14 @@ const example = 'Hello World';`}
 
 ### 1.4 Créer le README.md
 
-Créer `app/cours/[slug-du-guide]/README.md` avec :
+Créer `app/guides/[slug-du-guide]/README.md` avec :
 - Description du guide
 - Structure des sections
 - Prérequis
 - Objectifs pédagogiques
 - Références
 
-Voir [`app/cours/react-19-advanced/README.md`](../../app/cours/react-19-advanced/README.md) comme exemple.
+Voir [`app/guides/react-19-advanced/README.md`](../../app/guides/react-19-advanced/README.md) comme exemple.
 
 ---
 
@@ -239,7 +239,7 @@ Ajouter une carte du guide dans la section "Guides pratiques" :
 ```tsx
 {/* Votre nouveau guide */}
 <Link
-  href="/cours/[slug-du-guide]"
+  href="/guides/[slug-du-guide]"
   className="group relative rounded-2xl border border-border/50 bg-card p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:translate-y-[-4px] overflow-hidden"
 >
   <div className="absolute inset-0 bg-gradient-to-br from-[couleur]/5 to-[couleur]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -289,7 +289,7 @@ Ajouter une carte du guide dans la section "Guides pratiques" :
 <div className="text-sm text-muted-foreground">Guides pratiques</div>
 ```
 
-### 3.2 Page Catalogue (`app/cours/page.tsx`)
+### 3.2 Page Catalogue (`app/guides/page.tsx`)
 
 Ajouter le guide dans l'array `courses` :
 
@@ -322,7 +322,7 @@ npm run dev
 
 ### 4.2 Tests Visuels
 
-Naviguer vers `http://localhost:3000/cours/[slug-du-guide]` et vérifier :
+Naviguer vers `http://localhost:3000/guides/[slug-du-guide]` et vérifier :
 
 - ✅ Progress bar fonctionne
 - ✅ Scroll spy détecte section active
@@ -370,7 +370,7 @@ Vérifier :
 Avant de considérer votre guide de bonnes pratiques terminé :
 
 ### Structure
-- [ ] Dossier `app/cours/[slug]/` créé
+- [ ] Dossier `app/guides/[slug]/` créé
 - [ ] Fichier `page.tsx` créé
 - [ ] Toutes les sections dans `_sections/` créées
 - [ ] `README.md` complété avec contexte/REX
@@ -384,7 +384,7 @@ Avant de considérer votre guide de bonnes pratiques terminé :
 
 ### Navigation
 - [ ] Guide ajouté à `app/page.tsx`
-- [ ] Guide ajouté à `app/cours/page.tsx`
+- [ ] Guide ajouté à `app/guides/page.tsx`
 - [ ] Stats mises à jour (nombre de guides, sections)
 - [ ] Gradient et couleur cohérents
 
@@ -438,11 +438,11 @@ Avant de considérer votre guide de bonnes pratiques terminé :
 
 ### Guides Existants
 
-- **Next.js Demo** : [`app/cours/nextjs-demo/`](../../app/cours/nextjs-demo/)
+- **Next.js Demo** : [`app/guides/nextjs-demo/`](../../app/guides/nextjs-demo/)
   - 21 sections couvrant les patterns testés
   - Exemple de guide complet avec REX
 
-- **React 19 Advanced** : [`app/cours/react-19-advanced/`](../../app/cours/react-19-advanced/)
+- **React 19 Advanced** : [`app/guides/react-19-advanced/`](../../app/guides/react-19-advanced/)
   - 18 sections, niveau avancé
   - Exemple de contenu issu du terrain
 

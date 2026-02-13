@@ -24,7 +24,7 @@ export function FeaturedCourseCard({
 }: FeaturedCourseCardProps) {
   return (
     <Link
-      href={`/cours/${id}`}
+      href={`/guides/${id}`}
       className="group relative rounded-3xl border-2 border-border/50 bg-card p-12 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden md:col-span-8"
     >
       {/* Thick left border accent */}

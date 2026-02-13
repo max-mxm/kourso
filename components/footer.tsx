@@ -12,7 +12,7 @@ export function Footer() {
               Koursorr
             </h3>
             <p className="text-muted-foreground leading-relaxed max-w-md">
-              Plateforme d&apos;apprentissage React et Next.js avec cours interactifs, exemples pratiques, et guides avancés.
+              Bonnes pratiques React et Next.js issues de projets réels. Retours d&apos;expérience, patterns éprouvés et guides pratiques.
             </p>
 
             {/* Social Links */}
@@ -47,8 +47,8 @@ export function Footer() {
               <Link href="/" className="text-foreground hover:text-primary transition-colors">
                 Accueil
               </Link>
-              <Link href="/cours" className="text-foreground hover:text-primary transition-colors">
-                Cours
+              <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
+                Guides
               </Link>
               <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
                 Blog
@@ -59,16 +59,16 @@ export function Footer() {
             </nav>
           </div>
 
-          {/* Colonne 9-12: Cours */}
+          {/* Colonne 9-12: Guides */}
           <div className="md:col-span-4 space-y-4">
             <h4 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
-              Cours disponibles
+              Guides disponibles
             </h4>
             <nav className="flex flex-col gap-2">
-              <Link href="/cours/nextjs-demo" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/guides/nextjs-demo" className="text-foreground hover:text-primary transition-colors">
                 Guide Next.js 15
               </Link>
-              <Link href="/cours/react-19-advanced" className="text-foreground hover:text-primary transition-colors">
+              <Link href="/guides/react-19-advanced" className="text-foreground hover:text-primary transition-colors">
                 React 19 - Seniors
               </Link>
             </nav>

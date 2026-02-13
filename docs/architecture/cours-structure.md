@@ -8,7 +8,7 @@ Documentation technique de la structure pour partager bonnes pratiques et retour
 
 ### Composants Principaux
 
-#### 1. **CourseLayout** - Layout principal du cours
+#### 1. **CourseLayout** - Layout principal du guide
 
 Le composant `CourseLayout` gère :
 - **Navigation par type de pratique** - Organisation hiérarchique des sections
@@ -67,7 +67,7 @@ interface Section {
 
 ### Hiérarchie Visuelle
 
-1. **Header fixe** avec titre du cours et progress
+1. **Header fixe** avec titre du guide et progress
 2. **Sidebar catégorisée** avec navigation
 3. **Contenu principal** avec sections scrollables
 4. **Progress bar** en haut de page
@@ -83,7 +83,7 @@ interface Section {
 
 ## 📖 Exemple de Cours : Guide Next.js
 
-### Sections du cours
+### Sections du guide
 
 #### Fondamentaux
 - Comprendre les concepts de base
@@ -116,18 +116,18 @@ interface Section {
 
 ```
 app/
-├── cours/
+├── guides/
 │   ├── [slug]/
-│   │   ├── page.tsx                    # Point d'entrée du cours
+│   │   ├── page.tsx                    # Point d'entrée du guide
 │   │   ├── _components/
 │   │   │   ├── course-layout.tsx       # Layout principal
-│   │   │   ├── section-1.tsx           # Sections du cours
+│   │   │   ├── section-1.tsx           # Sections du guide
 │   │   │   ├── section-2.tsx
 │   │   │   └── ...
 │   │   ├── _lib/
 │   │   │   └── server/
 │   │   │       └── actions.ts          # Server actions si besoin
-│   │   └── README.md                   # Documentation du cours
+│   │   └── README.md                   # Documentation du guide
 ```
 
 ---
@@ -162,14 +162,14 @@ app/
 ### Priorité 1 - MVP
 - [ ] CourseLayout (layout principal)
 - [ ] Section (composant de section générique)
-- [ ] CourseCard (pour liste des cours)
+- [ ] CourseCard (pour liste des guides)
 - [ ] ProgressBar (barre de progression)
 
 ### Priorité 2 - Améliorations
 - [ ] CourseNav (navigation mobile)
 - [ ] Breadcrumb (fil d'ariane)
 - [ ] TableOfContents (table des matières)
-- [ ] CourseSearch (recherche dans le cours)
+- [ ] CourseSearch (recherche dans le guide)
 
 ### Priorité 3 - Enrichissements
 - [ ] CodeBlock (avec syntax highlighting)
@@ -182,7 +182,7 @@ app/
 ## 📝 Exemple d'Utilisation
 
 ```tsx
-// app/cours/nextjs/page.tsx
+// app/guides/nextjs/page.tsx
 import { CourseLayout } from '@/components/course-layout';
 import { FundamentalsSection } from './_components/fundamentals';
 import { SSRDemo } from './_components/ssr-demo';
@@ -237,7 +237,7 @@ Chaque section devrait contenir :
 ## 📊 Métriques de Succès
 
 ### Engagement
-- Temps passé par cours
+- Temps passé par guide
 - Taux de complétion
 - Sections les plus consultées
 
@@ -253,12 +253,12 @@ Chaque section devrait contenir :
 1. ✅ Import de la structure depuis Scanorr
 2. ✅ Documentation de l'architecture
 3. [ ] Création des composants de base
-4. [ ] Première version d'un cours
+4. [ ] Première version d'un guide
 5. [ ] Tests et itérations
 6. [ ] Déploiement
 
 ---
 
 **Source** : Importé depuis Scanorr (nextjs-demo)
-**Adapté pour** : Koursorr - Plateforme de cours simple
+**Adapté pour** : Koursorr - Plateforme de guides pratiques
 **Dernière mise à jour** : Février 2026

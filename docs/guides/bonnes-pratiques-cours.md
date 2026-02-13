@@ -323,7 +323,7 @@ Gain de maintenance > coût de migration pour notre équipe de 4 devs
 ```bash
 # Lighthouse audit
 npm run build
-npx lighthouse http://localhost:3000/cours/[slug] --view
+npx lighthouse http://localhost:3000/guides/[slug] --view
 ```
 
 ### Mode Dark/Light
@@ -483,7 +483,7 @@ npm run lint
 npx tsc --noEmit
 
 # Lighthouse
-npx lighthouse http://localhost:3000/cours/[slug] --view
+npx lighthouse http://localhost:3000/guides/[slug] --view
 ```
 
 ---
@@ -503,7 +503,7 @@ npx lighthouse http://localhost:3000/cours/[slug] --view
 ✅ **CORRECTION :** Utiliser `category="best-practices"`
 
 ### 4. Navigation Non Mise à Jour
-❌ **ERREUR :** Créer un guide sans l'ajouter à `app/page.tsx` et `app/cours/page.tsx`
+❌ **ERREUR :** Créer un guide sans l'ajouter à `app/page.tsx` et `app/guides/page.tsx`
 ✅ **CORRECTION :** Suivre le guide [ajouter-un-cours.md](./ajouter-un-cours.md)
 
 ### 5. Code Non Testé
@@ -559,12 +559,12 @@ npx lighthouse http://localhost:3000/cours/[slug] --view
 
 ### Guides Bien Structurés
 
-**Next.js Demo** ([`app/cours/nextjs-demo/`](../../app/cours/nextjs-demo/))
+**Next.js Demo** ([`app/guides/nextjs-demo/`](../../app/guides/nextjs-demo/))
 - ✅ 21 sections organisées en 5 catégories
 - ✅ Bon usage des composants
 - ✅ Navigation complète
 
-**React 19 Advanced** ([`app/cours/react-19-advanced/`](../../app/cours/react-19-advanced/))
+**React 19 Advanced** ([`app/guides/react-19-advanced/`](../../app/guides/react-19-advanced/))
 - ✅ Contenu technique approfondi
 - ✅ Exemples comparatifs React 18 vs 19
 - ✅ Documentation basée sur l'expérience

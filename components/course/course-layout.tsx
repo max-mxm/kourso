@@ -220,7 +220,7 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
               Felicitations !
             </h3>
             <p className="text-muted-foreground mt-2">
-              Vous avez termine le cours.
+              Vous avez termine ce guide.
             </p>
           </div>
         </main>
@@ -230,7 +230,7 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
       <button
         onClick={() => setMobileNavOpen(true)}
         className="fixed bottom-6 right-6 z-40 lg:hidden min-h-[56px] min-w-[56px] rounded-full bg-primary text-white shadow-xl flex items-center justify-center hover:bg-primary/90 active:scale-95 transition-all"
-        aria-label="Ouvrir la navigation du cours"
+        aria-label="Ouvrir la navigation du guide"
       >
         <List className="w-6 h-6" />
       </button>
@@ -254,7 +254,7 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
             {/* Header */}
             <div className="px-6 pb-3 border-b border-border/50 flex items-center justify-between flex-shrink-0">
               <span className="text-sm font-bold text-muted-foreground">
-                Navigation du cours
+                Navigation du guide
               </span>
               <button
                 onClick={() => setMobileNavOpen(false)}
