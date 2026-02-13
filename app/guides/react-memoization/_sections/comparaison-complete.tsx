@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { ArrowRight, Timer } from 'lucide-react';
 import { ConceptCard } from '@/components/course/concept-card';
 import { ComparisonTable } from '@/components/course/comparison-table';
 
@@ -154,6 +156,31 @@ export default function ComparaisonCompleteSection() {
           </div>
         </div>
       </ConceptCard>
+
+      {/* CTA vers le simulateur interactif */}
+      <Link
+        href="/guides/nextjs-demo/simulateur-performance"
+        className="group block p-6 rounded-xl border border-orange-500/20 bg-gradient-to-r from-orange-500/5 to-amber-500/5 hover:from-orange-500/10 hover:to-amber-500/10 hover:border-orange-500/30 hover:shadow-lg transition-all duration-300"
+      >
+        <div className="flex items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-3 flex-wrap">
+              <Timer className="w-5 h-5 text-orange-500" />
+              <span className="text-lg font-semibold text-foreground">
+                Testez ces strategies en live
+              </span>
+              <span className="rounded-md bg-orange-500/15 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-orange-600 dark:text-orange-400">
+                Interactif
+              </span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Comparez React.memo, useMemo et useCallback avec des mesures reelles
+              de temps de rendu sur un benchmark de liste de produits.
+            </p>
+          </div>
+          <ArrowRight className="w-5 h-5 flex-shrink-0 text-muted-foreground group-hover:text-orange-500 group-hover:translate-x-1 transition-all" />
+        </div>
+      </Link>
     </div>
   );
 }

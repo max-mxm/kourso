@@ -5,7 +5,8 @@ import { HeroSection } from './_components/hero-section';
 import { PhilosophySection } from './_components/philosophy-section';
 import { ContentCard } from '@/components/content-card';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
-import { getGuidesForLanding, getArticlesForLanding } from '@/lib/content';
+import { DemoCard } from '@/components/demo-card';
+import { getGuidesForLanding, getArticlesForLanding, getDemosForLanding } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Accueil',
@@ -33,6 +34,7 @@ const personSchema = {
 
 export default async function Home() {
   const guides = getGuidesForLanding();
+  const demos = getDemosForLanding();
   const articles = await getArticlesForLanding();
 
   return (
@@ -64,6 +66,30 @@ export default async function Home() {
             {guides.map((item, index) => (
               <RevealOnScroll key={item.href} delay={index * 80}>
                 <ContentCard {...item} />
+              </RevealOnScroll>
+            ))}
+          </div>
+        </section>
+
+        {/* Section Demos live */}
+        <section className="container pb-12 md:pb-20">
+          <div className="space-y-3 mb-8 md:mb-12 text-center md:text-left">
+            <span className="text-xs font-semibold tracking-widest uppercase bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+              Interactif
+            </span>
+            <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold leading-tight">
+              Testez en direct
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto md:mx-0">
+              Demos interactives avec des mesures en temps reel.
+              Manipulez, comparez, et observez les resultats dans votre navigateur.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {demos.map((demo, index) => (
+              <RevealOnScroll key={demo.href} delay={index * 80}>
+                <DemoCard {...demo} />
               </RevealOnScroll>
             ))}
           </div>

@@ -289,7 +289,42 @@ Ajouter une carte du guide dans la section "Guides pratiques" :
 <div className="text-sm text-muted-foreground">Guides pratiques</div>
 ```
 
-### 3.2 Page Catalogue (`app/guides/page.tsx`)
+### 3.2 Index de Recherche (`lib/search-index.ts`)
+
+Ajouter le guide et chacune de ses sections dans l'index de recherche pour qu'ils soient trouvables via la commande Cmd+K :
+
+```typescript
+// Dans lib/search-index.ts, ajouter dans SEARCH_INDEX :
+
+// Le guide lui-meme
+{
+  type: 'guide',
+  title: 'Titre du Guide',
+  description: 'Description courte.',
+  href: '/guides/slug-du-guide',
+  tags: ['Tag 1', 'Tag 2'],
+  keywords: ['mot-cle 1', 'synonyme', 'acronyme', 'terme EN'],
+},
+
+// Chaque section du guide
+{
+  type: 'guide-section',
+  title: 'Titre de la Section',
+  href: '/guides/slug-du-guide#section-id',
+  tags: ['Tag'],
+  parentTitle: 'Titre du Guide',
+  keywords: ['synonyme', 'terme alternatif', 'nom API ou fonction'],
+},
+```
+
+**Bonnes pratiques pour les `keywords` :**
+- Inclure les acronymes (SSR, SSG, ISR, RSC, etc.)
+- Inclure les traductions FR/EN des concepts ("rendu serveur" pour "Server-Side Rendering")
+- Inclure les noms d'API/fonctions associes (`getServerSideProps`, `generateStaticParams`)
+- Penser aux termes que les utilisateurs taperaient naturellement
+- Pas de doublons avec le `title` (deja indexe automatiquement)
+
+### 3.3 Page Catalogue (`app/guides/page.tsx`)
 
 Ajouter le guide dans l'array `courses` :
 
@@ -382,9 +417,11 @@ Avant de considérer votre guide de bonnes pratiques terminé :
 - [ ] Code examples issus de projets réels et testés
 - [ ] Pas de hard-coding de couleurs
 
-### Navigation
+### Navigation & Recherche
 - [ ] Guide ajouté à `app/page.tsx`
 - [ ] Guide ajouté à `app/guides/page.tsx`
+- [ ] Guide et sections ajoutés à `lib/search-index.ts`
+- [ ] Mots-clés pertinents ajoutés pour chaque item (acronymes, FR/EN, noms d'API)
 - [ ] Stats mises à jour (nombre de guides, sections)
 - [ ] Gradient et couleur cohérents
 
@@ -480,6 +517,9 @@ R : Voir [`docs/design-system/categories.md`](../design-system/categories.md) - 
 
 **Q : Les sections doivent-elles être des default exports ?**
 R : Préféré pour cohérence, mais named exports fonctionnent aussi.
+
+**Q : Comment ajouter mon guide à la recherche ?**
+R : Mettre à jour `lib/search-index.ts` : ajouter une entrée pour le guide et une entrée par section, avec des `keywords` pertinents (acronymes, traductions FR/EN, noms de fonctions/API). Voir l'étape 3.2 ci-dessus.
 
 ---
 

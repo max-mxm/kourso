@@ -30,18 +30,6 @@ const GUIDES: LandingContentItem[] = [
     publishedAt: '2026-02-13',
   },
   {
-    href: '/guides/nextjs-demo/simulateur-performance',
-    type: 'guide',
-    title: 'useMemo, useCallback et React.memo teste en live',
-    description:
-      'Comparez 4 strategies d\'optimisation React avec des mesures reelles de temps de rendu : baseline, React.memo, useMemo et la combinaison complete.',
-    tags: ['React', 'Performance', 'Interactif'],
-    accentColor: 'rgb(249, 115, 22)',
-    badge: 'INTERACTIF',
-    duration: '10min',
-    publishedAt: '2026-02-13',
-  },
-  {
     href: '/guides/tanstack-react',
     type: 'guide',
     title: 'TanStack -- Ecosysteme complet React',
@@ -91,6 +79,52 @@ const GUIDES: LandingContentItem[] = [
     publishedAt: '2026-01-28',
   },
 ];
+
+export interface LandingDemoItem {
+  href: string;
+  title: string;
+  description: string;
+  tags: string[];
+  accentColor: string;
+  gradientFrom: string;
+  gradientTo: string;
+  badge: string;
+  duration: string;
+  relatedGuide: string;
+}
+
+const DEMOS: LandingDemoItem[] = [
+  {
+    href: '/guides/nextjs-demo/simulateur-performance',
+    title: 'Simulateur de performance React',
+    description:
+      'Comparez 4 strategies d\'optimisation React avec des mesures reelles de temps de rendu. Testez React.memo, useMemo et useCallback en live.',
+    tags: ['React', 'Performance', 'Mesures reelles'],
+    accentColor: 'rgb(249, 115, 22)',
+    gradientFrom: 'from-orange-500',
+    gradientTo: 'to-amber-500',
+    badge: 'INTERACTIF',
+    duration: '10min',
+    relatedGuide: '/guides/react-memoization',
+  },
+  {
+    href: '/guides/nextjs-demo/simulateur-rendering',
+    title: 'Comparateur de modes de rendering',
+    description:
+      'Visualisez les differences entre SSR, SSG, ISR, CSR et Streaming. Timelines animees et metriques Core Web Vitals en temps reel.',
+    tags: ['Next.js', 'SSR', 'Core Web Vitals'],
+    accentColor: 'rgb(59, 130, 246)',
+    gradientFrom: 'from-blue-500',
+    gradientTo: 'to-cyan-500',
+    badge: 'INTERACTIF',
+    duration: '5min',
+    relatedGuide: '/guides/nextjs-demo',
+  },
+];
+
+export function getDemosForLanding(): LandingDemoItem[] {
+  return DEMOS;
+}
 
 export function getGuidesForLanding(): LandingContentItem[] {
   return [...GUIDES].sort((a, b) =>

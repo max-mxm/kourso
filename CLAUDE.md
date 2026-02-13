@@ -42,6 +42,17 @@ Contient :
 
 ---
 
+#### Si modification dans `app/guides/**/simulateur-*/**`
+→ **Consulter OBLIGATOIREMENT** : [`docs/guides/bonnes-pratiques-demo-live.md`](./docs/guides/bonnes-pratiques-demo-live.md)
+
+Contient :
+- Structure et design obligatoire des demos live
+- Standards interactifs (mesures reelles, controles, feedback)
+- Ajout a la navigation (landing page + guide parent)
+- Checklist de validation
+
+---
+
 #### Si modification dans `app/styles/**/*`
 → **Consulter** :
 - [`docs/design-system/colors.md`](./docs/design-system/colors.md) - Variables CSS et palette
@@ -60,6 +71,18 @@ Contient :
 - Ajout à la navigation (page d'accueil + catalogue)
 - Tests et validation
 - Checklist complète
+
+---
+
+#### Ajout d'une Demo Live / Simulateur Interactif
+→ **Consulter OBLIGATOIREMENT** : [`docs/guides/bonnes-pratiques-demo-live.md`](./docs/guides/bonnes-pratiques-demo-live.md)
+
+Contient :
+- Workflow complet pour creer une demo live
+- Design obligatoire (fond gradient, carte glassmorphique, header, CTA)
+- Standards interactifs (mesures reelles, controles utilisateur)
+- Ajout dans `lib/content.ts` (tableau `DEMOS`) et dans le guide parent
+- Checklist de validation
 
 ---
 
@@ -132,6 +155,7 @@ Contient :
 | "gradient", "fondamentaux", "rendering", "catégorie" | [`docs/design-system/categories.md`](./docs/design-system/categories.md) |
 | "impeccable", "améliorer UI", "refonte", "audit" | [`docs/guides/impeccable-workflow.md`](./docs/guides/impeccable-workflow.md) |
 | "qu'est-ce qui a été importé", "contexte", "historique" | [`docs/project/import-summary.md`](./docs/project/import-summary.md) |
+| "demo live", "simulateur", "interactif", "benchmark" | [`docs/guides/bonnes-pratiques-demo-live.md`](./docs/guides/bonnes-pratiques-demo-live.md) |
 
 ---
 
@@ -149,6 +173,7 @@ Contient :
 - [`docs/guides/ajouter-un-cours.md`](./docs/guides/ajouter-un-cours.md) - Guide complet pour créer un nouveau guide
 - [`docs/guides/bonnes-pratiques-cours.md`](./docs/guides/bonnes-pratiques-cours.md) - Standards de qualité et recommandations
 - [`docs/guides/impeccable-workflow.md`](./docs/guides/impeccable-workflow.md) - 15 skills en 6 phases
+- [`docs/guides/bonnes-pratiques-demo-live.md`](./docs/guides/bonnes-pratiques-demo-live.md) - Standards et workflow pour demos interactives
 
 ### Projet
 - [`docs/project/import-summary.md`](./docs/project/import-summary.md) - Historique import Scanorr

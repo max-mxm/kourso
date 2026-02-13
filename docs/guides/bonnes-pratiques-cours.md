@@ -433,6 +433,26 @@ Inspiré par [article/projet externe] et adapté à notre contexte.
 - Communauté React France pour les retours
 ```
 
+### Mots-clés de Recherche
+
+Chaque guide et chaque section doit être référencé dans l'index de recherche (`lib/search-index.ts`) avec des `keywords` pertinents pour la commande Cmd+K.
+
+**Bonnes pratiques pour les keywords :**
+- Inclure les **acronymes** : SSR, SSG, ISR, RSC, TDD, a11y, etc.
+- Inclure les **traductions FR/EN** : "rendu serveur" pour "Server-Side Rendering", "gestion d'état" pour "State Management"
+- Inclure les **noms d'API/fonctions** associés : `getServerSideProps`, `generateStaticParams`, `useQuery`, `useMutation`
+- Penser aux **termes que les utilisateurs taperaient** naturellement (pas forcément le titre exact)
+- Ne pas dupliquer le `title` (déjà indexé automatiquement par le moteur de recherche)
+
+**Exemples concrets :**
+
+| Section | Keywords |
+|---------|----------|
+| Server-Side Rendering (SSR) | `rendu serveur`, `getServerSideProps`, `dynamic rendering`, `rendu dynamique` |
+| React Compiler | `compilation`, `optimisation automatique`, `babel`, `memoisation auto`, `react forget` |
+| useMemo - Mémoiser une Valeur | `valeur calculee`, `calcul couteux`, `memoisation valeur`, `dependances` |
+| TanStack Query - Les Bases | `useQuery`, `queryClient`, `queryKey`, `data fetching`, `requete`, `cache` |
+
 ---
 
 ## Tests et Validation
@@ -446,6 +466,8 @@ Inspiré par [article/projet externe] et adapté à notre contexte.
 - [ ] Pas de hard-coding de couleurs
 - [ ] Sources citées et contributeurs crédités
 - [ ] Apprentissages et pièges documentés
+- [ ] Mots-clés de recherche ajoutés dans `lib/search-index.ts`
+- [ ] Keywords incluent acronymes, traductions FR/EN, termes API
 
 **Technique :**
 - [ ] Navigation fonctionne (scroll spy, sidebar)
@@ -531,6 +553,10 @@ npx lighthouse http://localhost:3000/guides/[slug] --view
 ### 9. Manque de Métriques
 ❌ **ERREUR :** "C'est plus rapide maintenant"
 ✅ **CORRECTION :** "Temps de chargement : 4.2s → 1.1s (-74%)"
+
+### 10. Oubli de l'Index de Recherche
+❌ **ERREUR :** Créer un guide sans mettre à jour `lib/search-index.ts`
+✅ **CORRECTION :** Toujours ajouter le guide + ses sections dans l'index avec des `keywords` pertinents (acronymes, traductions FR/EN, noms d'API). Voir [ajouter-un-cours.md, étape 3.2](./ajouter-un-cours.md)
 
 ---
 
