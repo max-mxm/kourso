@@ -32,7 +32,7 @@ const SEARCH_INDEX: SearchItem[] = [
     description: 'Schemas, inference de types, validation de formulaires et d\'API. De la validation basique aux patterns de production.',
     href: '/guides/zod-validation',
     tags: ['Zod', 'TypeScript', 'Validation'],
-    keywords: ['schema', 'parse', 'safeParse', 'z.object', 'z.string', 'z.infer', 'z.enum', 'runtime validation', 'type inference', 'type erasure', 'validation donnees', 'type-safe', 'formulaire', 'api'],
+    keywords: ['schema', 'parse', 'safeParse', 'z.object', 'z.string', 'z.infer', 'z.enum', 'z.lazy', 'z.brand', 'z.transform', 'z.refine', 'runtime validation', 'type inference', 'type erasure', 'validation donnees', 'type-safe', 'formulaire', 'api', 'zod v4'],
   },
   {
     type: 'guide-section',
@@ -48,7 +48,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/zod-validation#primitive-schemas',
     tags: ['Zod'],
     parentTitle: 'Zod : La validation TypeScript que vous auriez dû utiliser depuis le début',
-    keywords: ['z.string', 'z.number', 'z.boolean', 'z.date', 'z.literal', 'z.coerce', '.email', '.url', '.uuid', '.optional', '.nullable', 'z.enum'],
+    keywords: ['z.string', 'z.number', 'z.boolean', 'z.date', 'z.bigint', 'z.literal', 'z.coerce', 'z.undefined', 'z.null', 'z.void', 'z.unknown', 'z.never', '.email', '.url', '.uuid', '.ip', '.cidr', '.emoji', '.datetime', '.nanoid', '.regex', '.min', '.max', '.trim', '.toLowerCase', '.optional', '.nullable', '.default', 'z.enum'],
   },
   {
     type: 'guide-section',
@@ -72,7 +72,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/zod-validation#composable-schemas',
     tags: ['Zod'],
     parentTitle: 'Zod : La validation TypeScript que vous auriez dû utiliser depuis le début',
-    keywords: ['merge', 'extend', 'pick', 'omit', 'partial', '.required', 'z.input', 'z.output', 'standard schema', '.deepPartial'],
+    keywords: ['merge', 'extend', 'pick', 'omit', 'partial', '.required', 'z.input', 'z.output', 'standard schema', '.deepPartial', 'schema composition', 'reusable schemas'],
   },
   {
     type: 'guide-section',
@@ -128,7 +128,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/zod-validation#advanced-patterns',
     tags: ['Zod'],
     parentTitle: 'Zod : La validation TypeScript que vous auriez dû utiliser depuis le début',
-    keywords: ['discriminated union', 'recursive', 'branded types', 'z.lazy', 'state machine', 'generic factory', 'generiques'],
+    keywords: ['discriminated union', 'recursive', 'branded types', 'z.lazy', 'z.brand', 'state machine', 'generic factory', 'generiques', 'ZodType', 'ZodTypeAny', 'nominal types', 'factory pattern', 'paginated response'],
   },
   {
     type: 'guide-section',
@@ -172,7 +172,7 @@ const SEARCH_INDEX: SearchItem[] = [
     description: 'Query, Router, Table, Virtual, Form, Store et Pacer. Du data fetching a l\'architecture de production.',
     href: '/guides/tanstack-react',
     tags: ['TanStack Query', 'TanStack Router', 'React'],
-    keywords: ['react query', 'data fetching', 'cache', 'useQuery', 'useMutation', 'queryClient', 'headless', 'type-safe', 'staleTime', 'server state'],
+    keywords: ['react query', 'tanstack query', 'data fetching', 'cache', 'useQuery', 'useMutation', 'useInfiniteQuery', 'queryClient', 'queryKey', 'headless', 'type-safe', 'staleTime', 'gcTime', 'invalidateQueries', 'server state', 'swr', 'apollo alternative'],
   },
   {
     type: 'guide-section',
@@ -188,7 +188,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/tanstack-react#query-basics',
     tags: ['TanStack Query'],
     parentTitle: 'TanStack : Comment éliminer 80% de votre boilerplate React',
-    keywords: ['useQuery', 'queryClient', 'queryKey', 'staleTime', 'gcTime', 'retry', 'refetchOnWindowFocus', 'isLoading', 'isFetching', 'isError', 'query function'],
+    keywords: ['useQuery', 'queryClient', 'QueryClient', 'queryKey', 'staleTime', 'gcTime', 'cacheTime', 'retry', 'refetchOnWindowFocus', 'refetchOnMount', 'refetchOnReconnect', 'isLoading', 'isFetching', 'isError', 'isPending', 'isSuccess', 'query function', 'QueryClientProvider'],
   },
   {
     type: 'guide-section',
@@ -196,7 +196,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/tanstack-react#query-advanced',
     tags: ['TanStack Query'],
     parentTitle: 'TanStack : Comment éliminer 80% de votre boilerplate React',
-    keywords: ['useInfiniteQuery', 'prefetch', 'pagination', 'parallel queries', 'dependent queries', 'select', 'placeholderData', 'initialData', 'useQueries', 'refetchInterval', 'enabled'],
+    keywords: ['useInfiniteQuery', 'getNextPageParam', 'getPreviousPageParam', 'hasNextPage', 'fetchNextPage', 'prefetchQuery', 'prefetchInfiniteQuery', 'pagination', 'cursor pagination', 'parallel queries', 'dependent queries', 'select', 'placeholderData', 'initialData', 'useQueries', 'refetchInterval', 'enabled', 'infinite scroll'],
   },
   {
     type: 'guide-section',
@@ -204,7 +204,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/tanstack-react#mutations-invalidation',
     tags: ['TanStack Query'],
     parentTitle: 'TanStack : Comment éliminer 80% de votre boilerplate React',
-    keywords: ['useMutation', 'invalidateQueries', 'optimistic update', 'mutateAsync', 'onMutate', 'onSettled', 'cancelQueries', 'setQueryData', 'rollback'],
+    keywords: ['useMutation', 'mutate', 'mutateAsync', 'invalidateQueries', 'refetchQueries', 'optimistic update', 'optimistic ui', 'onMutate', 'onSuccess', 'onError', 'onSettled', 'cancelQueries', 'setQueryData', 'getQueryData', 'rollback', 'mutation context'],
   },
   {
     type: 'guide-section',
@@ -220,7 +220,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/tanstack-react#tanstack-router',
     tags: ['TanStack Router'],
     parentTitle: 'TanStack : Comment éliminer 80% de votre boilerplate React',
-    keywords: ['router', 'type-safe routing', 'file-based routing', 'createRootRoute', 'createRoute', 'Outlet', 'validateSearch', 'ensureQueryData', 'useSuspenseQuery', 'pendingComponent'],
+    keywords: ['tanstack router', 'router', 'type-safe routing', 'file-based routing', 'createRootRoute', 'createRoute', 'createFileRoute', 'Route', 'Outlet', 'Link', 'useNavigate', 'useParams', 'useSearch', 'validateSearch', 'ensureQueryData', 'useSuspenseQuery', 'pendingComponent', 'loaderData', 'beforeLoad'],
   },
   {
     type: 'guide-section',
@@ -228,7 +228,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/tanstack-react#tanstack-table',
     tags: ['TanStack Table'],
     parentTitle: 'TanStack : Comment éliminer 80% de votre boilerplate React',
-    keywords: ['useReactTable', 'ColumnDef', 'flexRender', 'getCoreRowModel', 'getSortedRowModel', 'getFilteredRowModel', 'getPaginationRowModel', 'headless', 'sorting', 'filtrage'],
+    keywords: ['tanstack table', 'useReactTable', 'createColumnHelper', 'ColumnDef', 'flexRender', 'getCoreRowModel', 'getSortedRowModel', 'getFilteredRowModel', 'getPaginationRowModel', 'getGroupedRowModel', 'getExpandedRowModel', 'headless table', 'sorting', 'filtrage', 'pagination', 'row selection', 'column visibility'],
   },
   {
     type: 'guide-section',
@@ -236,7 +236,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/tanstack-react#tanstack-virtual',
     tags: ['TanStack Virtual'],
     parentTitle: 'TanStack : Comment éliminer 80% de votre boilerplate React',
-    keywords: ['useVirtualizer', 'virtualisation', 'virtual scroll', 'windowing', 'estimateSize', 'overscan', 'measureElement', 'getTotalSize', 'getVirtualItems', 'scrollToIndex'],
+    keywords: ['tanstack virtual', 'useVirtualizer', 'virtualisation', 'virtual scroll', 'windowing', 'estimateSize', 'overscan', 'measureElement', 'getTotalSize', 'getVirtualItems', 'scrollToIndex', 'scrollToOffset', 'react-window alternative', 'react-virtualized alternative', 'virtualItem', 'virtualRows'],
   },
   {
     type: 'guide-section',
@@ -252,7 +252,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/tanstack-react#tanstack-store',
     tags: ['TanStack Store'],
     parentTitle: 'TanStack : Comment éliminer 80% de votre boilerplate React',
-    keywords: ['store', 'setState', 'subscribe', 'useStore', 'selector', 'signal', 'state management'],
+    keywords: ['tanstack store', 'Store', 'createStore', 'setState', 'subscribe', 'useStore', 'selector', 'signal', 'state management', 'zustand alternative', 'redux alternative', 'reactive store'],
   },
   {
     type: 'guide-section',
@@ -276,7 +276,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/tanstack-react#ssr-nextjs',
     tags: ['TanStack Query', 'Next.js'],
     parentTitle: 'TanStack : Comment éliminer 80% de votre boilerplate React',
-    keywords: ['ssr', 'server side rendering', 'next.js', 'hydration', 'dehydrate', 'HydrationBoundary', 'useSuspenseQuery', 'server components', 'revalidate'],
+    keywords: ['ssr', 'server side rendering', 'next.js', 'hydration', 'dehydrate', 'hydrate', 'HydrationBoundary', 'DehydratedState', 'useSuspenseQuery', 'server components', 'prefetchQuery', 'revalidate', 'streaming'],
   },
   {
     type: 'guide-section',
@@ -296,7 +296,7 @@ const SEARCH_INDEX: SearchItem[] = [
     description: 'Patterns avances React 19 : Compiler, Server Components, Actions. Solutions eprouvees et cas d\'usage professionnels.',
     href: '/guides/react-19-advanced',
     tags: ['React 19', 'Server Components', 'Compiler'],
-    keywords: ['react 19', 'use()', 'useActionState', 'useOptimistic', 'useTransition', 'rsc', 'server actions', 'concurrent rendering', 'react compiler'],
+    keywords: ['react 19', 'use()', 'useActionState', 'useOptimistic', 'useTransition', 'useDeferredValue', 'rsc', 'server components', 'server actions', 'use server', 'use client', 'concurrent rendering', 'react compiler', 'react forget', 'streaming', 'ppr', 'suspense'],
   },
   {
     type: 'guide-section',
@@ -312,7 +312,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/react-19-advanced#use-hook',
     tags: ['React 19'],
     parentTitle: 'React 19 : Ce que les devs seniors font (et que vous devriez copier)',
-    keywords: ['use()', 'hook use', 'suspense', 'promise', 'context', 'async component', 'conditional hook', 'suspense 2.0'],
+    keywords: ['use()', 'hook use', 'suspense', 'promise', 'context', 'async component', 'conditional hook', 'suspense 2.0', 'Suspense', 'fallback', 'await promise', 'use context'],
   },
   {
     type: 'guide-section',
@@ -320,7 +320,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/react-19-advanced#react-compiler',
     tags: ['React 19', 'Compiler'],
     parentTitle: 'React 19 : Ce que les devs seniors font (et que vous devriez copier)',
-    keywords: ['react compiler', 'babel-plugin-react-compiler', 'use no memo', 'react forget', 'automatic memoization', 'expression-level'],
+    keywords: ['react compiler', 'babel-plugin-react-compiler', 'use no memo', 'react forget', 'automatic memoization', 'auto memoization', 'expression-level', 'forget compiler', 'compilation', 'jsx transform', 'eslint-plugin-react-compiler'],
   },
   {
     type: 'guide-section',
@@ -328,7 +328,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/react-19-advanced#server-components',
     tags: ['React 19', 'RSC'],
     parentTitle: 'React 19 : Ce que les devs seniors font (et que vous devriez copier)',
-    keywords: ['rsc', 'server components', 'use client', 'use server', 'async component', 'zero bundle', 'hydration', 'prisma'],
+    keywords: ['rsc', 'server components', 'react server components', 'use client', 'use server', 'async component', 'server component', 'client component', 'zero bundle', 'zero js', 'hydration', 'prisma', 'database access', 'server-only'],
   },
   {
     type: 'guide-section',
@@ -336,7 +336,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/react-19-advanced#actions-transitions',
     tags: ['React 19'],
     parentTitle: 'React 19 : Ce que les devs seniors font (et que vous devriez copier)',
-    keywords: ['useTransition', 'startTransition', 'isPending', 'non-blocking', 'interruptible', 'async actions'],
+    keywords: ['useTransition', 'startTransition', 'isPending', 'non-blocking', 'interruptible', 'async actions', 'transition', 'concurrent mode', 'low priority update', 'action'],
   },
   {
     type: 'guide-section',
@@ -344,7 +344,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/react-19-advanced#use-action-state',
     tags: ['React 19'],
     parentTitle: 'React 19 : Ce que les devs seniors font (et que vous devriez copier)',
-    keywords: ['useActionState', 'useOptimistic', 'optimistic update', 'FormData', 'rollback', 'server mutation', 'form state'],
+    keywords: ['useActionState', 'useFormStatus', 'useOptimistic', 'optimistic update', 'optimistic ui', 'FormData', 'rollback', 'server mutation', 'form state', 'form action', 'pending state', 'isPending'],
   },
   {
     type: 'guide-section',
@@ -352,7 +352,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/react-19-advanced#streaming',
     tags: ['React 19'],
     parentTitle: 'React 19 : Ce que les devs seniors font (et que vous devriez copier)',
-    keywords: ['streaming', 'ppr', 'partial pre-rendering', 'suspense boundary', 'ttfb', 'selective hydration', 'html streaming'],
+    keywords: ['streaming', 'streaming ssr', 'ppr', 'partial pre-rendering', 'suspense boundary', 'Suspense', 'ttfb', 'fcp', 'selective hydration', 'progressive hydration', 'html streaming', 'renderToReadableStream'],
   },
   {
     type: 'guide-section',
@@ -360,7 +360,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/react-19-advanced#bundle-optimization',
     tags: ['React 19'],
     parentTitle: 'React 19 : Ce que les devs seniors font (et que vous devriez copier)',
-    keywords: ['tree-shaking', 'code splitting', 'lazy loading', 'dynamic()', 'next/dynamic', '@next/bundle-analyzer', 'webpack-bundle-analyzer'],
+    keywords: ['tree-shaking', 'code splitting', 'lazy loading', 'React.lazy', 'lazy()', 'dynamic()', 'next/dynamic', '@next/bundle-analyzer', 'webpack-bundle-analyzer', 'import()', 'dynamic import', 'barrel file'],
   },
   {
     type: 'guide-section',
@@ -440,7 +440,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/react-19-advanced#custom-hooks',
     tags: ['React 19'],
     parentTitle: 'React 19 : Ce que les devs seniors font (et que vous devriez copier)',
-    keywords: ['custom hook', 'useLocalStorage', 'useFetch', 'useMediaQuery', 'useDebounce', 'useIntersectionObserver'],
+    keywords: ['custom hook', 'useLocalStorage', 'useFetch', 'useMediaQuery', 'useDebounce', 'useThrottle', 'useIntersectionObserver', 'usePrevious', 'useAsync', 'useToggle', 'hook pattern'],
   },
   {
     type: 'guide-section',
@@ -460,7 +460,7 @@ const SEARCH_INDEX: SearchItem[] = [
     description: 'Modes de rendu SSR, SSG, ISR et Client Components. Retours d\'experience sur des projets en production avec exemples concrets.',
     href: '/guides/nextjs-demo',
     tags: ['Next.js 16', 'React 19', 'TypeScript'],
-    keywords: ['nextjs', 'next.js 16', 'app router', 'react server components', 'server actions', 'rendering modes', 'fullstack'],
+    keywords: ['nextjs', 'next.js', 'next.js 16', 'app router', 'app directory', 'pages router', 'react server components', 'rsc', 'server actions', 'server components', 'rendering modes', 'ssr', 'ssg', 'isr', 'csr', 'ppr', 'generateStaticParams', 'generateMetadata', 'revalidatePath', 'fullstack', 'vercel'],
   },
   {
     type: 'guide-section',
@@ -476,7 +476,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/nextjs-demo#ssr',
     tags: ['Next.js', 'SSR'],
     parentTitle: 'Next.js 16 : Les erreurs que j\'ai faites pour que vous ne les fassiez pas',
-    keywords: ['ssr', 'server side rendering', 'getServerSideProps', 'dynamic rendering', 'cache no-store', 'per-request', 'fetch'],
+    keywords: ['ssr', 'server side rendering', 'getServerSideProps', 'dynamic rendering', 'dynamic route', 'cache no-store', 'cache force-dynamic', 'per-request', 'fetch', 'cookies()', 'headers()', 'searchParams'],
   },
   {
     type: 'guide-section',
@@ -484,7 +484,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/nextjs-demo#ssg',
     tags: ['Next.js', 'SSG'],
     parentTitle: 'Next.js 16 : Les erreurs que j\'ai faites pour que vous ne les fassiez pas',
-    keywords: ['ssg', 'static generation', 'getStaticProps', 'generateStaticParams', 'build time', 'force-cache', 'cdn', 'pre-rendering'],
+    keywords: ['ssg', 'static generation', 'getStaticProps', 'getStaticPaths', 'generateStaticParams', 'build time', 'force-cache', 'static export', 'output export', 'cdn', 'edge', 'pre-rendering', 'static html'],
   },
   {
     type: 'guide-section',
@@ -492,7 +492,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/nextjs-demo#isr',
     tags: ['Next.js', 'ISR'],
     parentTitle: 'Next.js 16 : Les erreurs que j\'ai faites pour que vous ne les fassiez pas',
-    keywords: ['isr', 'revalidate', 'on-demand revalidation', 'stale-while-revalidate', 'background regeneration', 'cache'],
+    keywords: ['isr', 'incremental static regeneration', 'revalidate', 'revalidatePath', 'revalidateTag', 'on-demand revalidation', 'on-demand isr', 'stale-while-revalidate', 'background regeneration', 'cache', 'next revalidate', 'unstable_cache'],
   },
   {
     type: 'guide-section',
@@ -500,7 +500,7 @@ const SEARCH_INDEX: SearchItem[] = [
     href: '/guides/nextjs-demo#csr',
     tags: ['Next.js', 'CSR'],
     parentTitle: 'Next.js 16 : Les erreurs que j\'ai faites pour que vous ne les fassiez pas',
-    keywords: ['csr', 'client side rendering', 'useEffect', 'useState', 'spa', 'single page app', 'use client', 'ttfb', 'fcp'],
+    keywords: ['csr', 'client side rendering', 'useEffect', 'useState', 'spa', 'single page app', 'use client', 'client component', 'ttfb', 'fcp', 'lcp', 'cls', 'inp', 'hydration', 'interactive'],
   },
   {
     type: 'guide-section',
@@ -731,7 +731,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: 'Introduction',
     href: '/blog/tdd-frontend-vs-backend#introduction',
     tags: ['TDD'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['red green refactor', 'test cycle', 'test unitaire'],
   },
   {
@@ -739,7 +739,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: 'Le probleme du rendu visuel',
     href: '/blog/tdd-frontend-vs-backend#le-probleme-visuel',
     tags: ['TDD', 'Frontend'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['rendu visuel', 'ui testing', 'visual testing', 'snapshot', 'dom'],
   },
   {
@@ -747,7 +747,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: 'Les defis specifiques au frontend',
     href: '/blog/tdd-frontend-vs-backend#les-defis-specifiques',
     tags: ['TDD', 'Frontend'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['async testing', 'dom testing', 'browser apis', 'flaky tests'],
   },
   {
@@ -755,7 +755,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: '1. Etat asynchrone omnipresent',
     href: '/blog/tdd-frontend-vs-backend#etat-asynchrone',
     tags: ['TDD'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['async', 'promise', 'await', 'waitFor', 'act', 'mock fetch'],
   },
   {
@@ -763,7 +763,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: '2. Complexite des interactions utilisateur',
     href: '/blog/tdd-frontend-vs-backend#interactions-utilisateur',
     tags: ['TDD'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['userEvent', 'click', 'keyboard', 'focus management', 'aria attributes'],
   },
   {
@@ -771,7 +771,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: '3. Le DOM et le CSS',
     href: '/blog/tdd-frontend-vs-backend#dom-et-css',
     tags: ['TDD'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['dom', 'css', 'toBeInTheDocument', 'toBeVisible', 'display none', 'media query'],
   },
   {
@@ -779,7 +779,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: '4. Mocks et dependances externes',
     href: '/blog/tdd-frontend-vs-backend#mocks-complexes',
     tags: ['TDD'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['mock', 'stub', 'spy', 'msw', 'IntersectionObserver', 'matchMedia', 'localStorage mock'],
   },
   {
@@ -787,7 +787,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: '5. Separation des preoccupations',
     href: '/blog/tdd-frontend-vs-backend#separation-concerns',
     tags: ['TDD'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['separation of concerns', 'solid', 'custom hooks', 'fonctions pures', 'logique metier'],
   },
   {
@@ -795,7 +795,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: 'Pourquoi continuer malgre tout ?',
     href: '/blog/tdd-frontend-vs-backend#pourquoi-continuer',
     tags: ['TDD'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['test-after development', 'regression testing', 'refactoring', 'cypress', 'playwright'],
   },
   {
@@ -803,7 +803,7 @@ const SEARCH_INDEX: SearchItem[] = [
     title: 'Conclusion',
     href: '/blog/tdd-frontend-vs-backend#conclusion',
     tags: ['TDD'],
-    parentTitle: "TDD cote front vs back",
+    parentTitle: "TDD Frontend vs Backend",
     keywords: ['approche hybride', 'test e2e', 'test integration', 'vitest', 'testing library'],
   },
 

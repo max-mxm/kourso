@@ -52,7 +52,7 @@ const GUIDES: LandingContentItem[] = [
       'Patterns avances React 19 : Compiler, Server Components, Actions. Solutions eprouvees et cas d\'usage professionnels.',
     tags: ['React 19', 'Server Components', 'Compiler'],
     accentColor: 'rgb(168, 85, 247)',
-    sections: 18,
+    sections: 19,
     duration: '4h',
     level: 'Avance',
     publishedAt: '2026-02-07',
