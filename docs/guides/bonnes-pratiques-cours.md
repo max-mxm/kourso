@@ -421,7 +421,7 @@ Selon la documentation officielle React 19 :
 Source : [React v19 Documentation](https://react.dev/blog/2024/12/05/react-19)
 ```
 
-**Créditer les contributeurs et inspirations :**
+**Créditer les sources et inspirations :**
 ```markdown
 **Crédits :**
 Cette approche a été développée par l'équipe frontend (Marie, Alex, Thomas).
@@ -430,7 +430,7 @@ Inspiré par [article/projet externe] et adapté à notre contexte.
 **Remerciements :**
 - @marie pour l'implémentation initiale
 - @alex pour l'optimisation du bundle
-- Communauté React France pour les retours
+- Article [source] pour l'inspiration initiale
 ```
 
 ### Mots-clés de Recherche
@@ -603,13 +603,13 @@ npx lighthouse http://localhost:3000/guides/[slug] --view
 - Mieux vaut un retour d'expérience honnête et imparfait que théorie parfaite
 - Partagez vos vraies histoires, succès ET échecs
 - Les apprentissages les plus précieux viennent des erreurs
-- La communauté apprend davantage de vos REX réelles
+- Les développeurs apprennent davantage des REX réelles
 
-**Contribuer au savoir communautaire :**
-- Partagez vos bonnes pratiques et leçons apprises
-- Aidez d'autres développeurs à éviter vos erreurs
-- Itérez et améliorer à base de retours
-- Créditer les idées et contribueurs
+**Partage de bonnes pratiques :**
+- Documenter les bonnes pratiques et leçons apprises
+- Aider d'autres développeurs à éviter ces erreurs
+- Itérer et améliorer à base de l'expérience
+- Créditer les sources et inspirations
 
 ---
 

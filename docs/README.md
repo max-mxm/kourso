@@ -32,7 +32,7 @@ Contexte historique, stack technique, et roadmap.
 
 ## 🚀 Démarrage Rapide
 
-### Nouveau contributeur ?
+### Découvrir le projet ?
 1. Lire [project/import-summary.md](./project/import-summary.md) - Contexte et état actuel
 2. Lire [architecture/cours-structure.md](./architecture/cours-structure.md) - Structure des guides
 3. Parcourir [design-system/](./design-system/) - Comprendre le design
@@ -79,13 +79,13 @@ Contexte historique, stack technique, et roadmap.
 
 ---
 
-## 🤝 Contribuer
+## 📝 Faire Évoluer la Documentation
 
-Cette documentation évolue avec le projet. N'hésitez pas à :
-- Ajouter des exemples concrets
-- Corriger les erreurs
-- Proposer des améliorations
-- Documenter les nouveaux patterns
+Cette documentation évolue avec le projet. Pour ajouter/modifier :
+- Ajouter des exemples concrets au fil de l'expérience
+- Corriger les erreurs identifiées
+- Documenter les nouveaux patterns découverts
+- Enrichir avec de nouveaux retours d'expérience
 
 ---
 

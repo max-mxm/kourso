@@ -29,16 +29,16 @@ Résumé complet de l'import depuis Scanorr.
 **maxpaths** est une plateforme simple pour partager et documenter les bonnes pratiques et retours d'expérience (REX).
 
 ### Objectifs
-- **Simplicité** - Facile à contribuer, facile à consulter
+- **Simplicité** - Facile à consulter et à explorer
 - **Authenticité** - Bonnes pratiques réelles issues du terrain
 - **Accessibilité** - Guides accessibles à tous, partout
-- **Open Source** - Code ouvert et contributif
+- **Transparent** - Code disponible publiquement
 
 ### Valeurs
 - Partage de savoirs pratiques avant tout
 - Retours d'expérience réels et testés
 - Performance et accessibilité
-- Communauté bienveillante
+- Partage d'expérience authentique
 
 ---
 
@@ -102,16 +102,16 @@ Résumé complet de l'import depuis Scanorr.
 - [ ] Déploiement initial
 
 ### Phase 2 : Enrichissement (Mars 2026)
-- [ ] 3-5 guides supplémentaires partagés par la communauté
+- [ ] 3-5 guides supplémentaires issus de l'expérience terrain
 - [ ] Composants interactifs (Quiz, Playground)
 - [ ] Système de recherche
 - [ ] Amélioration SEO
 
-### Phase 3 : Communauté (Avril 2026)
-- [ ] Contributions externes
-- [ ] Système de feedback
+### Phase 3 : Interactivité (Avril 2026)
+- [ ] Système de commentaires (optionnel)
+- [ ] Newsletter (optionnel)
 - [ ] Analytics et métriques
-- [ ] Documentation contributeurs
+- [ ] Vidéos et animations pédagogiques
 
 ### Phase 4 : Scaling (Mai 2026+)
 - [ ] Backend avec authentification (optionnel)
@@ -134,23 +134,6 @@ Le projet est basé sur le design system et l'architecture de **Scanorr**, un pr
 - Système de thème dark/light
 - Architecture des cours (CourseLayout)
 - Workflow Impeccable
-
----
-
-## 🤝 Contribuer
-
-### Comment Contribuer
-1. Fork le projet
-2. Créer une branche (`git checkout -b feature/ma-feature`)
-3. Commit les changements (`git commit -m 'Ajout de ma feature'`)
-4. Push vers la branche (`git push origin feature/ma-feature`)
-5. Ouvrir une Pull Request
-
-### Guidelines
-- Lire la documentation dans `docs/`
-- Respecter le design system
-- Ajouter des tests si applicable
-- Mettre à jour la documentation
 
 ---
 

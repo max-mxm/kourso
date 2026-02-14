@@ -186,9 +186,9 @@ Voir [`docs/architecture/cours-structure.md`](../../../docs/architecture/cours-s
 
 ---
 
-## Contributeurs
+## Auteur
 
-Cours créé en février 2026 pour la plateforme maxpaths.
+Cours créé par Maxime Morellon en février 2026 pour maxpaths.
 
 ---
 

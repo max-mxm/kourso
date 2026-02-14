@@ -35,14 +35,14 @@ export default function React19AdvancedCourse() {
     // 1-2. Fondamentaux
     {
       id: 'introduction',
-      title: 'Introduction à React 19',
+      title: 'Qu\'est-ce qui change vraiment dans React 19 ?',
       icon: <Rocket className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <IntroductionSection />
     },
     {
       id: 'use-hook',
-      title: 'Hook use() & Suspense 2.0',
+      title: 'Comment use() simplifie le data fetching ?',
       icon: <Package className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <UseHookSection />
@@ -51,35 +51,35 @@ export default function React19AdvancedCourse() {
     // 3-7. Rendering & Concurrent Features
     {
       id: 'react-compiler',
-      title: 'React Compiler',
+      title: 'Pourquoi le React Compiler va remplacer useMemo ?',
       icon: <Cpu className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ReactCompilerSection />
     },
     {
       id: 'server-components',
-      title: 'React Server Components (RSC)',
+      title: 'Quand utiliser les Server Components ?',
       icon: <Server className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ServerComponentsSection />
     },
     {
       id: 'actions-transitions',
-      title: 'Actions & Async Transitions',
+      title: 'Comment gérer les actions async sans loading state ?',
       icon: <Zap className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ActionsTransitionsSection />
     },
     {
       id: 'use-action-state',
-      title: 'useActionState & useOptimistic',
+      title: 'Comment optimiser l\'UX pendant les requêtes serveur ?',
       icon: <RefreshCw className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <UseActionStateSection />
     },
     {
       id: 'streaming',
-      title: 'Streaming & Partial Pre-rendering',
+      title: 'Comment accélérer le temps de chargement perçu ?',
       icon: <Activity className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <StreamingSection />
@@ -88,35 +88,35 @@ export default function React19AdvancedCourse() {
     // 8-12. Optimisations
     {
       id: 'bundle-optimization',
-      title: 'Bundle Optimization',
+      title: 'Comment réduire drastiquement la taille de votre bundle ?',
       icon: <Package className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <BundleOptimizationSection />
     },
     {
       id: 'performance-hooks',
-      title: 'Performance Hooks',
+      title: 'Quels hooks pour diagnostiquer les problèmes de perf ?',
       icon: <Gauge className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <PerformanceHooksSection />
     },
     {
       id: 'memory-management',
-      title: 'Memory Management',
+      title: 'Comment éviter les fuites mémoire dans React ?',
       icon: <Trash2 className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <MemoryManagementSection />
     },
     {
       id: 'data-fetching',
-      title: 'Data Fetching Patterns',
+      title: 'Quel pattern choisir pour fetcher vos données ?',
       icon: <Database className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <DataFetchingSection />
     },
     {
       id: 'state-consolidation',
-      title: 'State Consolidation Patterns',
+      title: 'Comment simplifier votre gestion d\'état ?',
       icon: <Combine className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <StateConsolidationSection />
@@ -125,35 +125,35 @@ export default function React19AdvancedCourse() {
     // 13-17. Bonnes Pratiques
     {
       id: 'architecture',
-      title: 'Architecture Scalable',
+      title: 'Comment structurer une app React qui scale ?',
       icon: <Building className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ArchitectureSection />
     },
     {
       id: 'error-handling',
-      title: 'Error Handling & Boundaries',
+      title: 'Comment gérer les erreurs gracieusement ?',
       icon: <Shield className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ErrorHandlingSection />
     },
     {
       id: 'typescript-patterns',
-      title: 'TypeScript Advanced Patterns',
+      title: 'Quels patterns TypeScript pour React 19 ?',
       icon: <Code className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <TypeScriptPatternsSection />
     },
     {
       id: 'testing-strategy',
-      title: 'Testing Strategy',
+      title: 'Comment tester efficacement vos Server Components ?',
       icon: <TestTube className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <TestingStrategySection />
     },
     {
       id: 'accessibility',
-      title: 'Accessibility (a11y)',
+      title: 'Comment garantir l\'accessibilité de votre app ?',
       icon: <Eye className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <AccessibilitySection />
@@ -162,14 +162,14 @@ export default function React19AdvancedCourse() {
     // 18-19. Avancé
     {
       id: 'custom-hooks',
-      title: 'Custom Hooks Patterns',
+      title: 'Quels patterns pour des hooks réutilisables ?',
       icon: <Sparkles className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <CustomHooksSection />
     },
     {
       id: 'refs-metadata',
-      title: 'Refs as Props & Document Metadata',
+      title: 'Comment gérer les refs et metadata dans React 19 ?',
       icon: <Layers className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <RefsMetadataSection />
@@ -178,7 +178,7 @@ export default function React19AdvancedCourse() {
 
   return (
     <CourseLayout
-      title="React 19 - Bonnes Pratiques Seniors"
+      title="React 19 : Ce que les devs seniors font (et que vous devriez copier)"
       subtitle="Maîtriser React 19, performances et patterns avancés - 19 sections"
       sections={sections}
     />

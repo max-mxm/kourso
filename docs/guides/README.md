@@ -16,7 +16,7 @@ Workflow complet de refonte visuelle avec les 15 skills Impeccable.
 - Conseils d'exécution
 
 **Quand consulter** :
-- Pour contribuer, partager une bonne pratique ou améliorer un guide existant
+- Lors de la création ou amélioration d'un guide
 - Refonte ou amélioration de l'interface
 - Audit UX/UI
 - Optimisation du design

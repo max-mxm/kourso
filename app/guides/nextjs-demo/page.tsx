@@ -33,7 +33,7 @@ export default function NextJSDemoCourse() {
     // 1. Fondamentaux
     {
       id: 'introduction',
-      title: 'Introduction à Next.js 16',
+      title: 'Pourquoi Next.js 16 change votre façon de coder ?',
       icon: <Rocket className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <IntroductionSection />
@@ -42,42 +42,42 @@ export default function NextJSDemoCourse() {
     // 2-7. Modes de Rendu
     {
       id: 'ssr',
-      title: 'Server-Side Rendering (SSR)',
+      title: 'Quand utiliser le SSR plutôt que le SSG ?',
       icon: <Server className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <SSRSection />
     },
     {
       id: 'ssg',
-      title: 'Static Site Generation (SSG)',
+      title: 'Comment générer des pages statiques performantes ?',
       icon: <FileText className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <SSGSection />
     },
     {
       id: 'isr',
-      title: 'Incremental Static Regeneration (ISR)',
+      title: 'Comment mettre à jour vos pages sans rebuild complet ?',
       icon: <RefreshCw className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ISRSection />
     },
     {
       id: 'csr',
-      title: 'Client-Side Rendering (CSR)',
+      title: 'Dans quels cas privilégier le rendu côté client ?',
       icon: <Monitor className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <CSRSection />
     },
     {
       id: 'hybrid',
-      title: 'Hybrid (Server + Client)',
+      title: 'Comment mixer rendering strategies intelligemment ?',
       icon: <Layers className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <HybridSection />
     },
     {
       id: 'client-components',
-      title: 'Client Components',
+      title: 'Quand marquer un composant "use client" ?',
       icon: <Component className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ClientComponentsSection />
@@ -86,42 +86,42 @@ export default function NextJSDemoCourse() {
     // 8-13. Optimisations
     {
       id: 'dynamic-import',
-      title: 'Dynamic Import & Code Splitting',
+      title: 'Comment charger du code uniquement quand nécessaire ?',
       icon: <Package className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <DynamicImportSection />
     },
     {
       id: 'server-actions',
-      title: 'Server Actions',
+      title: 'Comment remplacer vos API routes par des Server Actions ?',
       icon: <Zap className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <ServerActionsSection />
     },
     {
       id: 'streaming',
-      title: 'Streaming & Suspense',
+      title: 'Comment afficher du contenu progressivement ?',
       icon: <Activity className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <StreamingSection />
     },
     {
       id: 'frontend-performance',
-      title: 'Performance Frontend',
+      title: 'Quelles techniques pour un frontend ultra-rapide ?',
       icon: <Gauge className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <FrontendPerformanceSection />
     },
     {
       id: 'backend-performance',
-      title: 'Performance Backend',
+      title: 'Comment optimiser vos Server Components ?',
       icon: <Database className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <BackendPerformanceSection />
     },
     {
       id: 'performance-measurement',
-      title: 'Mesure de Performance',
+      title: 'Comment mesurer et améliorer vos Core Web Vitals ?',
       icon: <Timer className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <PerformanceMeasurementSection />
@@ -130,35 +130,35 @@ export default function NextJSDemoCourse() {
     // 14-19. Bonnes Pratiques
     {
       id: 'security',
-      title: 'Sécurité',
+      title: 'Comment sécuriser votre app Next.js en production ?',
       icon: <Shield className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <SecuritySection />
     },
     {
       id: 'react-patterns',
-      title: 'React Best Practices',
+      title: 'Quelles bonnes pratiques React appliquer dans Next.js ?',
       icon: <Code className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ReactPatternsSection />
     },
     {
       id: 'composition',
-      title: 'Composition Patterns',
+      title: 'Comment composer vos composants efficacement ?',
       icon: <LayoutGrid className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <CompositionSection />
     },
     {
       id: 'architecture',
-      title: 'Architecture',
+      title: 'Comment structurer votre projet Next.js ?',
       icon: <Building className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ArchitectureSection />
     },
     {
       id: 'accessibility',
-      title: 'Accessibilité (a11y)',
+      title: 'Comment rendre votre app Next.js accessible ?',
       icon: <Eye className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <AccessibilitySection />
@@ -167,14 +167,14 @@ export default function NextJSDemoCourse() {
     // 20-21. Avancé
     {
       id: 'advanced-patterns',
-      title: 'Patterns Avancés',
+      title: 'Quels patterns avancés pour aller plus loin ?',
       icon: <Sparkles className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <AdvancedPatternsSection />
     },
     {
       id: 'comparison',
-      title: 'Comparaison & Conclusion',
+      title: 'SSR vs SSG vs ISR : lequel choisir ?',
       icon: <Target className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <ComparisonSection />
@@ -183,8 +183,8 @@ export default function NextJSDemoCourse() {
 
   return (
     <CourseLayout
-      title="Guide Next.js 16"
-      subtitle="Du débutant au senior - 22 sections complètes"
+      title="Next.js 16 : Les erreurs que j'ai faites pour que vous ne les fassiez pas"
+      subtitle="Du débutant au senior - 21 sections complètes"
       sections={sections}
     />
   );

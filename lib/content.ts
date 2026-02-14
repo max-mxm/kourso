@@ -3,7 +3,7 @@ import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
 
 export interface LandingContentItem {
   href: string;
-  type: 'guide' | 'article';
+  type: 'guide' | 'article' | 'demo';
   title: string;
   description: string;
   tags: string[];
@@ -21,7 +21,7 @@ const GUIDES: LandingContentItem[] = [
   {
     href: '/guides/zod-validation',
     type: 'guide',
-    title: 'Arretez de valider vos donnees a la main -- Zod fait mieux',
+    title: 'Zod : La validation TypeScript que vous auriez dû utiliser depuis le début',
     description:
       'Schemas, inference de types, validation de formulaires et d\'API. De la validation basique aux patterns de production.',
     tags: ['Zod', 'TypeScript', 'Validation'],
@@ -34,7 +34,7 @@ const GUIDES: LandingContentItem[] = [
   {
     href: '/guides/tanstack-react',
     type: 'guide',
-    title: 'TanStack : les 7 librairies qui remplacent tout votre boilerplate React',
+    title: 'TanStack : Comment éliminer 80% de votre boilerplate React',
     description:
       'Query, Router, Table, Virtual, Form, Store et Pacer. Du data fetching a l\'architecture de production.',
     tags: ['TanStack Query', 'TanStack Router', 'React'],
@@ -47,7 +47,7 @@ const GUIDES: LandingContentItem[] = [
   {
     href: '/guides/react-19-advanced',
     type: 'guide',
-    title: 'React 19 : ce que les seniors font differemment (et pourquoi ca marche)',
+    title: 'React 19 : Ce que les devs seniors font (et que vous devriez copier)',
     description:
       'Patterns avances React 19 : Compiler, Server Components, Actions. Solutions eprouvees et cas d\'usage professionnels.',
     tags: ['React 19', 'Server Components', 'Compiler'],
@@ -60,7 +60,7 @@ const GUIDES: LandingContentItem[] = [
   {
     href: '/guides/nextjs-demo',
     type: 'guide',
-    title: 'Next.js 16 : le guide que j\'aurais voulu avoir en production',
+    title: 'Next.js 16 : Les erreurs que j\'ai faites pour que vous ne les fassiez pas',
     description:
       'Modes de rendu SSR, SSG, ISR et Client Components. Retours d\'experience sur des projets en production avec exemples concrets.',
     tags: ['Next.js 16', 'React 19', 'TypeScript'],
@@ -74,7 +74,7 @@ const GUIDES: LandingContentItem[] = [
   {
     href: '/guides/react-memoization',
     type: 'guide',
-    title: 'La memoisation React demystifiee : quand (ne pas) optimiser',
+    title: 'Mémoisation React : Pourquoi vos optimisations ralentissent votre app',
     description:
       'Comprendre les 3 mecanismes de memoisation React avec des exemples concrets et testables.',
     tags: ['React', 'Performance', 'Hooks'],
@@ -131,7 +131,7 @@ const DEMOS: LandingDemoItem[] = [
 // Demos converties en LandingContentItem pour le catalogue
 const DEMOS_AS_CONTENT: LandingContentItem[] = DEMOS.map((demo) => ({
   href: demo.href,
-  type: 'guide' as const,
+  type: 'demo' as const,
   title: demo.title,
   description: demo.description,
   tags: demo.tags,
@@ -154,6 +154,26 @@ export function getGuidesForLanding(): LandingContentItem[] {
 export function getGuidesForCatalog(): LandingContentItem[] {
   const all = [...GUIDES, ...DEMOS_AS_CONTENT];
   return all.sort((a, b) => {
+    // Items sans publishedAt en dernier
+    if (!a.publishedAt && !b.publishedAt) return 0;
+    if (!a.publishedAt) return 1;
+    if (!b.publishedAt) return -1;
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  });
+}
+
+export function getDemosForCatalog(): LandingContentItem[] {
+  return [...DEMOS_AS_CONTENT].sort((a, b) => {
+    // Items sans publishedAt en dernier
+    if (!a.publishedAt && !b.publishedAt) return 0;
+    if (!a.publishedAt) return 1;
+    if (!b.publishedAt) return -1;
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  });
+}
+
+export function getGuidesOnlyForCatalog(): LandingContentItem[] {
+  return [...GUIDES].sort((a, b) => {
     // Items sans publishedAt en dernier
     if (!a.publishedAt && !b.publishedAt) return 0;
     if (!a.publishedAt) return 1;

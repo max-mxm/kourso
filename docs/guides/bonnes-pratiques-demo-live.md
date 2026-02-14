@@ -363,7 +363,19 @@ La propriete `ribbon` declenche l'affichage d'un badge orange avec point anime e
 
 Le texte affiche dans le badge est toujours "Live" (hardcode dans le JSX), la valeur de `ribbon` sert de `title` accessible au survol.
 
-### 5. Badge dans la Sidebar du Guide Parent
+### 5. Page Catalogue des Démos (`app/demos/page.tsx`)
+
+La demo apparaitra automatiquement dans le catalogue dedié `/demos` des qu'elle est ajoutee au tableau `DEMOS` dans `lib/content.ts`.
+
+**Verification :**
+1. Aller sur `/demos`
+2. Verifier que la demo apparait dans la grille
+3. Tester le filtrage par tags (Performance, Next.js, React, SSR)
+4. Verifier que le lien redirige correctement vers la demo
+
+**Note** : Le catalogue `/demos` affiche uniquement les demos (simulateurs interactifs), contrairement au catalogue `/guides` qui affiche les guides complets sans les demos.
+
+### 6. Badge dans la Sidebar du Guide Parent
 
 Le composant `CourseLayout` (`components/course/course-layout.tsx`) supporte un champ `badge` sur chaque section. Utiliser ce champ pour signaler dans la sidebar que la section contient un lien vers la demo.
 
@@ -407,7 +419,7 @@ Le badge s'affiche automatiquement a deux endroits :
 
 Ce badge permet a l'utilisateur de reperer rapidement depuis la sidebar quelle section du guide donne acces a la demo interactive.
 
-### 6. Generer les Keywords Techniques de Recherche
+### 7. Generer les Keywords Techniques de Recherche
 
 Apres avoir ajoute la demo a `lib/content.ts` et au guide parent, executer :
 
@@ -450,6 +462,8 @@ Les keywords seront ajoutes dans `lib/search-index.ts`.
 - [ ] Entree dans le tableau `DEMOS` de `lib/content.ts`
 - [ ] Titre landing aguicheur et distinct du titre technique de la page
 - [ ] Carte landing coherente avec les autres (composant `DemoCard` partage, palette supportee)
+- [ ] Demo visible dans le catalogue `/demos`
+- [ ] Filtrage par tags fonctionne correctement dans `/demos`
 - [ ] Entree dans le tableau `courses` de `app/guides/page.tsx` avec `ribbon` pour badge "Live"
 - [ ] Emplacement du CTA dans le guide parent valide par l'utilisateur
 - [ ] CTA dans le guide parent (section pertinente)

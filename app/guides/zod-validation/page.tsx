@@ -33,91 +33,91 @@ export default function ZodValidationCourse() {
   const sections = [
     {
       id: 'introduction',
-      title: 'Introduction a Zod',
+      title: 'Pourquoi Zod change la donne en validation TypeScript ?',
       icon: <Rocket className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <IntroductionSection />,
     },
     {
       id: 'primitive-schemas',
-      title: 'Schemas Primitifs et Methodes de Base',
+      title: 'Comment créer vos premiers schémas de validation ?',
       icon: <Box className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <PrimitiveSchemasSection />,
     },
     {
       id: 'parse-errors',
-      title: 'parse, safeParse et Gestion des Erreurs',
+      title: 'Quelle méthode choisir : parse ou safeParse ?',
       icon: <ShieldAlert className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <ParseErrorsSection />,
     },
     {
       id: 'complex-types',
-      title: 'Objets, Arrays et Types Complexes',
+      title: 'Comment valider des structures de données imbriquées ?',
       icon: <Layers className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ComplexTypesSection />,
     },
     {
       id: 'composable-schemas',
-      title: 'Schemas Composables',
+      title: 'Comment réutiliser vos schémas sans duplication ?',
       icon: <Puzzle className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ComposableSchemasSection />,
     },
     {
       id: 'transforms-refinements',
-      title: 'Transforms, Refinements et Pipes',
+      title: 'Comment ajouter une logique personnalisée à vos validations ?',
       icon: <Workflow className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <TransformsRefinementsSection />,
     },
     {
       id: 'performance-bundle',
-      title: 'Performance, Bundle Size et Alternatives',
+      title: 'Zod impacte-t-il les performances de votre app ?',
       icon: <Gauge className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <PerformanceBundleSection />,
     },
     {
       id: 'env-validation',
-      title: "Validation des Variables d'Environnement",
+      title: 'Comment valider votre .env au démarrage de l\'app ?',
       icon: <Settings className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <EnvValidationSection />,
     },
     {
       id: 'form-validation',
-      title: 'Formulaires -- React Hook Form + Zod',
+      title: 'Comment intégrer Zod dans vos formulaires React ?',
       icon: <FileText className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <FormValidationSection />,
     },
     {
       id: 'server-actions',
-      title: 'Next.js Server Actions et Zod',
+      title: 'Comment valider les données côté serveur avec Zod ?',
       icon: <Server className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ServerActionsSection />,
     },
     {
       id: 'api-validation',
-      title: 'Validation API -- Requetes et Reponses',
+      title: 'Comment garantir la fiabilité de vos endpoints API ?',
       icon: <Globe className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ApiValidationSection />,
     },
     {
       id: 'advanced-patterns',
-      title: 'Patterns Avances',
+      title: 'Quels patterns avancés pour des validations complexes ?',
       icon: <Sparkles className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <AdvancedPatternsSection />,
     },
     {
       id: 'ecosystem-v4',
-      title: 'Ecosysteme Zod et Migration v4',
+      title: 'Que change Zod v4 et comment migrer ?',
       icon: <Network className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <EcosystemV4Section />,
@@ -126,7 +126,7 @@ export default function ZodValidationCourse() {
 
   return (
     <CourseLayout
-      title="Zod -- Validation TypeScript-first"
+      title="Zod : La validation TypeScript que vous auriez dû utiliser depuis le début"
       subtitle="De la validation basique aux patterns de production -- 13 sections"
       sections={sections}
     />

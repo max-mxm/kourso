@@ -26,14 +26,14 @@ export default function ReactMemoizationCourse() {
     // 1-2. Fondamentaux
     {
       id: 'introduction',
-      title: 'Introduction a la Memoisation React',
+      title: 'Pourquoi vos optimisations ralentissent votre app ?',
       icon: <Rocket className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <IntroductionSection />,
     },
     {
       id: 'probleme-re-render',
-      title: 'Le Probleme du Re-render',
+      title: 'Qu\'est-ce qui déclenche vraiment un re-render ?',
       icon: <Repeat className="w-4 h-4 flex-shrink-0" />,
       category: 'fundamentals' as const,
       component: <ProblemeReRenderSection />,
@@ -42,14 +42,14 @@ export default function ReactMemoizationCourse() {
     // 3-4. Rendering
     {
       id: 'react-memo',
-      title: 'React.memo - Memoiser un Composant',
+      title: 'Comment éviter les re-renders inutiles de composants ?',
       icon: <Shield className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <ReactMemoSection />,
     },
     {
       id: 'usememo',
-      title: 'useMemo - Memoiser une Valeur',
+      title: 'Quand mémoiser un calcul coûteux ?',
       icon: <Brain className="w-4 h-4 flex-shrink-0" />,
       category: 'rendering' as const,
       component: <UseMemoSection />,
@@ -58,14 +58,14 @@ export default function ReactMemoizationCourse() {
     // 5-6. Optimisations
     {
       id: 'usecallback',
-      title: 'useCallback - Memoiser une Fonction',
+      title: 'Pourquoi vos callbacks cassent React.memo ?',
       icon: <Zap className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <UseCallbackSection />,
     },
     {
       id: 'trio-en-action',
-      title: 'Le Trio en Action - Exemple Complet',
+      title: 'Comment combiner React.memo, useMemo et useCallback ?',
       icon: <Puzzle className="w-4 h-4 flex-shrink-0" />,
       category: 'optimization' as const,
       component: <TrioEnActionSection />,
@@ -74,14 +74,14 @@ export default function ReactMemoizationCourse() {
     // 7-8. Bonnes Pratiques
     {
       id: 'comparaison-complete',
-      title: 'Comparaison Complete des Trois',
+      title: 'React.memo vs useMemo vs useCallback : lequel utiliser ?',
       icon: <Table2 className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ComparaisonCompleteSection />,
     },
     {
       id: 'erreurs-courantes',
-      title: 'Erreurs Courantes et Anti-Patterns',
+      title: 'Quelles erreurs éviter avec la mémoisation ?',
       icon: <AlertTriangle className="w-4 h-4 flex-shrink-0" />,
       category: 'best-practices' as const,
       component: <ErreursCourantesSection />,
@@ -90,14 +90,14 @@ export default function ReactMemoizationCourse() {
     // 9-10. Avance
     {
       id: 'quand-ne-pas-memoiser',
-      title: 'Quand ne PAS Memoiser',
+      title: 'Dans quels cas la mémoisation est contre-productive ?',
       icon: <XCircle className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <QuandNePasMemoiserSection />,
     },
     {
       id: 'react-compiler',
-      title: "React Compiler et l'Avenir",
+      title: 'Le React Compiler va-t-il remplacer la mémoisation manuelle ?',
       icon: <Cpu className="w-4 h-4 flex-shrink-0" />,
       category: 'advanced' as const,
       component: <ReactCompilerSection />,
@@ -106,7 +106,7 @@ export default function ReactMemoizationCourse() {
 
   return (
     <CourseLayout
-      title="useMemo, useCallback et React.memo"
+      title="Mémoisation React : Pourquoi vos optimisations ralentissent votre app"
       subtitle="Comprendre et maitriser la memoisation React - 10 sections"
       sections={sections}
     />

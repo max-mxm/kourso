@@ -48,7 +48,18 @@ Contient :
 Contient :
 - Structure et design obligatoire des demos live
 - Standards interactifs (mesures reelles, controles, feedback)
-- Ajout a la navigation (landing page + guide parent)
+- Ajout a la navigation (landing page + guide parent + catalogue /demos)
+- Checklist de validation
+
+---
+
+#### Si modification dans `app/demos/**/*`
+→ **Consulter** : [`docs/guides/bonnes-pratiques-demo-live.md`](./docs/guides/bonnes-pratiques-demo-live.md)
+
+Contient :
+- Structure et design obligatoire des demos live
+- Standards interactifs (mesures reelles, controles, feedback)
+- Ajout dans le catalogue `/demos` et dans le guide parent
 - Checklist de validation
 
 ---
@@ -183,6 +194,7 @@ Contient :
 | "impeccable", "améliorer UI", "refonte", "audit" | [`docs/guides/impeccable-workflow.md`](./docs/guides/impeccable-workflow.md) |
 | "qu'est-ce qui a été importé", "contexte", "historique" | [`docs/project/import-summary.md`](./docs/project/import-summary.md) |
 | "demo live", "simulateur", "interactif", "benchmark" | [`docs/guides/bonnes-pratiques-demo-live.md`](./docs/guides/bonnes-pratiques-demo-live.md) |
+| "catalogue demos", "page demos", "liste demos" | [`docs/guides/bonnes-pratiques-demo-live.md`](./docs/guides/bonnes-pratiques-demo-live.md) (section 5) |
 | "keywords", "mots-cles", "recherche", "search index" | Executer `/generate-keywords` |
 | "nouvel article", "ajouter article", "creer article", "blog" | [`docs/guides/ajouter-article-blog.md`](./docs/guides/ajouter-article-blog.md) |
 
@@ -280,14 +292,14 @@ Provider dans `app/layout.tsx` via `ThemeProvider`
 
 ---
 
-## 🤝 Contribuer à la Documentation
+## 📝 Évolution de la Documentation
 
-La documentation évolue avec le projet. Pour ajouter/modifier :
+La documentation évolue avec le projet. Workflow interne :
 
 1. Consulter la structure dans [`docs/README.md`](./docs/README.md)
 2. Éditer les fichiers markdown concernés
 3. Mettre à jour les liens si nécessaire
-4. Ajouter des exemples concrets
+4. Ajouter des exemples concrets au fil de l'expérience
 
 ---
 

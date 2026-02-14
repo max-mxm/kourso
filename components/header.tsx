@@ -42,6 +42,9 @@ export function Header() {
           <NavLink href="/guides" active={pathname.startsWith('/guides')}>
             Guides
           </NavLink>
+          <NavLink href="/demos" active={pathname.startsWith('/demos')}>
+            Démos
+          </NavLink>
           <NavLink href="/blog" active={pathname.startsWith('/blog')}>
             Blog
           </NavLink>

@@ -1,6 +1,6 @@
 # 🚀 maxpaths - Partage de Bonnes Pratiques Web
 
-Une plateforme open source regroupant les retours d'expérience (REX) et bonnes pratiques terrain pour Next.js, React et les technologies web modernes.
+Un blog personnel où je partage mes retours d'expérience (REX), bonnes pratiques terrain, cours, vidéos et animations pour Next.js, React et les technologies web modernes.
 
 ![Next.js 16](https://img.shields.io/badge/Next.js-16.1.6-black?style=flat-square&logo=next.js)
 ![React 19](https://img.shields.io/badge/React-19.2.3-61dafb?style=flat-square&logo=react)
@@ -132,24 +132,6 @@ npm run start    # Lancer le build de production
 npm run lint     # Linter ESLint
 ```
 
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Pour contribuer :
-
-1. Forkez le projet
-2. Créez une branche feature (`git checkout -b feature/amazing-course`)
-3. Committez vos changements (`git commit -m 'Add amazing course'`)
-4. Pushez vers la branche (`git push origin feature/amazing-course`)
-5. Ouvrez une Pull Request
-
-### Ajouter un nouveau guide
-
-1. Créez un dossier dans `app/cours/[votre-cours]/`
-2. Créez un fichier `page.tsx` avec vos bonnes pratiques
-3. Utilisez les composants existants (`CodeBlock`, `ConceptCard`, `ComparisonTable`, `InteractiveDemo`)
-4. Enveloppez vos sections dans `<CourseLayout>`
-5. Mettez à jour `app/cours/page.tsx` pour référencer votre guide
-
 ## 📚 Documentation
 
 Documentation complète disponible dans `/docs` :
@@ -172,4 +154,4 @@ MIT License - Voir le fichier LICENSE pour plus de détails.
 
 ---
 
-Construit par et pour la communauté des développeurs | Partageons nos bonnes pratiques terrain
+Un blog pour partager mon expérience frontend | Retours d'expérience terrain et bonnes pratiques

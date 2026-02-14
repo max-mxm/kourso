@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 export interface ContentCardProps {
   href: string;
-  type: 'guide' | 'article';
+  type: 'guide' | 'article' | 'demo';
   title: string;
   description: string;
   tags: string[];
@@ -80,7 +80,7 @@ export function ContentCard({
               className="inline-block w-1.5 h-1.5 rounded-full"
               style={{ backgroundColor: accentColor }}
             />
-            {type === 'guide' ? 'Guide' : 'Article'}
+            {type === 'guide' ? 'Guide' : type === 'demo' ? 'Démo' : 'Article'}
           </span>
           {badge && (
             <span className={cn(
