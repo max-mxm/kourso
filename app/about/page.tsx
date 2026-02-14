@@ -55,9 +55,9 @@ export default function AboutPage() {
 
             {/* Contenu hero avec barre accent */}
             <div className="lg:col-span-7 order-2 lg:order-1">
-              <div className="relative pl-6">
+              <div className="relative pl-0 md:pl-6 text-center md:text-left">
                 {/* Barre accent gradient */}
-                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20" />
+                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 hidden md:block" />
 
                 <div className="space-y-6">
                   <RevealOnScroll delay={0}>
@@ -105,14 +105,14 @@ export default function AboutPage() {
       <section className="about-section about-section-2 py-16 md:py-24 border-t border-border/50">
         <div className="container">
           <RevealOnScroll>
-            <div className="relative pl-6 mb-10">
-              <div className="about-accent-bar absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary to-primary/20" />
+            <div className="relative pl-0 md:pl-6 mb-10 text-center md:text-left">
+              <div className="about-accent-bar absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary to-primary/20 hidden md:block" />
               <div className="space-y-3">
                 <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary/80">
                   Genèse
                 </span>
                 <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight text-foreground">
-                  Pourquoi Maxpaths existe
+                  Pourquoi <span className="bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent">Maxpaths</span> existe
                 </h2>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function AboutPage() {
                 les choix d'architecture qui dégradent 6 mois plus tard, les optimisations qui génèrent plus de bugs qu'elles n'en résolvent.
               </p>
               <p className="font-medium text-foreground/90">
-                Maxpaths comble ce vide en documentant les solutions testées en production, pas la théorie abstraite.
+                <span className="bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent font-bold">Maxpaths</span> comble ce vide en documentant les solutions testées en production, pas la théorie abstraite.
               </p>
             </div>
           </RevealOnScroll>
@@ -141,8 +141,8 @@ export default function AboutPage() {
       <section className="about-section about-section-3 py-16 md:py-24 border-t border-border/50">
         <div className="container">
           <RevealOnScroll>
-            <div className="relative pl-6 mb-10">
-              <div className="about-accent-bar absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-brand-secondary to-brand-secondary/20" />
+            <div className="relative pl-0 md:pl-6 mb-10 text-center md:text-left">
+              <div className="about-accent-bar absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-brand-secondary to-brand-secondary/20 hidden md:block" />
               <div className="space-y-3">
                 <span className="text-xs font-bold tracking-[0.25em] uppercase text-brand-secondary/80">
                   Application
@@ -207,8 +207,8 @@ export default function AboutPage() {
       <section className="about-section about-section-4 py-16 md:py-24 border-t border-border/50">
         <div className="container">
           <RevealOnScroll>
-            <div className="relative pl-6 mb-12 md:mb-20">
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-brand-secondary to-brand-secondary/20" />
+            <div className="relative pl-0 md:pl-6 mb-12 md:mb-20 text-center md:text-left">
+              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-brand-secondary to-brand-secondary/20 hidden md:block" />
               <div className="space-y-3">
                 <span className="text-xs font-bold tracking-[0.25em] uppercase text-brand-secondary/80">
                   Parcours
@@ -241,8 +241,8 @@ export default function AboutPage() {
 
         <div className="container relative">
           <RevealOnScroll>
-            <div className="relative pl-6 mb-12 md:mb-16">
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20" />
+            <div className="relative pl-0 md:pl-6 mb-12 md:mb-16 text-center md:text-left">
+              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 hidden md:block" />
               <div className="space-y-3">
                 <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary/80">
                   Philosophie

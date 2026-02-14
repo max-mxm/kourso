@@ -196,8 +196,8 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
                 }}
               >
                 {/* Section header */}
-                <div className="mb-8">
-                  <div className="mb-2 flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
+                <div className="mb-8 text-center md:text-left">
+                  <div className="mb-2 flex items-center justify-center md:justify-start gap-2 text-sm font-medium text-slate-500 dark:text-slate-400">
                     <span>
                       {categories.find((c) => c.id === section.category)?.label}
                     </span>
@@ -206,7 +206,7 @@ export function CourseLayout({ title, subtitle, sections }: CourseLayoutProps) {
                       Section {index + 1}/{sections.length}
                     </span>
                   </div>
-                  <div className="flex flex-wrap items-center gap-3">
+                  <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                     <h2 className="text-3xl font-black tracking-tight">
                       {section.emoji && <span className="mr-3">{section.emoji}</span>}
                       {section.title}

@@ -16,7 +16,7 @@ export default function DemosPage() {
       <main className="container py-8 md:py-12">
         <div className="space-y-8 md:space-y-12">
           {/* En-tête */}
-          <div className="space-y-4 text-center md:text-left">
+          <div className="space-y-4 text-center md:text-left animate-fade-slide-down">
             <h1 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tight">
               Catalogue des démos
             </h1>
@@ -28,7 +28,7 @@ export default function DemosPage() {
           <DemosPageClient demos={demos} />
 
           {/* Message démos à venir */}
-          <div className="rounded-2xl border border-dashed border-border/50 bg-muted/20 p-12 text-center space-y-4">
+          <div className="rounded-2xl border border-dashed border-border/50 bg-muted/20 p-12 text-center space-y-4 animate-fade-slide-up stagger-12">
             <div className="inline-flex w-20 h-20 rounded-2xl bg-muted items-center justify-center">
               <Play className="w-10 h-10 text-muted-foreground/50" />
             </div>

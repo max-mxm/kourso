@@ -3,7 +3,7 @@
 import { ContentCard, ContentCardProps } from '@/components/content-card';
 import { ArticleMetadata, BlogCategory } from '@/lib/blog/types';
 import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
 interface BlogPageClientProps {
@@ -28,6 +28,11 @@ export function BlogPageClient({ articles }: BlogPageClientProps) {
   const [selectedCategory, setSelectedCategory] = useState<BlogCategory | 'all'>(
     'all'
   );
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const filteredArticles =
     selectedCategory === 'all'
@@ -41,7 +46,7 @@ export function BlogPageClient({ articles }: BlogPageClientProps) {
     <main className="container py-8 md:py-12">
       <div className="space-y-8 md:space-y-12">
         {/* En-tête */}
-        <div className="space-y-4 text-center md:text-left">
+        <div className="space-y-4 text-center md:text-left animate-fade-slide-down">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tight">
             Blog Technique
           </h1>
@@ -82,7 +87,7 @@ export function BlogPageClient({ articles }: BlogPageClientProps) {
 
         {/* Article featured (si existe) */}
         {featured && (
-          <div className="mb-12">
+          <div className={cn('mb-12', mounted && 'animate-fade-slide-up')}>
             <ContentCard {...articleToContentCard(featured)} variant="featured" />
           </div>
         )}
@@ -90,8 +95,16 @@ export function BlogPageClient({ articles }: BlogPageClientProps) {
         {/* Grille articles */}
         {regular.length > 0 ? (
           <div className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {regular.map((article) => (
-              <ContentCard key={article.slug} {...articleToContentCard(article)} />
+            {regular.map((article, index) => (
+              <div
+                key={article.slug}
+                className={cn(
+                  mounted && 'animate-fade-slide-up',
+                  mounted && `stagger-${Math.min(index + (featured ? 2 : 1), 12)}`
+                )}
+              >
+                <ContentCard {...articleToContentCard(article)} />
+              </div>
             ))}
           </div>
         ) : (

@@ -57,10 +57,10 @@ export function HeroSection() {
         {/* Grid 2 colonnes desktop, flex mobile */}
         <div className="flex flex-col lg:grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* COLONNE GAUCHE (60%) - Titre */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 text-center lg:text-left">
             {/* Eyebrow avec barre verticale */}
             <div
-              className="flex items-center gap-4 animate-fade-up opacity-0"
+              className="flex items-center justify-center lg:justify-start gap-4 animate-fade-up opacity-0"
               style={{ animationDelay: '0.15s', animationFillMode: 'forwards' }}
             >
               <div className="w-1 h-10 bg-primary animate-grow-vertical" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }} />
@@ -76,7 +76,7 @@ export function HeroSection() {
               <span className="block font-black tracking-[-0.04em] text-foreground lg:bg-gradient-to-r lg:from-foreground lg:via-primary/60 lg:to-brand-secondary/40 lg:bg-clip-text lg:text-transparent animate-slideInUp-title opacity-0" style={{ animationDelay: '0.35s', animationFillMode: 'forwards' }}>
                 Bonnes pratiques
               </span>
-              <span className="block font-thin tracking-[0.02em] text-primary ml-8 lg:ml-16 animate-text-shimmer opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
+              <span className="block font-thin tracking-[0.02em] text-primary ml-0 lg:ml-16 animate-text-shimmer opacity-0" style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
                 frontend
               </span>
             </h1>

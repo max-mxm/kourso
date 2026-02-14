@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ContentCard } from '@/components/content-card';
 import { LandingContentItem } from '@/lib/content';
 import { cn } from '@/lib/utils';
@@ -11,6 +11,11 @@ interface DemosPageClientProps {
 
 export function DemosPageClient({ demos }: DemosPageClientProps) {
   const [selectedTag, setSelectedTag] = useState<string>('all');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Tags de filtrage pour les demos
   const allTags = ['all', 'Performance', 'Next.js', 'React', 'SSR'];
@@ -46,8 +51,16 @@ export function DemosPageClient({ demos }: DemosPageClientProps) {
 
       {/* Grille des demos */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        {filteredDemos.map((demo) => (
-          <ContentCard key={demo.href} {...demo} />
+        {filteredDemos.map((demo, index) => (
+          <div
+            key={demo.href}
+            className={cn(
+              mounted && 'animate-fade-slide-up',
+              mounted && `stagger-${Math.min(index + 1, 12)}`
+            )}
+          >
+            <ContentCard {...demo} />
+          </div>
         ))}
       </div>
 

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface MobileMenuProps {
   pathname: string;
@@ -9,6 +9,8 @@ interface MobileMenuProps {
 }
 
 export function MobileMenu({ pathname, onClose }: MobileMenuProps) {
+  const [isDark, setIsDark] = useState(false);
+
   // Disable body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -17,9 +19,26 @@ export function MobileMenu({ pathname, onClose }: MobileMenuProps) {
     };
   }, []);
 
+  // Detect dark mode
+  useEffect(() => {
+    const checkDarkMode = () => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    };
+    checkDarkMode();
+
+    // Observer pour détecter les changements de thème
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-lg md:hidden animate-in fade-in slide-in-from-top-4">
-      <nav className="container py-8 flex flex-col gap-2">
+    <div className="fixed inset-0 top-16 z-40 bg-[#ffffff] dark:bg-[#0c0c0c] md:hidden border-t border-slate-200 dark:border-slate-800">
+      <nav className="container py-8 flex flex-col gap-2 bg-inherit">
         <MobileNavLink href="/" active={pathname === '/'} onClick={onClose}>
           Accueil
         </MobileNavLink>
@@ -54,7 +73,7 @@ function MobileNavLink({ href, active, onClick, children }: MobileNavLinkProps) 
       onClick={onClick}
       className={`
         min-h-[44px] px-4 py-3 rounded-lg text-lg font-semibold transition-colors
-        ${active ? 'bg-primary/10 text-primary' : 'text-foreground hover:bg-muted'}
+        ${active ? 'bg-primary/10 text-primary' : 'bg-muted/50 text-foreground hover:bg-muted'}
       `}
     >
       {children}

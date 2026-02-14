@@ -1,0 +1,58 @@
+/* Animations d'entrée pour les cartes */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classes d'animation avec délais échelonnés */
+.animate-fade-slide-up {
+  animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-fade-slide-down {
+  animation: fadeSlideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Délais pour l'effet de cascade (stagger) */
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 200ms; }
+.stagger-4 { animation-delay: 300ms; }
+.stagger-5 { animation-delay: 400ms; }
+.stagger-6 { animation-delay: 500ms; }
+.stagger-7 { animation-delay: 600ms; }
+.stagger-8 { animation-delay: 700ms; }
+.stagger-9 { animation-delay: 800ms; }
+.stagger-10 { animation-delay: 900ms; }
+.stagger-11 { animation-delay: 1000ms; }
+.stagger-12 { animation-delay: 1100ms; }
+
+/* Respect pour prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-slide-up,
+  .animate-fade-slide-down {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    opacity: 1 !important;
+  }
+}
