@@ -24,6 +24,230 @@ export interface GroupedResults {
 
 const SEARCH_INDEX: SearchItem[] = [
   // ==========================================================================
+  // ARTICLE : React 19 Actions en production
+  // ==========================================================================
+  {
+    type: 'article',
+    title: 'React 19 Actions en production : moins de boilerplate pour les formulaires',
+    description: 'Guide pratique pour reduire le boilerplate des formulaires avec useActionState, useFormStatus et useOptimistic.',
+    href: '/blog/react-19-actions-production',
+    tags: ['React 19', 'Actions', 'Forms', 'Best Practices'],
+    keywords: ['useActionState', 'useFormStatus', 'useOptimistic', 'form actions', 'actions', 'pending state', 'optimistic ui', 'server action', 'form submit', 'validation'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Introduction',
+    href: '/blog/react-19-actions-production#introduction',
+    tags: ['React 19'],
+    parentTitle: 'React 19 Actions en production',
+    keywords: ['boilerplate', 'forms', 'pending', 'errors'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Pourquoi les Actions changent la donne',
+    href: '/blog/react-19-actions-production#pourquoi-actions',
+    tags: ['React 19'],
+    parentTitle: 'React 19 Actions en production',
+    keywords: ['actions', 'form action', 'submit', 'async'],
+  },
+  {
+    type: 'article-heading',
+    title: 'useActionState : etat et erreurs sans glue-code',
+    href: '/blog/react-19-actions-production#useactionstate',
+    tags: ['React 19'],
+    parentTitle: 'React 19 Actions en production',
+    keywords: ['useActionState', 'state', 'error handling'],
+  },
+  {
+    type: 'article-heading',
+    title: 'useFormStatus : des boutons vraiment fiables',
+    href: '/blog/react-19-actions-production#useformstatus',
+    tags: ['React 19'],
+    parentTitle: 'React 19 Actions en production',
+    keywords: ['useFormStatus', 'pending', 'disabled button'],
+  },
+  {
+    type: 'article-heading',
+    title: 'useOptimistic : UI immediate sans tricher',
+    href: '/blog/react-19-actions-production#useoptimistic',
+    tags: ['React 19'],
+    parentTitle: 'React 19 Actions en production',
+    keywords: ['useOptimistic', 'optimistic ui', 'latency'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Checklist production',
+    href: '/blog/react-19-actions-production#checklist-production',
+    tags: ['React 19'],
+    parentTitle: 'React 19 Actions en production',
+    keywords: ['validation', 'idempotence', 'logging', 'observability'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Conclusion',
+    href: '/blog/react-19-actions-production#conclusion',
+    tags: ['React 19'],
+    parentTitle: 'React 19 Actions en production',
+    keywords: ['summary'],
+  },
+
+  // ==========================================================================
+  // ARTICLE : React 19.2 Activity, useEffectEvent et Performance Tracks
+  // ==========================================================================
+  {
+    type: 'article',
+    title: 'React 19.2 : Activity, useEffectEvent et Performance Tracks',
+    description: 'Guide pratique pour prioriser la UI et diagnostiquer les lenteurs avec les nouvelles primitives React 19.2.',
+    href: '/blog/react-19-2-activity-useeffectevent',
+    tags: ['React 19.2', 'Performance', 'Advanced'],
+    keywords: ['Activity', 'useEffectEvent', 'performance tracks', 'profiling', 'scheduler', 'rendering', 'ui priority'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Introduction',
+    href: '/blog/react-19-2-activity-useeffectevent#introduction',
+    tags: ['React 19.2'],
+    parentTitle: 'React 19.2 : Activity, useEffectEvent et Performance Tracks',
+    keywords: ['performance', 'profiling', 'latency'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Activity : pre-render sans bloquer',
+    href: '/blog/react-19-2-activity-useeffectevent#activity',
+    tags: ['React 19.2'],
+    parentTitle: 'React 19.2 : Activity, useEffectEvent et Performance Tracks',
+    keywords: ['Activity', 'pre-render', 'hidden ui'],
+  },
+  {
+    type: 'article-heading',
+    title: 'useEffectEvent : listeners stables',
+    href: '/blog/react-19-2-activity-useeffectevent#useeffectevent',
+    tags: ['React 19.2'],
+    parentTitle: 'React 19.2 : Activity, useEffectEvent et Performance Tracks',
+    keywords: ['useEffectEvent', 'event listener', 'stable callback'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Performance Tracks : lire les traces',
+    href: '/blog/react-19-2-activity-useeffectevent#performance-tracks',
+    tags: ['React 19.2'],
+    parentTitle: 'React 19.2 : Activity, useEffectEvent et Performance Tracks',
+    keywords: ['performance tracks', 'devtools', 'profiling'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Checklist adoption',
+    href: '/blog/react-19-2-activity-useeffectevent#checklist',
+    tags: ['React 19.2'],
+    parentTitle: 'React 19.2 : Activity, useEffectEvent et Performance Tracks',
+    keywords: ['adoption', 'best practices'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Conclusion',
+    href: '/blog/react-19-2-activity-useeffectevent#conclusion',
+    tags: ['React 19.2'],
+    parentTitle: 'React 19.2 : Activity, useEffectEvent et Performance Tracks',
+    keywords: ['summary'],
+  },
+
+  // ==========================================================================
+  // GUIDE : Architecture Hexagonale : decoupler votre metier des frameworks
+  // ==========================================================================
+  {
+    type: 'guide',
+    title: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    description: 'Ports & Adapters en pratique avec schemas, TypeScript et Next.js. Domaine testable et stable.',
+    href: '/guides/architecture-hexagonale',
+    tags: ['Architecture', 'TypeScript', 'Next.js', 'Testing'],
+    keywords: ['architecture hexagonale', 'ports and adapters', 'ports', 'adapters', 'domain', 'use case', 'dependency inversion', 'clean architecture', 'ddd', 'testabilite', 'decouplage', 'next.js architecture'],
+  },
+  {
+    type: 'guide-section',
+    title: 'Introduction a l architecture hexagonale',
+    href: '/guides/architecture-hexagonale#introduction',
+    tags: ['Architecture'],
+    parentTitle: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    keywords: ['couplage fort', 'prisma', 'stripe', 'refactor', 'separation des responsabilites'],
+  },
+  {
+    type: 'guide-section',
+    title: 'Principes fondamentaux',
+    href: '/guides/architecture-hexagonale#principes-fondamentaux',
+    tags: ['Architecture'],
+    parentTitle: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    keywords: ['regle de dependance', 'dependency rule', 'port entrant', 'port sortant', 'interfaces'],
+  },
+  {
+    type: 'guide-section',
+    title: 'Schema Ports & Adapters',
+    href: '/guides/architecture-hexagonale#schema-ports-adapters',
+    tags: ['Architecture'],
+    parentTitle: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    keywords: ['schema hexagonal', 'hexagone', 'adapter entrant', 'adapter sortant', 'inbound', 'outbound'],
+  },
+  {
+    type: 'guide-section',
+    title: 'Flux de requete vers le domaine',
+    href: '/guides/architecture-hexagonale#flux-use-case',
+    tags: ['Architecture', 'Next.js'],
+    parentTitle: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    keywords: ['controller', 'server action', 'composition root', 'create order', 'use case flow'],
+  },
+  {
+    type: 'guide-section',
+    title: 'Implementation Next.js',
+    href: '/guides/architecture-hexagonale#implementation-nextjs',
+    tags: ['Architecture', 'Next.js'],
+    parentTitle: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    keywords: ['folder structure', 'domain layer', 'infrastructure layer', 'adapters', 'project structure'],
+  },
+  {
+    type: 'guide-section',
+    title: 'Migration progressive',
+    href: '/guides/architecture-hexagonale#migration-progressive',
+    tags: ['Architecture'],
+    parentTitle: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    keywords: ['migration incrementale', 'big bang', 'legacy refactor', 'strangler pattern'],
+  },
+  {
+    type: 'guide-section',
+    title: 'Tests et maintenabilite',
+    href: '/guides/architecture-hexagonale#tests-et-maintenabilite',
+    tags: ['Architecture', 'Testing'],
+    parentTitle: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    keywords: ['unit test', 'fake adapter', 'test double', 'vitest', 'maintenabilite'],
+  },
+  {
+    type: 'guide-section',
+    title: 'Anti-patterns',
+    href: '/guides/architecture-hexagonale#anti-patterns',
+    tags: ['Architecture'],
+    parentTitle: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    keywords: ['anti pattern', 'sur-ingenierie', 'couplage', 'layers inutiles', 'complexite'],
+  },
+  {
+    type: 'guide-section',
+    title: 'Demo interactive des adapters',
+    href: '/guides/architecture-hexagonale#demo-interactive',
+    tags: ['Architecture', 'Demo'],
+    parentTitle: 'Architecture Hexagonale : decoupler votre metier des frameworks',
+    keywords: ['simulateur', 'adapter swap', 'payment port', 'repository port', 'interactive demo'],
+  },
+
+  // ==========================================================================
+  // DEMO : Architecture hexagonale en direct
+  // ==========================================================================
+  {
+    type: 'demo',
+    title: 'Architecture hexagonale : testez le swap d adapters en direct',
+    description: 'Lancez un use case metier et changez les adapters sans modifier le domaine.',
+    href: '/demos/simulateur-architecture-hexagonale',
+    tags: ['Architecture', 'TypeScript', 'Interactif'],
+    keywords: ['ports and adapters', 'hexagonal architecture demo', 'adapter swap', 'use case', 'payment adapter', 'repository adapter', 'dependency inversion', 'domain first'],
+  },
+
+  // ==========================================================================
   // GUIDE : Zod : La validation TypeScript que vous auriez dû utiliser depuis le début
   // ==========================================================================
   {

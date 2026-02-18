@@ -87,17 +87,22 @@ export function CodeBlock({
 
   return (
     <div
-      className="group relative rounded-lg overflow-hidden bg-muted/30 transition-all duration-300 hover:shadow-lg"
+      className="group relative w-full min-w-0 max-w-full rounded-lg overflow-hidden bg-muted/30 transition-all duration-300 hover:shadow-lg"
       style={{ borderLeft: `4px solid ${borderColor}` }}
     >
       {/* Header */}
-      <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border/50 bg-muted/20">
-        <div className="flex items-center gap-3">
+      <div className="flex items-center justify-between gap-3 px-4 sm:px-6 py-3 border-b border-border/50 bg-muted/20">
+        <div className="min-w-0 flex items-center gap-3">
           {filename && (
-            <span className="text-sm font-medium text-foreground/80">{filename}</span>
+            <span
+              className="min-w-0 truncate text-sm font-medium text-foreground/80"
+              title={filename}
+            >
+              {filename}
+            </span>
           )}
           <span
-            className="text-xs font-mono px-2 py-0.5 rounded"
+            className="shrink-0 text-xs font-mono px-2 py-0.5 rounded"
             style={{
               backgroundColor: `${borderColor}15`,
               color: borderColor
@@ -109,7 +114,7 @@ export function CodeBlock({
 
         <button
           onClick={handleCopy}
-          className="text-xs px-3 py-1.5 rounded-md bg-background/50 border border-border/50 hover:bg-background hover:border-primary/50 transition-all duration-200 font-medium flex items-center gap-1.5"
+          className="shrink-0 text-xs px-3 py-1.5 rounded-md bg-background/50 border border-border/50 hover:bg-background hover:border-primary/50 transition-all duration-200 font-medium flex items-center gap-1.5"
           aria-label="Copier le code"
         >
           {copied ? (
@@ -124,19 +129,19 @@ export function CodeBlock({
       </div>
 
       {/* Code Content */}
-      <div className="overflow-x-auto">
+      <div className="max-w-full overflow-x-auto">
         <Highlight
           theme={prismTheme}
           code={code.trim()}
           language={isPlain ? 'plain' : language}
         >
           {({ tokens, getLineProps, getTokenProps }) => (
-            <pre className="p-4 sm:p-6 text-sm leading-relaxed" style={{ background: 'transparent' }}>
+            <pre className="min-w-max p-4 sm:p-6 text-sm leading-relaxed" style={{ background: 'transparent' }}>
               <code className="font-mono">
                 {tokens.map((line, index) => {
                   const lineNumber = index + 1;
                   const isHighlighted = highlightLines.includes(lineNumber);
-                  const { style: _lineStyle, ...lineProps } = getLineProps({ line });
+                  const lineProps = getLineProps({ line });
 
                   return (
                     <div

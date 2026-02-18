@@ -28,6 +28,27 @@ export interface LandingContentItem {
 // Ordre : du plus recent au plus ancien
 const GUIDES: LandingContentItem[] = [
   {
+    href: '/guides/architecture-hexagonale',
+    type: 'guide',
+    title: 'Architecture Hexagonale : decouplez votre metier des frameworks',
+    description:
+      'Ports & Adapters en pratique avec schemas, TypeScript et Next.js. Construisez un domaine testable, stable et independant de votre infrastructure.',
+    tags: ['Architecture', 'TypeScript', 'Next.js', 'Testing'],
+    accentColor: 'rgb(14, 116, 144)',
+    sections: 9,
+    duration: '2h30',
+    level: 'Intermediaire',
+    publishedAt: '2026-02-18',
+    seoTitle: 'Architecture Hexagonale : Guide Complet Ports & Adapters',
+    seoDescription: 'Apprenez l architecture hexagonale avec schemas, use cases, ports, adapters, tests et demo interactive en TypeScript.',
+    ogTitle: 'Architecture Hexagonale : decoupler metier et infrastructure',
+    ogDescription: 'Guide pratique Ports & Adapters avec schemas, implementation TypeScript/Next.js et demo interactive.',
+    ogImage: '/api/og?title=Architecture+Hexagonale+:+Ports+%26+Adapters&category=best-practices',
+    twitterCard: 'summary_large_image',
+    twitterTitle: 'Architecture Hexagonale : Guide Complet',
+    twitterDescription: 'Ports, adapters, tests et migration progressive en TypeScript avec demo interactive.',
+  },
+  {
     href: '/guides/zod-validation',
     type: 'guide',
     title: 'Zod : La validation TypeScript que vous auriez dû utiliser depuis le début',
@@ -149,6 +170,19 @@ export interface LandingDemoItem {
 }
 
 const DEMOS: LandingDemoItem[] = [
+  {
+    href: '/demos/simulateur-architecture-hexagonale',
+    title: 'Architecture hexagonale : testez le swap d adapters en direct',
+    description:
+      'Lancez un use case metier et changez les adapters de paiement/repository sans modifier le domaine. Visualisez timeline et resultat.',
+    tags: ['Architecture', 'React', 'TypeScript'],
+    accentColor: 'rgb(14, 116, 144)',
+    gradientFrom: 'from-cyan-500',
+    gradientTo: 'to-emerald-500',
+    badge: 'INTERACTIF',
+    duration: '8min',
+    relatedGuide: '/guides/architecture-hexagonale',
+  },
   {
     href: '/demos/simulateur-performance',
     title: 'useMemo, useCallback, React.memo : quand utiliser quoi ? Testez en direct',

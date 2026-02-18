@@ -15,6 +15,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const guideUrls = [
     {
+      url: `${BASE_URL}/guides/architecture-hexagonale`,
+      lastModified: new Date('2026-02-18'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/guides/zod-validation`,
       lastModified: new Date('2026-02-13'),
       changeFrequency: 'monthly' as const,
@@ -47,6 +53,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const demoUrls = [
+    {
+      url: `${BASE_URL}/demos/simulateur-architecture-hexagonale`,
+      lastModified: new Date('2026-02-18'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
     {
       url: `${BASE_URL}/demos/simulateur-performance`,
       lastModified: new Date(),
