@@ -17,7 +17,6 @@ export function DemosPageClient({ demos }: DemosPageClientProps) {
     setMounted(true);
   }, []);
 
-  // Tags de filtrage pour les demos
   const allTags = ['all', 'Performance', 'Next.js', 'React', 'SSR'];
 
   const filteredDemos =
@@ -31,7 +30,6 @@ export function DemosPageClient({ demos }: DemosPageClientProps) {
 
   return (
     <>
-      {/* Filtres */}
       <div className="flex flex-wrap gap-3 justify-center md:justify-start">
         {allTags.map((tag) => (
           <button
@@ -49,7 +47,6 @@ export function DemosPageClient({ demos }: DemosPageClientProps) {
         ))}
       </div>
 
-      {/* Grille des demos */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {filteredDemos.map((demo, index) => (
           <div

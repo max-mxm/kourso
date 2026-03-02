@@ -66,7 +66,6 @@ export function RenderingComparisonChart({ scenarios }: RenderingComparisonChart
     1
   );
 
-  // Trigger animation on metric change
   const handleMetricChange = (key: MetricKey) => {
     setAnimateResults(false);
     setActiveMetric(key);
@@ -82,7 +81,6 @@ export function RenderingComparisonChart({ scenarios }: RenderingComparisonChart
         Comparaison des metriques
       </h5>
 
-      {/* Metric selector tabs */}
       <div className="flex flex-wrap gap-1.5 mb-5">
         {METRIC_CONFIGS.map((metric) => (
           <button
@@ -99,7 +97,6 @@ export function RenderingComparisonChart({ scenarios }: RenderingComparisonChart
         ))}
       </div>
 
-      {/* Bars */}
       <div className="space-y-3">
         {scenarios.map((scenario, index) => {
           const value = scenario.metrics[activeMetric];
@@ -151,7 +148,6 @@ export function RenderingComparisonChart({ scenarios }: RenderingComparisonChart
         })}
       </div>
 
-      {/* Legend */}
       <div className="mt-4 pt-4 border-t border-border">
         <div className="flex flex-wrap gap-4 text-xs">
           <div className="flex items-center gap-2">

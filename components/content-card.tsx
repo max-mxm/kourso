@@ -99,14 +99,14 @@ export function ContentCard({
         </div>
 
         {/* Title */}
-        <h3 className={cn(
+        <h2 className={cn(
           "font-bold leading-tight transition-colors duration-200 group-hover:text-primary",
           isFeatured
             ? 'text-2xl md:text-3xl mb-4'
             : 'text-lg md:text-xl mb-3 line-clamp-2',
         )}>
           {title}
-        </h3>
+        </h2>
 
         {/* Description */}
         <p className={cn(

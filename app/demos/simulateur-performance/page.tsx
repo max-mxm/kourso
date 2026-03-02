@@ -22,7 +22,6 @@ export default function SimulateurPerformancePage() {
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50/30 to-yellow-50 dark:from-zinc-950 dark:via-purple-950/30 dark:to-zinc-900">
       <div className="container max-w-6xl py-12 md:py-16 space-y-10">
 
-        {/* Navigation retour */}
         <AnimatedSection delay={0}>
           <Link
             href="/guides/nextjs-demo#performance-measurement"
@@ -33,7 +32,6 @@ export default function SimulateurPerformancePage() {
           </Link>
         </AnimatedSection>
 
-        {/* Header */}
         <div className="space-y-6">
           <AnimatedSection delay={100}>
             <div className="flex items-center gap-3 flex-wrap">
@@ -61,7 +59,6 @@ export default function SimulateurPerformancePage() {
           </AnimatedSection>
         </div>
 
-        {/* Callout mesures réelles */}
         <AnimatedSection delay={400}>
           <div className="relative overflow-hidden rounded-2xl border-2 border-red-400/30 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-yellow-500/10 p-6 max-w-4xl dark:border-red-400/20">
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-red-500/10 blur-3xl animate-glow-pulse" />
@@ -83,7 +80,6 @@ export default function SimulateurPerformancePage() {
           </div>
         </AnimatedSection>
 
-        {/* Simulateur */}
         <AnimatedSection delay={500}>
           <div className="rounded-3xl bg-white border-2 border-red-500/20 shadow-2xl shadow-red-500/10 p-6 md:p-8 space-y-8 dark:bg-zinc-900 dark:border-red-400/30 dark:shadow-red-500/20">
             <PerformanceDemo
@@ -121,11 +117,10 @@ export default function SimulateurPerformancePage() {
               onItemCountChange={setItemCount}
             />
 
-            {/* Onglets code source */}
             <div className="border-t-2 border-red-500/20 pt-8 dark:border-red-400/20">
-              <h3 className="text-2xl font-black tracking-tight text-foreground mb-6">
+              <h2 className="text-2xl font-black tracking-tight text-foreground mb-6">
                 Code source de chaque approche
-              </h3>
+              </h2>
               <div className="flex flex-wrap gap-2 mb-6">
                 {PERFORMANCE_CODE_TABS.map((tab) => (
                   <button
@@ -156,7 +151,6 @@ export default function SimulateurPerformancePage() {
           </div>
         </AnimatedSection>
 
-        {/* CTA vers la théorie */}
         <AnimatedSection delay={600}>
           <Link
             href="/guides/nextjs-demo#performance-measurement"
@@ -179,7 +173,6 @@ export default function SimulateurPerformancePage() {
               <ArrowRight className="h-8 w-8 flex-shrink-0 text-red-500 transition-transform duration-300 group-hover:translate-x-2" strokeWidth={2.5} />
             </div>
 
-            {/* Glow effect on hover */}
             <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-red-500/20 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
           </Link>
         </AnimatedSection>

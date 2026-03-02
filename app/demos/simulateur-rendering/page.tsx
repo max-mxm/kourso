@@ -15,7 +15,6 @@ export default function SimulateurRenderingPage() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50/20 to-slate-50 dark:from-slate-950 dark:via-purple-950/50 dark:to-indigo-950">
       <div className="container max-w-6xl py-12 md:py-16 space-y-10">
 
-        {/* Navigation retour */}
         <AnimatedSection delay={0}>
           <Link
             href="/guides/nextjs-demo#comparison"
@@ -26,7 +25,6 @@ export default function SimulateurRenderingPage() {
           </Link>
         </AnimatedSection>
 
-        {/* Header */}
         <div className="space-y-6">
           <AnimatedSection delay={100}>
             <div className="flex items-center gap-3 flex-wrap">
@@ -54,7 +52,6 @@ export default function SimulateurRenderingPage() {
           </AnimatedSection>
         </div>
 
-        {/* Callout simulation */}
         <AnimatedSection delay={400}>
           <div className="relative overflow-hidden rounded-2xl border-2 border-indigo-400/30 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 p-6 max-w-4xl dark:border-indigo-400/20">
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-purple-500/10 blur-3xl animate-glow-pulse" />
@@ -76,16 +73,14 @@ export default function SimulateurRenderingPage() {
           </div>
         </AnimatedSection>
 
-        {/* Simulateur */}
         <AnimatedSection delay={500}>
           <div className="rounded-3xl bg-white border-2 border-purple-500/20 shadow-2xl shadow-purple-500/10 p-6 md:p-8 space-y-8 dark:bg-slate-900 dark:border-purple-400/30 dark:shadow-purple-500/20">
             <RenderingSimulator />
 
-            {/* Onglets code source */}
             <div className="border-t-2 border-purple-500/20 pt-8 dark:border-purple-400/20">
-              <h3 className="text-2xl font-black tracking-tight text-foreground mb-6">
+              <h2 className="text-2xl font-black tracking-tight text-foreground mb-6">
                 Code Next.js de chaque mode
-              </h3>
+              </h2>
               <div className="flex flex-wrap gap-2 mb-6">
                 {RENDERING_CODE_TABS.map((tab) => (
                   <button
@@ -116,7 +111,6 @@ export default function SimulateurRenderingPage() {
           </div>
         </AnimatedSection>
 
-        {/* CTA vers la théorie */}
         <AnimatedSection delay={600}>
           <Link
             href="/guides/nextjs-demo#comparison"
@@ -139,7 +133,6 @@ export default function SimulateurRenderingPage() {
               <ArrowRight className="h-8 w-8 flex-shrink-0 text-purple-600 transition-transform duration-300 group-hover:translate-x-2" strokeWidth={2.5} />
             </div>
 
-            {/* Glow effect on hover */}
             <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-purple-500/20 blur-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
           </Link>
         </AnimatedSection>

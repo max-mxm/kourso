@@ -44,9 +44,9 @@ export default function CoursesPage() {
               <BookOpen className="w-10 h-10 text-muted-foreground/50" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+              <h2 className="text-2xl font-bold text-foreground mb-2">
                 Plus de guides en preparation
-              </h3>
+              </h2>
               <p className="text-muted-foreground">
                 D&apos;autres guides sur React, TypeScript, Node.js et bien plus seront ajoutes prochainement. Restez a l&apos;ecoute !
               </p>

@@ -72,7 +72,6 @@ export function PerformanceDemo({
     }));
   }, []);
 
-  // Nouvelle palette : vermillon (lent) → citron (moyen) → émeraude (rapide)
   const getPerformanceColor = (time: number): string => {
     if (time < 10) return 'text-emerald-600 dark:text-emerald-400';
     if (time < 50) return 'text-yellow-600 dark:text-yellow-400';
@@ -96,7 +95,6 @@ export function PerformanceDemo({
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h4 className="text-2xl font-black tracking-tight text-foreground mb-2">
@@ -115,9 +113,7 @@ export function PerformanceDemo({
         </button>
       </div>
 
-      {/* Contrôles */}
       <div className="flex flex-col sm:flex-row gap-3">
-        {/* Toggle mode ralenti */}
         <button
           onClick={() => setSlowMode(!slowMode)}
           onMouseEnter={(e) => {
@@ -138,7 +134,6 @@ export function PerformanceDemo({
           Mode ralenti {slowMode ? 'actif' : 'inactif'}
         </button>
 
-        {/* Slider nombre d'items */}
         {onItemCountChange && (
           <div className="flex items-center gap-4 flex-1 px-4 py-3 bg-muted/50 rounded-xl border-2 border-border/50 hover:border-red-500/20 transition-all duration-300 group">
             <label className="text-sm font-bold text-foreground whitespace-nowrap">
@@ -167,7 +162,6 @@ export function PerformanceDemo({
         </p>
       )}
 
-      {/* Grille des scénarios avec composants réels */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {scenarios.map((scenario) => {
           const metric = metrics[scenario.name];
@@ -177,7 +171,6 @@ export function PerformanceDemo({
               key={scenario.name}
               className="border-2 border-border/50 rounded-xl overflow-hidden bg-card hover:border-red-500/30 hover:shadow-lg transition-all duration-300"
             >
-              {/* Header du scénario */}
               <div className="flex items-center justify-between px-4 py-3 border-b-2 border-border/30 bg-muted/20">
                 <div className="flex-1">
                   <h5 className="font-bold text-foreground text-sm">
@@ -207,7 +200,6 @@ export function PerformanceDemo({
                 )}
               </div>
 
-              {/* Composant rendu */}
               <div className="p-3">
                 {runId > 0 ? (
                   <MeasuredScenario
@@ -229,7 +221,6 @@ export function PerformanceDemo({
         })}
       </div>
 
-      {/* Graphique comparatif */}
       {Object.keys(metrics).length > 1 && (
         <div className="border-2 border-border/50 rounded-2xl p-6 bg-card">
           <h5 className="text-xl font-black tracking-tight text-foreground mb-6 flex items-center gap-2">
@@ -281,7 +272,6 @@ export function PerformanceDemo({
             })}
           </div>
 
-          {/* Légende */}
           <div className="mt-6 pt-6 border-t-2 border-border/30">
             <div className="flex flex-wrap gap-6 text-xs">
               <div className="flex items-center gap-2">

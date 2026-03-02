@@ -17,7 +17,7 @@ Site personnel de guides React et Next.js, articles techniques et demos interact
 app/
   guides/          # Guides techniques (Next.js, React 19, Zod, TanStack, etc.)
   blog/            # Articles avec metadata + contenu
-  demos/           # Simulateurs interactifs (rendering, performance, archi hexagonale)
+  demos/           # Simulateurs interactifs (rendering, performance)
   about/           # Page a propos
   api/og/          # Generation dynamique d'images Open Graph
 components/

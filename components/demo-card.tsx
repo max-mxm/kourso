@@ -63,10 +63,10 @@ export function DemoCard({
           </span>
         </div>
 
-        <h3 className="text-lg md:text-xl font-bold leading-tight mb-3 transition-colors group-hover:text-primary flex items-start gap-2">
+        <h2 className="text-lg md:text-xl font-bold leading-tight mb-3 transition-colors group-hover:text-primary flex items-start gap-2">
           <Play className={cn('w-5 h-5 mt-0.5 flex-shrink-0 transition-colors', accentIconColor, 'group-hover:text-primary')} />
           {title}
-        </h3>
+        </h2>
 
         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 mb-4 flex-1">
           {description}

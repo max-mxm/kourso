@@ -31,16 +31,13 @@ export function RenderingSimulator() {
   const startTimeRef = useRef<number>(0);
   const elapsedRef = useRef<number>(0);
 
-  // Build active scenarios based on settings
   const activeScenarios: RenderingScenarioConfig[] = RENDERING_SCENARIOS.map((scenario) => {
-    // Replace ISR HIT with ISR MISS if toggle is off
     if (scenario.id === 'isr-hit' && !isrCacheHit) {
       return ISR_MISS_SCENARIO;
     }
     return scenario;
   });
 
-  // Apply network multiplier
   const networkMultiplier =
     NETWORK_PRESETS.find((p) => p.id === networkPreset)?.latencyMultiplier ?? 1;
 
@@ -88,12 +85,10 @@ export function RenderingSimulator() {
     setSimulationState('idle');
   }, [stopAnimation]);
 
-  // Cleanup on unmount
   useEffect(() => {
     return () => stopAnimation();
   }, [stopAnimation]);
 
-  // Reset when settings change during idle
   useEffect(() => {
     if (simulationState === 'completed') {
       resetSimulation();
@@ -106,7 +101,6 @@ export function RenderingSimulator() {
 
   return (
     <div className="space-y-6">
-      {/* Header + Controls */}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h4 className="text-2xl font-black tracking-tight text-foreground mb-2">
@@ -137,9 +131,7 @@ export function RenderingSimulator() {
         </div>
       </div>
 
-      {/* Settings */}
       <div className="flex flex-col sm:flex-row gap-3">
-        {/* Network preset */}
         <div className="flex items-center gap-3 px-4 py-3 bg-muted/50 rounded-xl border-2 border-border/50 hover:border-purple-500/20 transition-all duration-300">
           {networkPreset === 'fast' ? (
             <Wifi className="w-5 h-5 text-emerald-600" strokeWidth={2.5} />
@@ -173,7 +165,6 @@ export function RenderingSimulator() {
           </div>
         </div>
 
-        {/* ISR Cache toggle */}
         <button
           onClick={() => setIsrCacheHit(!isrCacheHit)}
           disabled={isRunning}
@@ -195,7 +186,6 @@ export function RenderingSimulator() {
         </button>
       </div>
 
-      {/* Time scale */}
       {(isRunning || hasCompleted) && (
         <div className="flex items-center justify-between text-[11px] font-mono font-bold text-muted-foreground px-1 tabular-nums">
           <span>0ms</span>
@@ -206,7 +196,6 @@ export function RenderingSimulator() {
         </div>
       )}
 
-      {/* Timelines + Previews */}
       <div className="space-y-5">
         {displayScenarios.map((scenario) => (
           <div key={scenario.id} className="space-y-2">
@@ -229,7 +218,6 @@ export function RenderingSimulator() {
         ))}
       </div>
 
-      {/* Phase legend */}
       {(isRunning || hasCompleted) && (
         <div className="flex flex-wrap gap-4 text-xs pt-4 border-t-2 border-border/30">
           {(Object.entries(PHASE_COLORS) as [PhaseType, (typeof PHASE_COLORS)[PhaseType]][])
@@ -251,7 +239,6 @@ export function RenderingSimulator() {
         </div>
       )}
 
-      {/* Comparison chart */}
       {hasCompleted && (
         <div className="pt-2">
           <RenderingComparisonChart scenarios={displayScenarios} />

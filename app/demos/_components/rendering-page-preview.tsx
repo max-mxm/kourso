@@ -26,7 +26,6 @@ export function RenderingPagePreview({
       return lastState.state;
     }
 
-    // Find the current state based on elapsed time
     let state: PageVisualState = 'blank';
     for (const transition of scenario.pageStates) {
       if (elapsedMs >= transition.atMs) {
@@ -38,7 +37,6 @@ export function RenderingPagePreview({
 
   return (
     <div className="relative w-full h-28 rounded-lg border border-border/50 overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-200">
-      {/* Browser chrome */}
       <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-muted/50 border-b border-border/30">
         <div className="flex gap-1">
           <div className="w-1.5 h-1.5 rounded-full bg-red-400/60" />
@@ -48,7 +46,6 @@ export function RenderingPagePreview({
         <div className="flex-1 h-3.5 bg-muted rounded-sm mx-2" />
       </div>
 
-      {/* Page content area */}
       <div className="p-2 space-y-1.5 relative">
         {currentState === 'blank' && <BlankState />}
         {currentState === 'shell' && <ShellState />}
@@ -58,7 +55,6 @@ export function RenderingPagePreview({
         {currentState === 'complete' && <CompleteState />}
       </div>
 
-      {/* State label overlay */}
       {(isRunning || hasCompleted) && (
         <div className="absolute bottom-1 right-1.5">
           <span
@@ -95,8 +91,6 @@ function getStateLabel(state: PageVisualState): string {
   }
 }
 
-// --- Visual states ---
-
 function BlankState() {
   return <div className="h-16" />;
 }
@@ -104,9 +98,7 @@ function BlankState() {
 function ShellState() {
   return (
     <div className="space-y-1.5 animate-[fadeIn_0.2s_ease-out]">
-      {/* Header skeleton */}
       <div className="h-2.5 w-20 bg-muted rounded-sm" />
-      {/* Content skeletons */}
       <div className="flex gap-2">
         <div className="w-10 h-10 bg-muted rounded-sm animate-pulse" />
         <div className="flex-1 space-y-1">
@@ -115,7 +107,6 @@ function ShellState() {
           <div className="h-2 w-2/3 bg-muted rounded-sm animate-pulse" />
         </div>
       </div>
-      {/* Price skeleton */}
       <div className="h-2 w-12 bg-muted rounded-sm animate-pulse" />
     </div>
   );
@@ -133,9 +124,7 @@ function LoadingState() {
 function Partial1State() {
   return (
     <div className="space-y-1.5 animate-[fadeIn_0.2s_ease-out]">
-      {/* Header */}
       <div className="h-2.5 w-20 bg-primary/20 rounded-sm" />
-      {/* Product info - loaded */}
       <div className="flex gap-2">
         <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center">
           <div className="w-5 h-5 bg-primary/20 rounded" />
@@ -145,7 +134,6 @@ function Partial1State() {
           <div className="h-2 w-1/2 bg-foreground/10 rounded-sm" />
         </div>
       </div>
-      {/* Price skeleton still loading */}
       <div className="h-2 w-12 bg-muted rounded-sm animate-pulse" />
     </div>
   );
@@ -154,9 +142,7 @@ function Partial1State() {
 function Partial2State() {
   return (
     <div className="space-y-1.5 animate-[fadeIn_0.2s_ease-out]">
-      {/* Header */}
       <div className="h-2.5 w-20 bg-primary/20 rounded-sm" />
-      {/* Product info - loaded */}
       <div className="flex gap-2">
         <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center">
           <div className="w-5 h-5 bg-primary/20 rounded" />
@@ -166,9 +152,7 @@ function Partial2State() {
           <div className="h-2 w-1/2 bg-foreground/10 rounded-sm" />
         </div>
       </div>
-      {/* Price loaded */}
       <div className="h-2 w-12 bg-emerald-500/30 rounded-sm" />
-      {/* Reviews skeleton */}
       <div className="h-2 w-1/3 bg-muted rounded-sm animate-pulse" />
     </div>
   );
@@ -177,9 +161,7 @@ function Partial2State() {
 function CompleteState() {
   return (
     <div className="space-y-1.5 animate-[fadeIn_0.2s_ease-out]">
-      {/* Header */}
       <div className="h-2.5 w-20 bg-primary/20 rounded-sm" />
-      {/* Product info */}
       <div className="flex gap-2">
         <div className="w-10 h-10 bg-primary/10 rounded-sm flex items-center justify-center">
           <div className="w-5 h-5 bg-primary/20 rounded" />
@@ -189,9 +171,7 @@ function CompleteState() {
           <div className="h-2 w-1/2 bg-foreground/10 rounded-sm" />
         </div>
       </div>
-      {/* Price */}
       <div className="h-2 w-12 bg-emerald-500/30 rounded-sm" />
-      {/* Reviews */}
       <div className="flex gap-1">
         {[1, 2, 3].map((i) => (
           <div key={i} className="h-1.5 w-1.5 rounded-full bg-yellow-400/60" />

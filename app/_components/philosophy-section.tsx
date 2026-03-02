@@ -68,9 +68,9 @@ export function PhilosophySection() {
                   <value.icon className="w-5 h-5 text-primary" strokeWidth={2.5} />
                 </div>
 
-                <h4 className="font-semibold text-foreground text-base mb-2">
+                <h3 className="font-semibold text-foreground text-base mb-2">
                   {value.title}
-                </h4>
+                </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>

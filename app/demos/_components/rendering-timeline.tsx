@@ -24,7 +24,6 @@ export function RenderingTimeline({
 }: RenderingTimelineProps) {
   const scenarioDuration = getScenarioTotalDuration(scenario);
 
-  // FCP and LCP markers
   const fcpPosition = useMemo(
     () => (scenario.metrics.fcp / maxDuration) * 100,
     [scenario.metrics.fcp, maxDuration]
@@ -36,7 +35,6 @@ export function RenderingTimeline({
 
   return (
     <div className="space-y-2">
-      {/* Scenario header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div
@@ -57,15 +55,12 @@ export function RenderingTimeline({
         )}
       </div>
 
-      {/* Timeline bar */}
       <div className="relative h-9 bg-muted/50 rounded-lg overflow-hidden border border-border/50">
-        {/* Phase segments */}
         {scenario.phases.map((phase) => {
           const leftPercent = (phase.startMs / maxDuration) * 100;
           const widthPercent = (phase.durationMs / maxDuration) * 100;
           const phaseStyle = PHASE_COLORS[phase.type];
 
-          // Calculate fill progress for this phase
           const phaseEnd = phase.startMs + phase.durationMs;
           let fillPercent = 0;
           if (isRunning || hasCompleted) {
@@ -86,23 +81,19 @@ export function RenderingTimeline({
                 width: `${widthPercent}%`,
               }}
             >
-              {/* Background track */}
               <div className="absolute inset-0 bg-muted/30 border-r border-border/20" />
 
-              {/* Filled portion with glow */}
               <div
                 className={`absolute top-0 left-0 h-full ${phaseStyle.bg} shadow-lg ${phaseStyle.shadow} transition-[width] duration-75 ease-linear`}
                 style={{
                   width: `${fillPercent}%`,
                 }}
               >
-                {/* Glow overlay during animation */}
                 {isRunning && fillPercent > 0 && fillPercent < 100 && (
                   <div className="absolute top-0 right-0 h-full w-4 bg-white/20 animate-glow-pulse" />
                 )}
               </div>
 
-              {/* Phase label */}
               {widthPercent > 6 && (
                 <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
                   <span
@@ -117,7 +108,6 @@ export function RenderingTimeline({
                 </div>
               )}
 
-              {/* Tooltip */}
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 bg-popover text-popover-foreground text-xs rounded-md shadow-lg border border-border opacity-0 group-hover/phase:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-20">
                 <div className="font-semibold">{phase.label}</div>
                 <div className="text-muted-foreground">
@@ -128,7 +118,6 @@ export function RenderingTimeline({
           );
         })}
 
-        {/* FCP marker */}
         {hasCompleted && (
           <div
             className="absolute top-0 h-full w-px z-10"
@@ -139,7 +128,6 @@ export function RenderingTimeline({
           </div>
         )}
 
-        {/* LCP marker (only if different from FCP) */}
         {hasCompleted && scenario.metrics.lcp !== scenario.metrics.fcp && (
           <div
             className="absolute top-0 h-full w-px z-10"
@@ -150,7 +138,6 @@ export function RenderingTimeline({
           </div>
         )}
 
-        {/* Cursor (time indicator) */}
         {isRunning && (
           <div
             className="absolute top-0 h-full w-0.5 bg-red-500 z-20 transition-[left] duration-75 ease-linear"
@@ -162,7 +149,6 @@ export function RenderingTimeline({
           </div>
         )}
 
-        {/* Completion indicator */}
         {hasCompleted && (
           <div
             className="absolute top-0 h-full w-0.5 bg-primary/30 z-10"
