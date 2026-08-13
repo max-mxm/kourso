@@ -3,7 +3,7 @@
 import { ContentCard, ContentCardProps } from '@/components/content-card';
 import { ArticleMetadata, BlogCategory } from '@/lib/blog/types';
 import { BLOG_CATEGORY_INFO } from '@/lib/blog/constants';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface BlogPageClientProps {
@@ -28,12 +28,6 @@ export function BlogPageClient({ articles }: BlogPageClientProps) {
   const [selectedCategory, setSelectedCategory] = useState<BlogCategory | 'all'>(
     'all'
   );
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   const filteredArticles =
     selectedCategory === 'all'
       ? articles
@@ -87,7 +81,7 @@ export function BlogPageClient({ articles }: BlogPageClientProps) {
 
         {/* Article featured (si existe) */}
         {featured && (
-          <div className={cn('mb-12', mounted && 'animate-fade-slide-up')}>
+          <div className="mb-12 animate-fade-slide-up">
             <ContentCard {...articleToContentCard(featured)} variant="featured" />
           </div>
         )}
@@ -99,8 +93,8 @@ export function BlogPageClient({ articles }: BlogPageClientProps) {
               <div
                 key={article.slug}
                 className={cn(
-                  mounted && 'animate-fade-slide-up',
-                  mounted && `stagger-${Math.min(index + (featured ? 2 : 1), 12)}`
+                  'animate-fade-slide-up',
+                  `stagger-${Math.min(index + (featured ? 2 : 1), 12)}`
                 )}
               >
                 <ContentCard {...articleToContentCard(article)} />

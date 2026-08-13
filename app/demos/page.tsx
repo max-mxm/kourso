@@ -6,6 +6,9 @@ export const metadata = {
   title: 'Demos Interactives React & Next.js',
   description:
     'Explorez des demos interactives pour visualiser et tester des concepts frontend en direct : React, Next.js, Performance, Optimisations.',
+  alternates: {
+    canonical: '/demos',
+  },
   openGraph: {
     title: 'Demos Interactives | Maxpaths',
     description: 'Simulateurs interactifs avec mesures reelles : performance React, rendering Next.js. Testez en direct dans votre navigateur.',

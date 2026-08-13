@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 import { ANIMATION_TIMINGS } from '@/lib/animation-config';
 
 /**
@@ -29,21 +29,19 @@ export function useAnimation(delay = 0): boolean {
  * Hook pour détecter si l'utilisateur préfère un mouvement réduit
  */
 export function useReducedMotion(): boolean {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      setPrefersReducedMotion(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
-  return prefersReducedMotion;
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      if (typeof window === 'undefined') return () => {};
+      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      mediaQuery.addEventListener('change', onStoreChange);
+      return () => mediaQuery.removeEventListener('change', onStoreChange);
+    },
+    () =>
+      typeof window !== 'undefined'
+        ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        : false,
+    () => false
+  );
 }
 
 /**

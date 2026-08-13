@@ -1,6 +1,5 @@
 import { ConceptCard } from '@/components/course/concept-card';
 import { CodeBlock } from '@/components/course/code-block';
-import { ComparisonTable } from '@/components/course/comparison-table';
 import { Check } from 'lucide-react';
 
 export default function ArchitectureSection() {

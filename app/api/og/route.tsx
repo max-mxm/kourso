@@ -1,10 +1,12 @@
 import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 const CATEGORY_GRADIENTS: Record<string, { from: string; to: string }> = {
   fundamentals: { from: '#009688', to: '#7c3aed' },
+  architecture: { from: '#3b82f6', to: '#06b6d4' },
+  testing: { from: '#f97316', to: '#f59e0b' },
   rendering: { from: '#3b82f6', to: '#06b6d4' },
   optimization: { from: '#f97316', to: '#f59e0b' },
   'best-practices': { from: '#8b5cf6', to: '#ec4899' },

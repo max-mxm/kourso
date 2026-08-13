@@ -19,6 +19,9 @@ import {
 export const metadata: Metadata = {
   title: 'Zod TypeScript : Guide Complet 2026 - Validation Type-Safe',
   description: 'Maitrisez Zod pour valider vos donnees TypeScript. Schemas, inference de types, validation de formulaires et API. Guide pratique avec exemples concrets.',
+  alternates: {
+    canonical: '/guides/zod-validation',
+  },
   openGraph: {
     title: 'Zod : La validation TypeScript que vous auriez du utiliser',
     description: 'Guide complet : schemas, inference de types, validation de formulaires et d\'API. Reduisez les bugs runtime de 70%.',

@@ -10,7 +10,7 @@ export const BLOG_CATEGORY_INFO: Record<BlogCategory, BlogCategoryInfo> = {
   fundamentals: {
     label: 'Fondamentaux',
     gradient: 'from-primary to-brand-secondary',
-    accentColor: 'rgb(0, 150, 136)',
+    accentColor: 'rgb(0, 105, 92)',
   },
   architecture: {
     label: 'Architecture',

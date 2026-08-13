@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Timer, BookOpen, Activity, ArrowRight } from 'lucide-react';
+import { ArrowLeft, BookOpen, Activity, ArrowRight } from 'lucide-react';
 import { CodeBlock } from '@/components/course/code-block';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { PerformanceDemo } from '@/app/demos/_components/performance-demo';

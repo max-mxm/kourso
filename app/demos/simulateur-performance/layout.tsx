@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Simulateur Performance React : useMemo, useCallback, React.memo en Direct',
   description: 'Comparez 4 strategies d\'optimisation React avec des mesures reelles de temps de rendu. Testez React.memo, useMemo et useCallback en live dans votre navigateur.',
+  alternates: {
+    canonical: '/demos/simulateur-performance',
+  },
   openGraph: {
     title: 'Simulateur Performance React | Maxpaths',
     description: 'Comparez React.memo, useMemo, useCallback avec des mesures reelles. Demo interactive en direct.',

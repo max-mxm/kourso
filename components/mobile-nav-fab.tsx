@@ -74,11 +74,6 @@ export function MobileNavFAB() {
   const pathname = usePathname();
   const { guideNav } = useMobileNav();
 
-  // Close on route change
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   // Body scroll lock
   useEffect(() => {
     if (open) {

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "./styles/demo-animations.css";
@@ -18,6 +18,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const isVercelDeployment = Boolean(process.env.VERCEL_ENV);
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.maxpaths.dev'),
@@ -103,6 +105,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#00695C' },
+    { media: '(prefers-color-scheme: dark)', color: '#009688' },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -170,7 +179,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <Analytics/>
+        {isVercelDeployment && <Analytics />}
         <ThemeProvider defaultTheme="light" storageKey="Maxpaths-ui-theme">
           <MobileNavProvider>
             <Header />

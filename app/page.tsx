@@ -9,9 +9,12 @@ import { DemoCard } from '@/components/demo-card';
 import { getGuidesForLanding, getArticlesForLanding, getDemosForLanding } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Accueil',
+  title: 'Guides React, Next.js et bonnes pratiques frontend',
   description:
     'Bonnes pratiques frontend, patterns et retours d\'experience par Maxime Morellon. Guides React, Next.js et articles techniques.',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Maxpaths — Bonnes pratiques frontend par Maxime Morellon',
     description:

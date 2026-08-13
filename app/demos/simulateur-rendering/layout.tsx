@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Simulateur Rendering Next.js : SSR, SSG, ISR en Direct',
   description: 'Visualisez les differences entre SSR, SSG, ISR, CSR et Streaming. Timelines animees et metriques Core Web Vitals en temps reel.',
+  alternates: {
+    canonical: '/demos/simulateur-rendering',
+  },
   openGraph: {
     title: 'Simulateur Rendering Next.js | Maxpaths',
     description: 'Visualisez SSR, SSG, ISR, CSR et Streaming avec des timelines animees et Core Web Vitals en temps reel.',

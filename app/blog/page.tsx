@@ -5,6 +5,9 @@ export const metadata = {
   title: 'Blog Frontend : React, Next.js, Testing, Architecture',
   description:
     'Articles techniques sur le developpement frontend moderne : React, Next.js, Testing, Architecture. Analyses, comparatifs et retours d\'experience.',
+  alternates: {
+    canonical: '/blog',
+  },
   openGraph: {
     title: 'Blog Frontend | Maxpaths',
     description: 'Articles techniques : React, Next.js, Testing, Architecture. Analyses approfondies et retours d\'experience.',

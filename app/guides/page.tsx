@@ -6,6 +6,9 @@ import { GuidesPageClient } from './guides-page-client';
 export const metadata: Metadata = {
   title: 'Guides React & Next.js',
   description: 'Guides techniques complets bases sur des retours d\'experience en production. React 19, Next.js 16, TypeScript, performance et patterns avances.',
+  alternates: {
+    canonical: '/guides',
+  },
   openGraph: {
     title: 'Guides React & Next.js | Maxpaths',
     description: 'Guides techniques complets : React 19, Next.js 16, TanStack, Zod, Memoisation. Patterns eprouves en production.',

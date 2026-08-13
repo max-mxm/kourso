@@ -23,28 +23,37 @@ export async function generateMetadata({
   }
 
   const metadata = article;
+  const pageTitle = metadata.seoTitle || `${metadata.title} | Blog maxpaths`;
+  const ogImage =
+    metadata.ogImage ||
+    `/api/og?title=${encodeURIComponent(pageTitle)}&category=${metadata.category}`;
 
   return {
-    title: metadata.seoTitle || `${metadata.title} | Blog maxpaths`,
+    title: {
+      absolute: pageTitle,
+    },
     description: metadata.seoDescription || metadata.description,
     authors: [{ name: metadata.author }],
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
 
     openGraph: {
-      title: metadata.seoTitle || metadata.title,
+      title: metadata.ogTitle || pageTitle,
       description: metadata.seoDescription || metadata.description,
       type: 'article',
       publishedTime: metadata.publishedAt,
       modifiedTime: metadata.updatedAt,
       authors: [metadata.author],
       tags: metadata.tags,
-      images: [{ url: `/api/og?title=${encodeURIComponent(metadata.seoTitle || metadata.title)}&category=best-practices`, width: 1200, height: 630 }],
+      images: [{ url: ogImage, width: 1200, height: 630 }],
     },
 
     twitter: {
       card: 'summary_large_image',
-      title: metadata.seoTitle || metadata.title,
-      description: metadata.seoDescription || metadata.description,
-      images: [`/api/og?title=${encodeURIComponent(metadata.seoTitle || metadata.title)}&category=best-practices`],
+      title: metadata.twitterTitle || pageTitle,
+      description: metadata.twitterDescription || metadata.seoDescription || metadata.description,
+      images: [ogImage],
     },
   };
 }

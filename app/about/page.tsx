@@ -8,6 +8,9 @@ import { Timeline } from './_components/timeline';
 export const metadata: Metadata = {
   title: 'A propos - Maxime Morellon, Developpeur Frontend Senior',
   description: 'Maxime Morellon, developpeur frontend senior avec 8 ans d\'experience. Specialise React, Next.js, TypeScript. Createur de Maxpaths.',
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
     title: 'A propos | Maxpaths',
     description: 'Maxime Morellon, developpeur frontend senior. 8 ans d\'experience React, Next.js, TypeScript.',

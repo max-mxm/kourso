@@ -5,6 +5,9 @@ import { Rocket, Database, Settings, RefreshCw, Code, Navigation, Table2, List, 
 export const metadata: Metadata = {
   title: 'TanStack React : Guide Complet Query, Router, Table, Virtual',
   description: '7 librairies TanStack pour eliminer le boilerplate React. Data fetching, routing type-safe, tableaux headless, virtualisation. Architecture de production.',
+  alternates: {
+    canonical: '/guides/tanstack-react',
+  },
   openGraph: {
     title: 'TanStack : Eliminez 80% de votre boilerplate React',
     description: 'Query, Router, Table, Virtual, Form, Store et Pacer. Du data fetching a l\'architecture de production avec 7 librairies headless.',

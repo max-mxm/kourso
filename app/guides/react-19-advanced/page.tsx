@@ -5,6 +5,9 @@ import { Rocket, Package, Cpu, Server, Zap, RefreshCw, Activity, Gauge, Trash2, 
 export const metadata: Metadata = {
   title: 'React 19 : Patterns Avances Server Components & Compiler',
   description: 'Patterns React 19 professionnels. use(), useActionState, useOptimistic, Server Components, React Compiler. Solutions eprouvees en production.',
+  alternates: {
+    canonical: '/guides/react-19-advanced',
+  },
   openGraph: {
     title: 'React 19 : Patterns des Devs Seniors',
     description: 'Compiler, Server Components, Actions, Streaming. Patterns avances React 19 et cas d\'usage professionnels eprouves en production.',

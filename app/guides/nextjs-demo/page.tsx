@@ -5,6 +5,9 @@ import { Rocket, Server, FileText, RefreshCw, Monitor, Layers, Component, Packag
 export const metadata: Metadata = {
   title: 'Next.js 16 : SSR, SSG, ISR - Guide Complet des Rendering Modes',
   description: 'Maitrisez les 5 modes de rendu Next.js 16. SSR, SSG, ISR, CSR, Streaming. Retours d\'experience production avec exemples concrets et Core Web Vitals.',
+  alternates: {
+    canonical: '/guides/nextjs-demo',
+  },
   openGraph: {
     title: 'Next.js 16 : Les Erreurs a Eviter en Production',
     description: 'SSR, SSG, ISR, Client Components, Streaming. Retours d\'experience sur des projets Next.js en production avec exemples concrets.',

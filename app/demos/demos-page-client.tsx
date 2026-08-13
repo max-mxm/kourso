@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ContentCard } from '@/components/content-card';
 import { LandingContentItem } from '@/lib/content';
 import { cn } from '@/lib/utils';
@@ -11,11 +11,6 @@ interface DemosPageClientProps {
 
 export function DemosPageClient({ demos }: DemosPageClientProps) {
   const [selectedTag, setSelectedTag] = useState<string>('all');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const allTags = ['all', 'Performance', 'Next.js', 'React', 'SSR'];
 
@@ -52,8 +47,8 @@ export function DemosPageClient({ demos }: DemosPageClientProps) {
           <div
             key={demo.href}
             className={cn(
-              mounted && 'animate-fade-slide-up',
-              mounted && `stagger-${Math.min(index + 1, 12)}`
+              'animate-fade-slide-up',
+              `stagger-${Math.min(index + 1, 12)}`
             )}
           >
             <ContentCard {...demo} />

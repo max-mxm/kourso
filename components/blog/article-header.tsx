@@ -74,7 +74,7 @@ export function ArticleHeader({ metadata }: ArticleHeaderProps) {
           {metadata.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full border border-border/50"
+              className="px-3 py-1 text-xs font-medium bg-muted text-foreground/80 rounded-full border border-border/50"
             >
               #{tag}
             </span>

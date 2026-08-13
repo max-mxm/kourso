@@ -32,7 +32,7 @@ export const metadata: ArticleMetadata = {
   // Open Graph
   ogTitle: 'Redux vs Context vs Zustand : Quel State Management Choisir ?',
   ogDescription: 'Comparaison technique de trois approches de gestion d\'etat en React. Redux Toolkit, React Context API, Zustand avec exemples de code et guide de choix.',
-  ogImage: '/og-images/articles/redux-vs-context-vs-zustand.jpg',
+  ogImage: '/api/og?title=Redux+vs+Context+vs+Zustand&category=architecture',
 
   // Twitter Card
   twitterCard: 'summary_large_image',

@@ -12,7 +12,7 @@ export function Footer() {
             <p className="text-muted-foreground text-sm text-center md:text-left max-w-md">
               Blog et bonnes pratiques frontend. Retours d&apos;experience, patterns eprouves et guides techniques.
             </p>
-            <span className="text-xs text-muted-foreground/80 text-center md:text-left">
+            <span className="text-xs text-muted-foreground text-center md:text-left">
               Fait avec passion par{' '}
               <a
                 href="https://www.maxime-morellon.dev/"

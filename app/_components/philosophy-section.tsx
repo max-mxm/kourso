@@ -58,7 +58,7 @@ export function PhilosophySection() {
 
         {/* Values Grid - pleine largeur */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
-            {values.map((value, index) => (
+            {values.map((value) => (
               <div
                 key={value.title}
                 className="group relative p-6 rounded-xl border border-border/40 hover:border-primary/30 bg-card/30 hover:bg-card/60 transition-all duration-300"

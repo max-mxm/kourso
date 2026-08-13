@@ -5,6 +5,9 @@ import { Rocket, Repeat, Shield, Brain, Zap, Puzzle, Table2, AlertTriangle, XCir
 export const metadata: Metadata = {
   title: 'React Memoisation : React.memo, useMemo, useCallback Expliques',
   description: '3 mecanismes de memoisation React expliques. Quand utiliser React.memo, useMemo, useCallback. Evitez l\'over-optimization avec exemples concrets.',
+  alternates: {
+    canonical: '/guides/react-memoization',
+  },
   openGraph: {
     title: 'Memoisation React : Optimisez Sans Ralentir',
     description: 'React.memo, useMemo, useCallback : les 3 mecanismes expliques. Exemples concrets et testables pour eviter l\'over-optimization.',

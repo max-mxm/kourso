@@ -73,7 +73,7 @@ export const metadata: ArticleMetadata = {
   // Open Graph
   ogTitle: 'TDD Frontend vs Backend : Les Vrais Défis',
   ogDescription: 'Pourquoi le TDD côté front n\'est pas aussi facile que le TDD côté back. Analyse approfondie et recommandations pragmatiques.',
-  ogImage: '/og-images/articles/tdd-frontend-vs-backend.jpg',
+  ogImage: '/api/og?title=TDD+Frontend+vs+Backend&category=testing',
 
   // Twitter Card
   twitterCard: 'summary_large_image',

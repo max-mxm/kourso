@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { ContentCard } from '@/components/content-card';
 import { LandingContentItem } from '@/lib/content';
 import { cn } from '@/lib/utils';
@@ -11,11 +11,6 @@ interface GuidesPageClientProps {
 
 export function GuidesPageClient({ guides }: GuidesPageClientProps) {
   const [selectedTag, setSelectedTag] = useState<string>('all');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Extraire tous les tags uniques
   const allTags = ['all', 'Next.js', 'React', 'TypeScript', 'Performance'];
@@ -55,8 +50,8 @@ export function GuidesPageClient({ guides }: GuidesPageClientProps) {
           <div
             key={guide.href}
             className={cn(
-              mounted && 'animate-fade-slide-up',
-              mounted && `stagger-${Math.min(index + 1, 12)}`
+              'animate-fade-slide-up',
+              `stagger-${Math.min(index + 1, 12)}`
             )}
           >
             <ContentCard {...guide} />
