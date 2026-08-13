@@ -15,7 +15,7 @@ export function Footer() {
             <span className="text-xs text-muted-foreground text-center md:text-left">
               Fait avec passion par{' '}
               <a
-                href="https://www.maxime-morellon.dev/"
+                href="https://maximemorellon.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors font-medium"
@@ -37,7 +37,7 @@ export function Footer() {
               <Linkedin size={18} />
             </a>
             <a
-              href="https://www.maxime-morellon.dev/"
+              href="https://maximemorellon.dev/"
               target="_blank"
               rel="noopener noreferrer"
               className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full border border-border hover:border-primary hover:bg-primary/5 transition-colors"

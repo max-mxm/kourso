@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: '%s | Maxpaths'
   },
 
-  description: 'Guides React et Next.js, articles techniques et retours d\'experience par Maxime Morellon. Patterns eprouves et solutions issues de 8 ans de developpement frontend.',
+  description: 'Guides React, Next.js, TypeScript et IA appliquee par Maxime Morellon. Patterns frontend, workflows IA et solutions issues de projets en production.',
 
   icons: {
     icon: [
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     'App Router'
   ],
 
-  authors: [{ name: 'Maxime Morellon', url: 'https://www.maxime-morellon.dev' }],
+  authors: [{ name: 'Maxime Morellon', url: 'https://maximemorellon.dev' }],
   creator: 'Maxime Morellon',
 
   openGraph: {
@@ -136,18 +136,18 @@ export default function RootLayout({
               "name": "Maxpaths",
               "url": "https://www.maxpaths.dev",
               "logo": "https://www.maxpaths.dev/maxpaths-logo.svg",
-              "description": "Plateforme de partage de bonnes pratiques React et Next.js basées sur des projets réels",
+              "description": "Plateforme de partage de bonnes pratiques React, Next.js et IA appliquee basees sur des projets reels",
               "founder": {
                 "@type": "Person",
                 "name": "Maxime Morellon",
-                "url": "https://www.maxime-morellon.dev",
+                "url": "https://maximemorellon.dev",
                 "sameAs": [
                   "https://www.linkedin.com/in/maxime-morellon-7a9403112"
                 ]
               },
               "sameAs": [
                 "https://www.linkedin.com/in/maxime-morellon-7a9403112",
-                "https://www.maxime-morellon.dev"
+                "https://maximemorellon.dev"
               ]
             })
           }}
@@ -160,17 +160,22 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Maxime Morellon",
-              "jobTitle": "Senior Frontend Developer",
-              "url": "https://www.maxime-morellon.dev",
+              "jobTitle": "Senior Frontend Engineer",
+              "url": "https://maximemorellon.dev",
               "sameAs": [
-                "https://www.linkedin.com/in/maxime-morellon-7a9403112"
+                "https://www.linkedin.com/in/maxime-morellon-7a9403112",
+                "https://maximemorellon.dev"
               ],
               "knowsAbout": [
                 "React",
                 "Next.js",
                 "TypeScript",
                 "Frontend Architecture",
-                "Web Performance"
+                "Web Performance",
+                "Applied AI",
+                "LLM Workflows",
+                "RAG",
+                "AI Agents"
               ]
             })
           }}

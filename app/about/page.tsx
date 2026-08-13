@@ -1,115 +1,182 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Target, Sparkles, Layers, Share2, Linkedin, Globe, Github } from 'lucide-react';
+import {
+  Bot,
+  Code2,
+  Gauge,
+  Github,
+  Globe,
+  Layers,
+  Linkedin,
+  Share2,
+  ShieldCheck,
+  Target,
+  Workflow,
+} from 'lucide-react';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
-import { Timeline } from './_components/timeline';
+
+const PORTFOLIO_URL = 'https://maximemorellon.dev/';
+
+const expertisePillars = [
+  {
+    icon: Code2,
+    title: 'Frontend expert',
+    description:
+      'React, Next.js, TypeScript, performance, accessibilité et architecture UI. Pas seulement faire marcher une interface : la rendre maintenable, rapide et robuste.',
+  },
+  {
+    icon: Bot,
+    title: 'IA appliquée',
+    description:
+      'LLMs, agents, automatisations, RAG, vision et workflows IA. Pas des démos isolées : des systèmes utilisables, observables et intégrés au produit.',
+  },
+];
+
+const maxpathsPromises = [
+  {
+    icon: Target,
+    title: 'Le terrain avant la théorie',
+    description:
+      'Chaque guide part d’un problème réel : rendu instable, architecture qui fatigue, optimisation inutile, dette qui ralentit l’équipe.',
+  },
+  {
+    icon: Gauge,
+    title: 'Mesurer avant d’optimiser',
+    description:
+      'Les décisions frontend sérieuses commencent par des signaux : re-renders, bundle, latence perçue, accessibilité, coût de maintenance.',
+  },
+  {
+    icon: Workflow,
+    title: 'IA dans le workflow',
+    description:
+      'L’IA est traitée comme un levier d’ingénierie : cadrage, génération, validation, automatisation, review, documentation et produit.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Production, pas magie',
+    description:
+      'Un pattern n’a de valeur que s’il résiste aux erreurs, aux cas limites, aux contraintes métier et aux usages réels.',
+  },
+];
+
+const topics = [
+  'React 19',
+  'Next.js',
+  'TypeScript',
+  'Performance',
+  'Accessibilité',
+  'Architecture UI',
+  'LLMs',
+  'Agents',
+  'RAG',
+  'Automatisation',
+  'BMAD',
+  'Workflows IA',
+];
 
 export const metadata: Metadata = {
-  title: 'A propos - Maxime Morellon, Developpeur Frontend Senior',
-  description: 'Maxime Morellon, developpeur frontend senior avec 8 ans d\'experience. Specialise React, Next.js, TypeScript. Createur de Maxpaths.',
+  title: 'A propos - Expertise frontend et IA appliquée',
+  description:
+    'Maxpaths documente les patterns frontend React, Next.js, TypeScript et IA appliquée utilisés pour construire des produits fiables en production.',
   alternates: {
     canonical: '/about',
   },
   openGraph: {
     title: 'A propos | Maxpaths',
-    description: 'Maxime Morellon, developpeur frontend senior. 8 ans d\'experience React, Next.js, TypeScript.',
-    images: [{ url: '/api/og?title=Maxime+Morellon+-+Frontend+Senior&category=fundamentals', width: 1200, height: 630 }],
+    description:
+      'Expertise frontend et IA appliquée : React, Next.js, TypeScript, agents, workflows IA et patterns de production.',
+    images: [{ url: '/api/og?title=Frontend+%26+IA+appliquee&category=fundamentals', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'A propos | Maxpaths',
-    description: 'Maxime Morellon, developpeur frontend senior. 8 ans d\'experience React, Next.js, TypeScript.',
-    images: ['/api/og?title=Maxime+Morellon+-+Frontend+Senior&category=fundamentals'],
+    description: 'Expertise frontend et IA appliquée, documentée depuis le terrain.',
+    images: ['/api/og?title=Frontend+%26+IA+appliquee&category=fundamentals'],
   },
 };
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* =============================================
-          SECTION 1 — Hero avec background moderne
-      ============================================= */}
-      <section className="about-hero relative py-20 md:py-32 overflow-hidden">
-        {/* Background stratifié moderne (comme page d'accueil) */}
+      <section className="about-hero relative overflow-hidden py-20 md:py-32">
         <div className="absolute inset-0 overflow-hidden opacity-60">
           <div
             className="about-bg-float absolute top-0 left-0 right-0 h-96 opacity-[0.06] dark:opacity-[0.05]"
             style={{
               background: 'linear-gradient(120deg, var(--primary) 0%, transparent 60%)',
               transform: 'skewY(-4deg)',
-              transformOrigin: 'top left'
+              transformOrigin: 'top left',
             }}
           />
           <div
-            className="absolute bottom-0 right-0 w-2/3 h-80 opacity-[0.05] dark:opacity-[0.04]"
+            className="absolute bottom-0 right-0 h-80 w-2/3 opacity-[0.05] dark:opacity-[0.04]"
             style={{
               background: 'linear-gradient(240deg, var(--brand-secondary) 0%, transparent 70%)',
               transform: 'skewY(3deg)',
-              transformOrigin: 'bottom right'
+              transformOrigin: 'bottom right',
             }}
           />
         </div>
 
         <div className="container relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            {/* Photo unique - visible sur tous les écrans */}
-            <div className="lg:col-span-5 order-1 lg:order-2">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-20">
+            <div className="order-1 lg:order-2 lg:col-span-5">
               <RevealOnScroll delay={100}>
-                <div className="relative aspect-[4/5] max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl border border-border/20">
+                <div className="relative mx-auto aspect-[4/5] max-w-md overflow-hidden rounded-xl border border-border/20 shadow-2xl">
                   <Image
                     src="/moi.png"
-                    alt="Maxime Morellon, développeur frontend"
+                    alt="Maxime Morellon"
                     fill
                     className="object-cover"
                     priority
                     sizes="(min-width: 1024px) 420px, 320px"
                   />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-6 py-5">
-                    <p className="font-bold text-white text-lg">Maxime Morellon</p>
-                    <p className="text-white/90 text-sm">Développeur Frontend Senior</p>
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-6 py-5">
+                    <p className="text-lg font-bold text-white">Maxime Morellon</p>
+                    <p className="text-sm text-white/90">Frontend expert · IA appliquée</p>
                   </div>
                 </div>
               </RevealOnScroll>
             </div>
 
-            {/* Contenu hero avec barre accent */}
-            <div className="lg:col-span-7 order-2 lg:order-1">
-              <div className="relative pl-0 md:pl-6 text-center md:text-left">
-                {/* Barre accent gradient */}
-                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 hidden md:block" />
+            <div className="order-2 lg:order-1 lg:col-span-7">
+              <div className="relative text-center md:pl-6 md:text-left">
+                <div className="absolute left-0 top-0 bottom-0 hidden w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 md:block" />
 
                 <div className="space-y-6">
-                  <RevealOnScroll delay={0}>
-                    <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary/80">
+                  <RevealOnScroll>
+                    <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary/80">
                       À propos
                     </span>
                   </RevealOnScroll>
 
                   <RevealOnScroll delay={100}>
-                    <h1 className="text-[clamp(2rem,7vw,4.5rem)] font-black leading-[1.05] tracking-tight text-foreground">
-                      Documenter ce que personne ne{' '}
-                      <span className="text-primary">documente</span>
+                    <h1 className="text-[clamp(2.25rem,7vw,4.75rem)] font-black leading-[1.03] tracking-tight text-foreground">
+                      Expert frontend.
+                      <span className="block bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent">
+                        IA appliquée.
+                      </span>
                     </h1>
                   </RevealOnScroll>
 
                   <RevealOnScroll delay={200}>
-                    <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl">
-                      Server Components imprévisibles. Re-renders en cascade. Optimisations contre-productives.
-                      Ce site rassemble les solutions forgées quand Stack Overflow ne suffit plus.
+                    <p className="max-w-2xl text-lg leading-relaxed text-foreground/80 md:text-xl">
+                      Maxpaths documente les patterns React, Next.js, TypeScript et IA que
+                      j’utilise pour construire des produits fiables, rapides et utiles en production.
                     </p>
                   </RevealOnScroll>
 
                   <RevealOnScroll delay={300}>
-                    <div className="grid grid-cols-2 gap-6 pt-4">
-                      <div className="space-y-1">
-                        <div className="text-3xl font-bold text-primary">React 19</div>
-                        <div className="text-sm text-muted-foreground">Standards actuels</div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-3xl font-bold text-brand-secondary">Next.js 16</div>
-                        <div className="text-sm text-muted-foreground">Dernière version</div>
-                      </div>
+                    <div className="grid grid-cols-2 gap-4 pt-4 sm:grid-cols-4">
+                      {['React', 'Next.js', 'TypeScript', 'IA'].map((item) => (
+                        <div key={item} className="border-l border-border/70 pl-4 text-left">
+                          <div className="text-lg font-bold text-foreground">{item}</div>
+                          <div className="text-xs uppercase tracking-wide text-muted-foreground">
+                            production
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </RevealOnScroll>
                 </div>
@@ -119,136 +186,116 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =============================================
-          SECTION 2 — Origine du projet (pleine largeur)
-      ============================================= */}
-      <section className="about-section about-section-2 py-16 md:py-24 border-t border-border/50">
+      <section className="about-section about-section-2 border-t border-border/50 py-16 md:py-24">
         <div className="container">
           <RevealOnScroll>
-            <div className="relative pl-0 md:pl-6 mb-10 text-center md:text-left">
-              <div className="about-accent-bar absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 hidden md:block" />
-              <div className="space-y-3">
-                <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary/80">
-                  Genèse
-                </span>
-                <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight text-foreground">
-                  Pourquoi <span className="bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent">Maxpaths</span> existe
-                </h2>
-              </div>
+            <div className="relative mb-10 text-center md:pl-6 md:text-left">
+              <div className="about-accent-bar absolute left-0 top-0 bottom-0 hidden w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 md:block" />
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary/80">
+                Positionnement
+              </span>
+              <h2 className="mt-3 text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight text-foreground">
+                Ce site n’est pas mon CV. C’est mon laboratoire public.
+              </h2>
             </div>
           </RevealOnScroll>
 
           <RevealOnScroll delay={100}>
-            <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>
-                La documentation officielle enseigne la syntaxe. L'expérience terrain enseigne ce qu'il ne faut jamais faire.
-              </p>
-              <p>
-                Entre les tutoriels académiques et les projets à fort trafic, il existe un gouffre : les anti-patterns réels,
-                les choix d'architecture qui dégradent 6 mois plus tard, les optimisations qui génèrent plus de bugs qu'elles n'en résolvent.
+                Mon portfolio présente mon parcours. Maxpaths, lui, sert à documenter ce que je
+                considère comme vraiment utile pour les développeurs frontend et les équipes produit :
+                les choix techniques, les compromis, les erreurs, les patterns et les workflows IA
+                qui changent concrètement la manière de construire.
               </p>
               <p className="font-medium text-foreground/90">
-                <span className="bg-gradient-to-r from-primary to-brand-secondary bg-clip-text text-transparent font-bold">Maxpaths</span> comble ce vide en documentant les solutions testées en production, pas la théorie abstraite.
+                L’objectif est simple : transformer l’expérience de production en guides actionnables,
+                sans vendre de raccourci magique ni empiler de théorie hors-sol.
               </p>
             </div>
           </RevealOnScroll>
         </div>
       </section>
 
-      {/* =============================================
-          SECTION 3 — Application Scanorr (pleine largeur)
-      ============================================= */}
-      <section className="about-section about-section-3 py-16 md:py-24 border-t border-border/50">
+      <section className="about-section about-section-3 border-t border-border/50 py-16 md:py-24">
         <div className="container">
           <RevealOnScroll>
-            <div className="relative pl-0 md:pl-6 mb-10 text-center md:text-left">
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-brand-secondary to-brand-secondary/20 hidden md:block" />
-              <div className="space-y-3">
-                <span className="text-xs font-bold tracking-[0.25em] uppercase text-brand-secondary/80">
-                  Application
-                </span>
-                <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight text-foreground">
-                  Scanorr : mise en pratique des principes
-                </h2>
-              </div>
+            <div className="relative mb-12 text-center md:pl-6 md:text-left">
+              <div className="absolute left-0 top-0 bottom-0 hidden w-[3px] bg-gradient-to-b from-brand-secondary to-brand-secondary/20 md:block" />
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-brand-secondary/80">
+                Deux expertises
+              </span>
+              <h2 className="mt-3 text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight text-foreground">
+                Frontend exigeant, IA concrète
+              </h2>
             </div>
           </RevealOnScroll>
 
-          <RevealOnScroll delay={100}>
-            <div className="space-y-6 text-base md:text-lg text-muted-foreground leading-relaxed">
-              <p>
-                J'ai développé{' '}
-                <a
-                  href="https://scanorr.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="about-link font-medium text-primary hover:text-primary/80"
-                >
-                  Scanorr
-                </a>
-                , une application web et mobile en Next.js et React Native qui digitalise les états des lieux immobiliers.
-                L'application intègre de l'IA pour la reconnaissance de pièces, fonctionne entièrement hors-ligne,
-                et génère des rapports conformes à la loi ALUR avec signatures électroniques.
-              </p>
-              <p>
-                Ce projet m'a permis de mettre en œuvre de nombreux principes documentés dans les guides :
-                optimisations de rendu avec Server Components, mémoïsation stratégique, gestion d'état avec Zustand,
-                validation robuste avec Zod, et architecture progressive pour gérer la complexité croissante.
-              </p>
-              <p className="font-medium text-foreground/90">
-                Scanorr réduit le temps d'inspection de 2h à 45 minutes pour un appartement type 3 pièces,
-                tout en garantissant la conformité légale et la protection des propriétaires.
-              </p>
-            </div>
-          </RevealOnScroll>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {expertisePillars.map((pillar, index) => (
+              <RevealOnScroll key={pillar.title} delay={index * 100}>
+                <div className="about-card group relative h-full rounded-xl border border-border/40 bg-card/40 p-7 transition-all duration-300 hover:border-primary/30 hover:bg-card/70">
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-brand-secondary/10">
+                    <pillar.icon className="about-icon-hover h-6 w-6 text-primary" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="mb-3 text-xl font-bold text-foreground">{pillar.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                    {pillar.description}
+                  </p>
+                  <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-br from-primary/0 via-primary/0 to-brand-secondary/0 transition-all duration-500 group-hover:from-primary/5 group-hover:to-brand-secondary/5" />
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
 
           <RevealOnScroll delay={200}>
-            <div className="pt-8">
-              <a
-                href="https://scanorr.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="about-button about-icon-rotate group inline-flex items-center gap-2 px-6 py-3 border border-border/60 hover:border-brand-secondary/40 font-semibold rounded-lg hover:bg-brand-secondary/5"
-              >
-                <Globe size={18} className="about-icon-hover" />
-                Découvrir Scanorr
-                <svg className="w-4 h-4 about-icon-hover" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </a>
+            <div className="mt-10 flex flex-wrap gap-2">
+              {topics.map((topic) => (
+                <span
+                  key={topic}
+                  className="rounded-md border border-border/50 bg-muted px-3 py-1 text-sm font-medium text-foreground/80"
+                >
+                  {topic}
+                </span>
+              ))}
             </div>
           </RevealOnScroll>
         </div>
       </section>
 
-      {/* =============================================
-          SECTION 4 — Timeline du Parcours
-      ============================================= */}
-      <section className="about-section about-section-4 py-16 md:py-24 border-t border-border/50">
+      <section className="about-section about-section-4 border-t border-border/50 py-16 md:py-24">
         <div className="container">
           <RevealOnScroll>
-            <div className="relative pl-0 md:pl-6 mb-12 md:mb-20 text-center md:text-left">
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-brand-secondary to-brand-secondary/20 hidden md:block" />
-              <div className="space-y-3">
-                <span className="text-xs font-bold tracking-[0.25em] uppercase text-brand-secondary/80">
-                  Parcours
-                </span>
-                <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight text-foreground">
-                  Étapes clés du projet
-                </h2>
-              </div>
+            <div className="relative mb-12 text-center md:pl-6 md:text-left">
+              <div className="absolute left-0 top-0 bottom-0 hidden w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 md:block" />
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary/80">
+                Promesse
+              </span>
+              <h2 className="mt-3 text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight text-foreground">
+                Ce que Maxpaths met sur la table
+              </h2>
             </div>
           </RevealOnScroll>
 
-          <Timeline />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {maxpathsPromises.map((item, index) => (
+              <RevealOnScroll key={item.title} delay={index * 80}>
+                <div className="about-card group relative h-full rounded-xl border border-border/40 bg-card/30 p-7 transition-all duration-300 hover:border-primary/30 hover:bg-card/60">
+                  <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-brand-secondary/10">
+                    <item.icon className="about-icon-hover h-6 w-6 text-primary" strokeWidth={2.5} />
+                  </div>
+                  <h3 className="mb-3 text-lg font-semibold text-foreground">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              </RevealOnScroll>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* =============================================
-          SECTION 5 — Philosophie (pleine largeur, grille centrée)
-      ============================================= */}
-      <section className="about-section about-section-5 relative py-16 md:py-28 border-t border-border/50 overflow-hidden">
-        {/* Background grain subtil */}
+      <section className="about-section about-section-5 relative overflow-hidden border-t border-border/50 py-16 md:py-24">
         <div className="absolute inset-0 opacity-[0.015] dark:opacity-[0.01]">
           <div
             className="absolute inset-0"
@@ -261,100 +308,62 @@ export default function AboutPage() {
 
         <div className="container relative">
           <RevealOnScroll>
-            <div className="relative pl-0 md:pl-6 mb-12 md:mb-16 text-center md:text-left">
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 hidden md:block" />
-              <div className="space-y-3">
-                <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary/80">
-                  Philosophie
-                </span>
-                <h2 className="text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight text-foreground">
-                  Principes fondateurs
-                </h2>
-              </div>
+            <div className="relative mb-10 text-center md:pl-6 md:text-left">
+              <div className="absolute left-0 top-0 bottom-0 hidden w-[3px] bg-gradient-to-b from-brand-secondary to-brand-secondary/20 md:block" />
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-brand-secondary/80">
+                Preuve par le produit
+              </span>
+              <h2 className="mt-3 text-[clamp(1.75rem,5vw,3rem)] font-bold leading-tight text-foreground">
+                Scanorr : quand frontend, mobile, offline et IA se rencontrent
+              </h2>
             </div>
           </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: Target,
-                title: 'Axé production',
-                description:
-                  'Solutions validées en conditions réelles. Zéro spéculation, uniquement des patterns éprouvés sur applications à fort trafic.',
-              },
-              {
-                icon: Sparkles,
-                title: 'Apprentissage interactif',
-                description:
-                  'Démos live avec mesures temps réel. Manipulation directe, observations concrètes, code modifiable à volonté.',
-              },
-              {
-                icon: Layers,
-                title: 'Architecture progressive',
-                description:
-                  'Du fondamental vers l\'avancé. Parcours structurés selon niveau et cas d\'usage, sans sauter d\'étapes.',
-              },
-              {
-                icon: Share2,
-                title: 'Savoir partagé',
-                description:
-                  'Contenu ouvert et gratuit. Retours terrain, anti-patterns documentés, communauté qui apprend ensemble.',
-              },
-            ].map((value, index) => (
-              <RevealOnScroll key={value.title} delay={index * 80}>
-                <div className="about-card group relative p-7 rounded-xl border border-border/40 hover:border-primary/30 bg-card/30 hover:bg-card/60">
-                  {/* Icon avec background gradient */}
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-primary/10 to-brand-secondary/10 mb-5">
-                    <value.icon className="about-icon-hover w-6 h-6 text-primary" strokeWidth={2.5} />
-                  </div>
+          <RevealOnScroll delay={100}>
+            <div className="space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+              <p>
+                Scanorr illustre exactement le type de complexité qui nourrit Maxpaths : une interface
+                produit réelle, des contraintes terrain, de l’IA Vision & Voice, du mobile, du offline,
+                de la génération de rapports et une UX qui doit rester simple malgré la technique.
+              </p>
+              <p className="font-medium text-foreground/90">
+                C’est ce genre de produit qui rend les articles utiles : les patterns ne viennent pas
+                d’une préférence abstraite, mais de problèmes qu’il faut résoudre proprement.
+              </p>
+            </div>
+          </RevealOnScroll>
 
-                  <h3 className="text-lg font-semibold text-foreground mb-3">
-                    {value.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {value.description}
-                  </p>
-
-                  {/* Accent hover */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/0 via-primary/0 to-brand-secondary/0 group-hover:from-primary/5 group-hover:to-brand-secondary/5 transition-all duration-500 pointer-events-none" />
-                </div>
-              </RevealOnScroll>
-            ))}
-          </div>
-
-          {/* Links sociaux */}
-          <RevealOnScroll delay={300}>
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-12 mt-12 border-t border-border/30">
+          <RevealOnScroll delay={200}>
+            <div className="flex flex-col gap-4 border-t border-border/30 pt-10 sm:flex-row sm:items-center">
               <div className="flex-1 text-center sm:text-left">
                 <p className="text-sm font-medium text-foreground/70">
-                  Restons connectés
+                  Le portfolio garde le détail du parcours. Maxpaths garde les enseignements.
                 </p>
               </div>
-
-              <div className="flex flex-wrap gap-3 justify-center sm:justify-end">
+              <div className="flex flex-wrap justify-center gap-3 sm:justify-end">
+                <a
+                  href={PORTFOLIO_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about-button about-icon-rotate group inline-flex items-center gap-2 rounded-lg border border-border/60 px-6 py-3 font-semibold hover:border-primary/40 hover:bg-primary/5"
+                >
+                  <Globe size={18} className="about-icon-hover" />
+                  Voir le portfolio complet
+                </a>
                 <a
                   href="https://www.linkedin.com/in/maxime-morellon-7a9403112"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="about-button about-icon-scale group inline-flex items-center gap-2 px-6 py-3 bg-[#0077B5] text-white font-semibold rounded-lg hover:bg-[#0077B5]/90 shadow-md hover:shadow-lg hover:shadow-[#0077B5]/20"
+                  className="about-button about-icon-scale group inline-flex items-center gap-2 rounded-lg bg-[#0077B5] px-6 py-3 font-semibold text-white shadow-md hover:bg-[#0077B5]/90 hover:shadow-lg hover:shadow-[#0077B5]/20"
                 >
                   <Linkedin size={18} className="about-icon-hover" />
                   LinkedIn
                 </a>
                 <a
-                  href="https://www.maxime-morellon.dev/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="about-button about-icon-rotate group inline-flex items-center gap-2 px-6 py-3 border border-border/60 hover:border-primary/40 font-semibold rounded-lg hover:bg-primary/5"
-                >
-                  <Globe size={18} className="about-icon-hover" />
-                  Portfolio
-                </a>
-                <a
                   href="https://www.github.com/maxime-morellon"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="about-button about-icon-scale group inline-flex items-center gap-2 px-6 py-3 border border-border/60 hover:border-primary/40 font-semibold rounded-lg hover:bg-primary/5"
+                  className="about-button about-icon-scale group inline-flex items-center gap-2 rounded-lg border border-border/60 px-6 py-3 font-semibold hover:border-primary/40 hover:bg-primary/5"
                 >
                   <Github size={18} className="about-icon-hover" />
                   GitHub
@@ -365,59 +374,50 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* =============================================
-          SECTION 6 — CTA Final (modernisé)
-      ============================================= */}
-      <section className="about-section-6 relative py-16 md:py-28 overflow-hidden">
-        {/* Background stratifié subtil */}
+      <section className="about-section-6 relative overflow-hidden py-16 md:py-28">
         <div className="absolute inset-0 opacity-40">
           <div
             className="absolute bottom-0 left-0 right-0 h-64 opacity-[0.06] dark:opacity-[0.05]"
             style={{
               background: 'linear-gradient(90deg, var(--primary) 0%, var(--brand-secondary) 50%, transparent 100%)',
               transform: 'skewY(-2deg)',
-              transformOrigin: 'bottom left'
+              transformOrigin: 'bottom left',
             }}
           />
         </div>
 
         <div className="container relative z-10">
           <RevealOnScroll>
-            <div className="relative pl-0 md:pl-6 mb-10 text-center md:text-left">
-              <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 hidden md:block" />
-              <div className="space-y-4">
-                <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight">
-                  Prêt à explorer ?
-                </h2>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                  Parcourez les guides, expérimentez les démos interactives, découvrez les patterns
-                  qui transformeront votre approche du développement React.
-                </p>
-              </div>
+            <div className="relative mb-10 text-center md:pl-6 md:text-left">
+              <div className="absolute left-0 top-0 bottom-0 hidden w-[3px] bg-gradient-to-b from-primary via-brand-secondary to-primary/20 md:block" />
+              <h2 className="text-[clamp(2rem,5vw,3.5rem)] font-black leading-tight">
+                Explorer les patterns qui tiennent.
+              </h2>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+                Guides frontend, articles IA, démos interactives : tout est pensé pour passer
+                de l’idée au système utilisable.
+              </p>
             </div>
           </RevealOnScroll>
 
           <RevealOnScroll delay={100}>
-            <div className="max-w-3xl mx-auto">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Link
-                  href="/guides"
-                  className="about-button group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/20 overflow-hidden"
-                >
-                  <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                  <span className="relative">Explorer les guides</span>
-                  <svg className="about-icon-hover relative w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </Link>
-                <Link
-                  href="/blog"
-                  className="about-button group relative inline-flex items-center justify-center gap-2 px-8 py-4 border border-border/60 hover:border-primary/40 font-semibold rounded-lg hover:bg-primary/5 overflow-hidden"
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-                  <span className="relative">Lire le blog</span>
-                </Link>
-              </div>
+            <div className="mx-auto flex max-w-3xl flex-col justify-center gap-4 pt-4 sm:flex-row">
+              <Link
+                href="/guides"
+                className="about-button group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-8 py-4 font-semibold text-white shadow-lg hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/20"
+              >
+                <span className="absolute inset-0 translate-y-full bg-white/10 transition-transform duration-500 ease-out group-hover:translate-y-0" />
+                <span className="relative">Explorer les guides</span>
+                <Layers className="about-icon-hover relative h-4 w-4" />
+              </Link>
+              <Link
+                href="/blog"
+                className="about-button group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg border border-border/60 px-8 py-4 font-semibold hover:border-primary/40 hover:bg-primary/5"
+              >
+                <span className="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 transition-transform duration-700 ease-out group-hover:translate-x-[100%]" />
+                <span className="relative">Lire le blog</span>
+                <Share2 className="about-icon-hover relative h-4 w-4" />
+              </Link>
             </div>
           </RevealOnScroll>
         </div>

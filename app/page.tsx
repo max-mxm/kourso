@@ -37,7 +37,7 @@ const personSchema = {
   jobTitle: 'Developpeur Frontend Senior',
   sameAs: [
     'https://www.linkedin.com/in/maxime-morellon-7a9403112',
-    'https://www.maxime-morellon.dev/',
+    'https://maximemorellon.dev/',
   ],
 };
 

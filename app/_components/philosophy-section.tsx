@@ -100,7 +100,7 @@ export function PhilosophySection() {
               LinkedIn
             </a>
             <a
-              href="https://www.maxime-morellon.dev/"
+              href="https://maximemorellon.dev/"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 px-6 py-3 border border-border/60 hover:border-primary/40 font-semibold rounded-lg hover:bg-primary/5 transition-all duration-300"
