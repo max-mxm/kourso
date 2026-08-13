@@ -5,6 +5,7 @@ import { metadata as tddMetadata } from '@/app/blog/_articles/tdd-frontend-vs-ba
 import { metadata as reduxVsContextVsZustandMetadata } from '@/app/blog/_articles/redux-vs-context-vs-zustand/metadata';
 import { metadata as react19ActionsProductionMetadata } from '@/app/blog/_articles/react-19-actions-production/metadata';
 import { metadata as react192ActivityUseEffectEventMetadata } from '@/app/blog/_articles/react-19-2-activity-useeffectevent/metadata';
+import { metadata as uxSaasIaVitamcvMetadata } from '@/app/blog/_articles/ux-saas-ia-vitamcv/metadata';
 
 // Registre des métadonnées (sans les composants)
 const metadataRegistry: ArticleMetadata[] = [
@@ -12,6 +13,7 @@ const metadataRegistry: ArticleMetadata[] = [
   reduxVsContextVsZustandMetadata,
   react19ActionsProductionMetadata,
   react192ActivityUseEffectEventMetadata,
+  uxSaasIaVitamcvMetadata,
 ];
 
 // Fonction pour charger le composant content d'un article
@@ -29,6 +31,9 @@ async function loadArticleContent(slug: string): Promise<React.ComponentType | n
     case 'react-19-2-activity-useeffectevent':
       const { default: React192ActivityUseEffectEventContent } = await import('@/app/blog/_articles/react-19-2-activity-useeffectevent/content');
       return React192ActivityUseEffectEventContent;
+    case 'ux-saas-ia-vitamcv':
+      const { default: UxSaasIaVitamcvContent } = await import('@/app/blog/_articles/ux-saas-ia-vitamcv/content');
+      return UxSaasIaVitamcvContent;
     default:
       return null;
   }

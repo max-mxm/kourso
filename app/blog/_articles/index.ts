@@ -13,3 +13,6 @@ export { default as React19ActionsProductionContent } from './react-19-actions-p
 
 export { metadata as react192ActivityUseEffectEventMetadata } from './react-19-2-activity-useeffectevent/metadata';
 export { default as React192ActivityUseEffectEventContent } from './react-19-2-activity-useeffectevent/content';
+
+export { metadata as uxSaasIaVitamcvMetadata } from './ux-saas-ia-vitamcv/metadata';
+export { default as UxSaasIaVitamcvContent } from './ux-saas-ia-vitamcv/content';
