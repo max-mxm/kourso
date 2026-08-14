@@ -76,7 +76,13 @@ app/blog/_articles/<slug>/
   content.tsx
 ```
 
-Then export both files from:
+Then register the article in:
+
+```text
+lib/blog/get-articles.ts
+```
+
+Also export both files from:
 
 ```text
 app/blog/_articles/index.ts
@@ -132,15 +138,32 @@ Keep component usage consistent with existing articles.
 
 For each new article:
 
-- choose a descriptive slug with the main keyword
-- include French and English technical keywords when useful
-- keep `seoTitle` around 50-70 characters when possible
-- keep `seoDescription` concise and action-oriented
+- choose a descriptive slug with the main keyword, in kebab-case and without
+  accents
+- write a unique, descriptive `seoTitle` with the main query early; keep it
+  readable in search results, but do not force an exact character count
+- write a unique `seoDescription` that accurately summarizes the visible page;
+  keep it concise and useful, but do not pad or trim it only to satisfy a fixed
+  length
+- include French and English technical keywords when useful; avoid keyword
+  stuffing
+- make sure the primary query appears naturally in the title, introduction,
+  headings, link text, image alt text when relevant, and body copy
+- cite current official sources when the article covers changing technologies
+  or search-sensitive topics
+- keep product mentions helpful and contextual; use case-study framing and
+  useful CTAs instead of hard-sell copy
+- ensure JSON-LD describes visible page content, canonical URLs use
+  `https://www.maxpaths.dev`, and internal/external links are crawlable
+- for AI search visibility, prioritize expert-led, non-commodity content with
+  concrete examples, original lessons, clear structure, and source attribution
 - use `/api/og?title=...&category=...` for generated OG images unless a custom
   image already exists
 
 If search keywords are required by the workflow, update the relevant search
 index or run the project keyword generation workflow described in the docs.
+Keep `keywords` arrays focused on technical terms used by the internal search,
+not as a substitute for visible article quality.
 
 ## Git Hygiene
 

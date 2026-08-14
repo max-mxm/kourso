@@ -152,6 +152,122 @@ const SEARCH_INDEX: SearchItem[] = [
   },
 
   // ==========================================================================
+  // ARTICLE : Construire un SaaS IA conversationnel : le cas VitamCV
+  // ==========================================================================
+  {
+    type: 'article',
+    title: 'Construire un SaaS IA conversationnel : le cas VitamCV',
+    description: 'Guide d architecture pour SaaS IA conversationnel avec Next.js, AI SDK, assistant-ui, Zustand, ToolUI, scoring et validation humaine.',
+    href: '/blog/ux-saas-ia-vitamcv',
+    tags: ['SaaS IA', 'UX', 'Next.js', 'AI SDK', 'Zustand', 'VitamCV'],
+    keywords: ['SaaS IA', 'AI UX', 'Next.js', 'AI SDK', 'assistant-ui', 'ToolUI', 'tool calling', 'Zustand', 'Supabase', 'Zod', 'scoring CV', 'scanner CV IA', 'idempotent tool effects', 'conversation phase'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Introduction',
+    href: '/blog/ux-saas-ia-vitamcv#introduction',
+    tags: ['SaaS IA'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['chat IA', 'SaaS IA', 'VitamCV', 'generateur CV IA'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Le point de depart',
+    href: '/blog/ux-saas-ia-vitamcv#point-depart',
+    tags: ['SaaS IA'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['chatbot', 'produit IA', 'donnees structurees', 'surface de controle'],
+  },
+  {
+    type: 'article-heading',
+    title: 'La stack choisie',
+    href: '/blog/ux-saas-ia-vitamcv#stack-choisie',
+    tags: ['Next.js', 'AI SDK'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['Next.js', 'AI SDK', 'assistant-ui', 'Zustand', 'Supabase', 'Zod', 'shadcn/ui'],
+  },
+  {
+    type: 'article-heading',
+    title: "Qui possede l'etat ?",
+    href: '/blog/ux-saas-ia-vitamcv#architecture-etat',
+    tags: ['Zustand'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['state management', 'Zustand', 'Supabase', 'durable state', 'ui state'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Les phases conversationnelles',
+    href: '/blog/ux-saas-ia-vitamcv#phases-conversation',
+    tags: ['AI SDK'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['system prompt', 'conversation phase', 'onboarding', 'extraction', 'exploration', 'validation'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Synchronisation chat panel',
+    href: '/blog/ux-saas-ia-vitamcv#synchronisation',
+    tags: ['UX'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['chat panel sync', 'ToolResultSync', 'panel edits', 'updateProfile'],
+  },
+  {
+    type: 'article-heading',
+    title: 'ToolUI et validation humaine',
+    href: '/blog/ux-saas-ia-vitamcv#tool-ui-validation',
+    tags: ['assistant-ui'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['ToolUI', 'assistant-ui', 'validateSection', 'human in the loop', 'toolkit'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Focus Mode',
+    href: '/blog/ux-saas-ia-vitamcv#focus-mode',
+    tags: ['UX'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['Focus Mode', 'preview CV', 'split view', 'responsive layout'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Scoring explicable',
+    href: '/blog/ux-saas-ia-vitamcv#scoring',
+    tags: ['SaaS IA'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['scoring', 'ATS', 'computeScore', 'keyword overlap', 'authenticity score'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Retry et idempotence',
+    href: '/blog/ux-saas-ia-vitamcv#durable-turns',
+    tags: ['AI SDK'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['retry', 'idempotence', 'stream interrompu', 'tool call receipt'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Lecons frontend et IA',
+    href: '/blog/ux-saas-ia-vitamcv#lecons',
+    tags: ['Frontend'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['frontend IA', 'trust UX', 'validation', 'preview', 'erreurs recuperables'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Checklist SaaS IA',
+    href: '/blog/ux-saas-ia-vitamcv#checklist',
+    tags: ['SaaS IA'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['checklist', 'tools', 'schema input', 'validation humaine', 'documentation'],
+  },
+  {
+    type: 'article-heading',
+    title: 'Conclusion',
+    href: '/blog/ux-saas-ia-vitamcv#conclusion',
+    tags: ['SaaS IA'],
+    parentTitle: 'Construire un SaaS IA conversationnel',
+    keywords: ['conclusion', 'patterns IA', 'VitamCV', 'scanner CV'],
+  },
+
+  // ==========================================================================
   // GUIDE : Zod : La validation TypeScript que vous auriez dû utiliser depuis le début
   // ==========================================================================
   {

@@ -281,7 +281,7 @@ export { default as VotreContent } from './nom-de-votre-article/content';
 ### 5.1 Lancer le serveur
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ### 5.2 Vérifier les URLs
@@ -348,27 +348,31 @@ Les keywords sont ajoutés dans `lib/search-index.ts` pour l'article principal E
 
 ### SEO / GEO (OBLIGATOIRE)
 
-- **seoTitle** : 50-70 caracteres, mots-cles principaux en premier, terminer par `| Blog maxpaths`
-- **seoDescription** : 150-160 caracteres, proposition de valeur avec mots-cles
-- **keywords** : Array de 8-15 mots-cles techniques (noms d'API, librairies, acronymes, termes FR/EN)
+- **seoTitle** : titre unique, descriptif, avec la requete principale au debut quand c'est naturel. Viser un affichage lisible dans Google, sans forcer un nombre exact de caracteres.
+- **seoDescription** : description unique, concise et fidele au contenu visible. Elle doit donner envie de cliquer, mais ne doit pas etre rembourree ou coupee uniquement pour atteindre une longueur fixe.
+- **keywords** : array focalise sur les termes techniques utiles a la recherche interne Cmd+K (noms d'API, librairies, acronymes, termes FR/EN). Ne pas utiliser ce champ comme substitut a du contenu visible.
 - **ogTitle** : Titre engageant pour les reseaux sociaux (peut differer du seoTitle)
 - **ogDescription** : Description pour LinkedIn/Slack/Discord (max 200 caracteres)
 - **twitterCard** : Toujours `'summary_large_image'`
 - **twitterTitle/Description** : Optimises pour Twitter/X
 - **Tags** : 3-7 tags pertinents (affiches sur la page blog et utilises pour le filtrage)
 - **URL** : Kebab-case, sans accents, maximum 5 mots
+- **Requete principale** : La faire apparaitre naturellement dans le titre, l'introduction, certains intertitres, les ancres de liens, les textes alternatifs d'images pertinents et le corps du texte.
+- **Sources** : Citer des sources officielles et recentes pour les sujets qui evoluent vite : React, Next.js, AI SDK, securite, SEO, navigateurs, standards web.
+- **Liens** : Les liens internes et externes importants doivent etre crawlables, explicites et utiles au lecteur.
 
 **JSON-LD TechArticle** : Le schema est genere automatiquement dans `app/blog/[slug]/page.tsx` a partir des metadata de l'article. Il inclut :
 - `TechArticle` avec headline, author, publisher, dates, keywords
 - `BreadcrumbList` avec Accueil > Blog > Titre de l'article
+- Le contenu du JSON-LD doit representer le contenu visible de la page. Ne pas baliser des informations absentes, cachees ou trompeuses.
 
 **Image OG** : L'image est generee dynamiquement via `/api/og?title=...&category=best-practices`. Pas besoin de creer une image statique.
 
-**GEO (visibilite dans les moteurs IA)** :
-- Commencer chaque section par une reponse directe (format "answer-first")
-- Inclure des statistiques et donnees chiffrees (+37% visibilite IA)
-- Citer les sources officielles (+40% visibilite IA)
-- Utiliser un ton autoritaire d'expert (+25%)
+**SEO pour les experiences IA / AI Search** :
+- Les bonnes pratiques SEO restent la base : structure claire, contenu accessible, canonical propre, liens crawlables, performance et balisage coherent.
+- Produire du contenu non generique : retour d'experience, exemples concrets, arbitrages techniques, limites, checklists et sources.
+- Eviter les affirmations chiffrees non sourcees. Une statistique doit etre verifiable ou supprimee.
+- L'IA peut aider a structurer ou rechercher, mais l'article final doit apporter une valeur experte visible pour le lecteur.
 
 ### Performance
 
