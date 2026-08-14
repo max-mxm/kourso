@@ -48,6 +48,11 @@ When adding or editing guides, read:
 - `docs/guides/ajouter-un-cours.md`
 - `docs/architecture/cours-structure.md`
 
+When publishing a new guide or blog article, verify that the homepage
+`Nouveaute` section can surface it from its `publishedAt` date. Guides must be
+registered in `lib/content.ts`; blog articles must be registered through
+`lib/blog/get-articles.ts` so `getArticlesForLanding()` can expose them.
+
 When adding or editing demos, read:
 
 - `docs/guides/bonnes-pratiques-demo-live.md`
@@ -118,6 +123,9 @@ For technical articles, prefer the format "guide published in the blog":
 - Write in French unless the user asks otherwise.
 - Favor concrete production lessons over generic introductions.
 - Use short paragraphs and explicit section headings.
+- Make newly published guides and blog articles visible from the homepage
+  `Nouveaute` section by keeping `publishedAt` current and the landing
+  registries updated.
 - Cite current official sources when writing about changing technologies such as
   React, Next.js, AI SDK, security, or browser APIs.
 - Avoid turning product references into hard-sell copy. Use product examples as

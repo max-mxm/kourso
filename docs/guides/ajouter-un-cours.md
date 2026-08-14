@@ -353,6 +353,10 @@ Ajouter le guide dans le tableau `GUIDES` avec **tous les champs SEO** :
 },
 ```
 
+Le champ `publishedAt` alimente aussi la rubrique "Nouveauté" de l'accueil.
+Si le guide est le contenu le plus récent publié, il doit apparaître sous
+l'écran d'accueil après son ajout dans `GUIDES`.
+
 ### 3.5 Bonnes Pratiques GEO (Generative Engine Optimization)
 
 Pour maximiser la visibilite dans les moteurs IA (ChatGPT, Perplexity, Claude) :
@@ -612,6 +616,7 @@ Avant de considérer votre guide de bonnes pratiques terminé :
 - [ ] Guide ajouté à `app/page.tsx`
 - [ ] Guide ajouté à `app/guides/page.tsx`
 - [ ] Guide et sections ajoutés à `lib/search-index.ts`
+- [ ] Guide visible dans la rubrique "Nouveauté" de l'accueil si son `publishedAt` est le plus récent
 - [ ] Commande `/generate-keywords` exécutée
 - [ ] Keywords techniques vérifiés (noms d'API, fonctions, librairies, acronymes, FR/EN)
 - [ ] Recherche Cmd+K testée avec des termes techniques variés

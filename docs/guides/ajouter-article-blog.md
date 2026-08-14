@@ -291,6 +291,12 @@ pnpm dev
   - Tester les filtres par catégorie
   - Vérifier la carte featured si activée
 
+- **Accueil** : `http://localhost:3002/`
+  - Si l'article est le contenu le plus récent publié, il doit apparaître dans
+    la rubrique "Nouveauté" sous l'écran d'accueil
+  - Vérifier que le badge, la date, le temps de lecture et les tags sont lisibles
+    en desktop et mobile
+
 - **Page article** : `http://localhost:3002/blog/nom-de-votre-article`
   - Vérifier le contenu complet
   - Tester la table des matières (scroll spy)
@@ -482,6 +488,7 @@ Avant de publier un article, vérifier :
 - [ ] Tous les IDs de ToC correspondent aux H2/H3
 - [ ] Article enregistré dans `metadataRegistry`
 - [ ] Case ajouté dans `loadArticleContent()`
+- [ ] Article visible dans la rubrique "Nouveauté" de l'accueil si son `publishedAt` est le plus récent
 
 ### SEO / GEO (OBLIGATOIRE)
 - [ ] `seoTitle` defini (50-70 caracteres, mots-cles en premier)

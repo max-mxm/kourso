@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { HeroSection } from './_components/hero-section';
+import { LatestContentSection } from './_components/latest-content-section';
 import { PhilosophySection } from './_components/philosophy-section';
 import { ContentCard } from '@/components/content-card';
 import { RevealOnScroll } from '@/components/reveal-on-scroll';
 import { DemoCard } from '@/components/demo-card';
 import { getGuidesForLanding, getArticlesForLanding, getDemosForLanding } from '@/lib/content';
+import { getLatestPublishedContent } from '@/lib/content-highlight';
 
 export const metadata: Metadata = {
   title: 'Guides React, Next.js et bonnes pratiques frontend',
@@ -94,6 +96,7 @@ export default async function Home() {
   const guides = getGuidesForLanding();
   const demos = getDemosForLanding();
   const articles = await getArticlesForLanding();
+  const latestContent = getLatestPublishedContent([...guides, ...articles]);
 
   return (
     <>
@@ -112,6 +115,8 @@ export default async function Home() {
 
       <div className="min-h-screen">
         <HeroSection />
+
+        {latestContent && <LatestContentSection item={latestContent} />}
 
         {/* Section Guides */}
         <section className="container py-12 md:py-20">
